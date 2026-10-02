@@ -131,3 +131,126 @@
     max-height: none;
   }
 }
+
+
+/* =========================================================
+   TEAM PAGE — WordPress-like typography and spacing
+   ========================================================= */
+
+body {
+  color: #333333;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+/* Keep Team page intentionally simpler than the homepage */
+.team-page {
+  max-width: 1040px;
+}
+
+.team-page > h1 {
+  width: auto;
+  margin: 0 0 30px;
+  padding: 0 0 18px;
+  border-bottom: 1px solid #d9d9d9;
+  color: #333333;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: 0;
+}
+
+/* Remove the large red underline inherited from the general page H1 */
+.team-page > h1::after {
+  display: none !important;
+  content: none !important;
+}
+
+.member-row {
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr);
+  gap: 42px;
+  align-items: start;
+  padding: 38px 0;
+  border-bottom: 1px solid #dddddd;
+}
+
+.member-photo {
+  width: 100%;
+}
+
+.member-photo img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 500px;
+  margin: 0 auto;
+  object-fit: contain;
+  object-position: center;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.member-copy {
+  padding-top: 2px;
+}
+
+.member-copy h2 {
+  margin: 0 0 4px;
+  color: #333333;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: 0;
+}
+
+.member-copy .role {
+  margin: 0 0 17px;
+  color: #555555;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.member-copy p {
+  max-width: none;
+  margin: 0 0 15px;
+  color: #444444;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+/* Team page should not have the oversized section heading treatment */
+.team-page .eyebrow {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .team-page > h1 {
+    font-size: 29px;
+  }
+
+  .member-row {
+    grid-template-columns: 1fr;
+    gap: 23px;
+    padding: 32px 0;
+  }
+
+  .member-photo img {
+    max-width: min(100%, 380px);
+    max-height: none;
+    margin: 0;
+  }
+
+  .member-copy h2 {
+    font-size: 23px;
+  }
+}
