@@ -254,3 +254,74 @@ body {
     font-size: 23px;
   }
 }
+
+
+/* =========================================================
+   TEAM PAGE — refined to match WordPress more closely
+   ========================================================= */
+
+.team-page {
+  max-width: 980px;
+}
+
+.member-row {
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 34px;
+  padding: 34px 0 40px;
+}
+
+.member-photo img {
+  max-width: 280px;
+  max-height: 460px;
+  margin: 0;
+}
+
+.member-copy {
+  padding-top: 0;
+}
+
+.member-copy h2 {
+  margin: 0 0 2px;
+  color: #c62828;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.member-copy .role {
+  margin: 0 0 14px;
+  color: #444444;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.member-copy p {
+  margin: 0 0 12px;
+  color: #444444;
+  font-size: 15.5px;
+  line-height: 1.65;
+}
+
+@media (max-width: 800px) {
+  .member-row {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .member-photo img {
+    max-width: min(100%, 340px);
+    margin: 0;
+  }
+
+  .member-copy h2 {
+    font-size: 21px;
+  }
+
+  .member-copy .role {
+    font-size: 15px;
+  }
+
+  .member-copy p {
+    font-size: 15.5px;
+  }
+}
