@@ -1,0 +1,45 @@
+<header class="wp-header">
+  <div class="wp-header-inner">
+    <a class="wp-logo" href="index.html">
+      <span class="wp-logo-main">Med n' Ed</span>
+      <span class="wp-logo-sub">To medicate and educate all in<br>need</span>
+    </a>
+
+    <nav class="wp-nav" aria-label="Main navigation">
+      <a href="index.html"{% if page.nav_group == "home" %} class="active"{% endif %}>Home</a>
+      <span class="nav-sep"></span>
+
+      <div class="nav-dropdown{% if page.nav_group == 'about' %} current{% endif %}">
+        <button class="nav-dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+          About Us <span class="nav-chevron">⌄</span>
+        </button>
+        <div class="nav-dropdown-menu">
+          <a href="mission.html"{% if page.page_id == "mission" %} class="active"{% endif %}>Our Mission</a>
+          <a href="motivation.html"{% if page.page_id == "motivation" %} class="active"{% endif %}>Our Motivation</a>
+        </div>
+      </div>
+
+      <span class="nav-sep"></span>
+      <a href="team.html"{% if page.nav_group == "team" %} class="active"{% endif %}>Our team</a>
+      <span class="nav-sep"></span>
+
+      <div class="nav-dropdown{% if page.nav_group == 'events' %} current{% endif %}">
+        <button class="nav-dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+          Events <span class="nav-chevron">⌄</span>
+        </button>
+        <div class="nav-dropdown-menu">
+          <a href="projects.html"{% if page.page_id == "projects" %} class="active"{% endif %}>Projects</a>
+          <a href="interviews.html"{% if page.page_id == "interviews" %} class="active"{% endif %}>Interviews</a>
+          <a href="medx.html"{% if page.page_id == "medx" %} class="active"{% endif %}>MedX</a>
+        </div>
+      </div>
+
+      <span class="nav-sep"></span>
+      <a href="get-involved.html"{% if page.nav_group == "get-involved" %} class="active"{% endif %}>Get Involved</a>
+      <span class="nav-sep"></span>
+      <a href="index.html#contact">Contact Us</a>
+      <span class="wp-search">⌕</span>
+      <a class="wp-donate" href="get-involved.html">DONATE</a>
+    </nav>
+  </div>
+</header>

@@ -1450,3 +1450,23 @@ body {
     padding: 6px 0;
   }
 }
+
+
+/* =========================================================
+   SHARED HEADER / FOOTER (Jekyll includes)
+   ========================================================= */
+
+.nav-dropdown.current > .nav-dropdown-toggle,
+.nav-dropdown-menu a.active {
+  color: #df111e !important;
+  font-weight: 700;
+}
+
+.wp-footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.wp-footer a:hover {
+  text-decoration: underline;
+}

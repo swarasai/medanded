@@ -1,77 +1,41 @@
+# Med n' Ed — GitHub Pages / Jekyll
 
-# Med n' Ed — GitHub Pages migration
+This version uses one shared header and one shared footer across every page.
 
-## Files
-- index.html
-- mission.html
-- motivation.html
-- team.html
-- projects.html
-- get-involved.html
-- interviews.html
-- resources.html
-- medx.html
-- styles.css
+## Shared files
 
-## Publish with GitHub Pages
+- `_includes/header.html` — edit this once to change navigation/logo on every page
+- `_includes/footer.html` — edit this once to change the footer on every page
+- `_layouts/default.html` — shared HTML shell, stylesheet, and JavaScript
+- `styles.css` — site-wide styling
+- `script.js` — site-wide JavaScript
 
-1. Create a GitHub account if needed.
-2. Create a public repository named `medanded` (or any name you prefer).
-3. Upload every file in this folder to the repository root.
-4. Open the repository in GitHub.
-5. Go to **Settings → Pages**.
-6. Under **Build and deployment**, choose:
-   - Source: **Deploy from a branch**
-   - Branch: **main**
-   - Folder: **/(root)**
-7. Save.
-8. GitHub will publish the site at a URL similar to:
-   `https://YOUR-USERNAME.github.io/medanded/`
+## Page files
 
-## Keep medanded.org
+Each page contains only its own content plus Jekyll front matter:
 
-You can point `medanded.org` to GitHub Pages while keeping the domain registered with your existing registrar.
+- `index.html`
+- `mission.html`
+- `motivation.html`
+- `team.html`
+- `projects.html`
+- `get-involved.html`
+- `interviews.html`
+- `resources.html`
+- `medx.html`
 
-In GitHub:
-1. Go to **Settings → Pages**.
-2. Under **Custom domain**, enter `medanded.org`.
-3. Save and enable **Enforce HTTPS** after DNS has propagated.
+Example:
 
-At your domain registrar:
-- Add A records for the root domain (`@`) pointing to GitHub Pages:
-  - 185.199.108.153
-  - 185.199.109.153
-  - 185.199.110.153
-  - 185.199.111.153
-- Add a CNAME for `www` pointing to:
-  `YOUR-USERNAME.github.io`
+```yaml
+---
+layout: default
+title: "Our Mission"
+body_class: "wp-home interior-page"
+nav_group: "about"
+page_id: "mission"
+---
+```
 
-Also create a file named `CNAME` in the repository containing:
-`medanded.org`
+GitHub Pages runs Jekyll automatically when publishing this repository.
 
-## Before cancelling WordPress hosting
-
-Export/download all media first:
-- WordPress Admin → Media → Library
-- Download original images, PDFs, videos, and documents.
-- Put images in `images/`, PDFs in `downloads/`, etc.
-- Update the HTML links to point to those local files.
-
-Also check:
-- contact forms
-- donation/payment buttons
-- embedded videos
-- downloadable interview PDFs
-- Instagram links
-- any Google Forms
-- analytics
-
-GitHub Pages only serves static HTML/CSS/JS. It cannot run WordPress PHP or a database.
-
-## Free replacements for dynamic WordPress features
-
-- Contact form: Google Forms or Formspree (free tier)
-- Donations: PayPal/Stripe-hosted donation link
-- Video: YouTube embeds
-- Documents: store PDFs directly in the repo if file sizes permit
-- Analytics: Google Analytics or Cloudflare Web Analytics
+IMPORTANT: because the header/footer use Jekyll includes, double-clicking an HTML file on your Mac will not render the includes. Preview the site through GitHub Pages, or run Jekyll locally.
