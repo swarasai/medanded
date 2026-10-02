@@ -1,43 +1,30 @@
-
 (function () {
-  const slides = Array.from(document.querySelectorAll('.home-slide'));
-  const dots = Array.from(document.querySelectorAll('.slider-dot'));
-  const prev = document.querySelector('.slider-prev');
-  const next = document.querySelector('.slider-next');
-
+  const slides = [...document.querySelectorAll('.wp-slide')];
   if (!slides.length) return;
 
-  let current = 0;
-  let timer = null;
+  let index = 0;
+  let timer;
 
-  function showSlide(index) {
-    current = (index + slides.length) % slides.length;
-    slides.forEach((slide, i) => slide.classList.toggle('active', i === current));
-    dots.forEach((dot, i) => dot.classList.toggle('active', i === current));
+  function show(i) {
+    index = (i + slides.length) % slides.length;
+    slides.forEach((s, n) => s.classList.toggle('active', n === index));
   }
 
-  function startAuto() {
+  function resetTimer() {
     clearInterval(timer);
-    timer = setInterval(() => showSlide(current + 1), 6000);
+    timer = setInterval(() => show(index + 1), 6500);
   }
 
-  prev.addEventListener('click', () => {
-    showSlide(current - 1);
-    startAuto();
+  document.querySelector('.wp-prev')?.addEventListener('click', () => {
+    show(index - 1);
+    resetTimer();
   });
 
-  next.addEventListener('click', () => {
-    showSlide(current + 1);
-    startAuto();
+  document.querySelector('.wp-next')?.addEventListener('click', () => {
+    show(index + 1);
+    resetTimer();
   });
 
-  dots.forEach((dot, i) => {
-    dot.addEventListener('click', () => {
-      showSlide(i);
-      startAuto();
-    });
-  });
-
-  showSlide(0);
-  startAuto();
+  show(0);
+  resetTimer();
 })();
