@@ -2948,3 +2948,22 @@ df-messenger {
     font-size: 15px !important;
   }
 }
+
+
+/* Exact Get Involved icons cropped from the WordPress page screenshot */
+.gi-icon-circle {
+  width: 220px !important;
+  height: 220px !important;
+  border-radius: 50%;
+  overflow: hidden;
+  background: transparent !important;
+}
+
+.gi-icon-circle img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 0;
+  border-radius: 50%;
+}
