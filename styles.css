@@ -2362,3 +2362,195 @@ df-messenger {
     margin-right: auto !important;
   }
 }
+
+
+/* =========================================================
+   OUR TEAM PAGE — WordPress screenshot match
+   ========================================================= */
+
+.team-page-wordpress {
+  background: #fff;
+}
+
+.team-page-hero {
+  min-height: 255px;
+  display: grid;
+  place-items: center;
+  background: #6f2927;
+  color: #fff;
+}
+
+.team-page-hero-inner {
+  text-align: center;
+}
+
+.team-page-hero h1 {
+  margin: 0 0 5px;
+  color: #fff;
+  font-size: 39px;
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.team-page-hero p {
+  margin: 0;
+  color: #fff;
+  font-size: 16px;
+}
+
+.team-page-hero a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.team-page-hero a:hover {
+  text-decoration: underline;
+}
+
+.team-page-hero span {
+  margin: 0 5px;
+}
+
+.team-board-section {
+  padding: 115px 0 90px;
+  background: #fff;
+}
+
+.team-board-wrap {
+  width: min(1280px, 76%);
+  margin: 0 auto;
+}
+
+.team-board-title {
+  height: 235px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 30px;
+  background: #e52424;
+  border-bottom: 2px solid #e52424;
+}
+
+.team-board-title h2 {
+  margin: 0;
+  color: #fff;
+  font-size: 58px;
+  font-weight: 300;
+  line-height: 1;
+}
+
+.team-member {
+  padding: 0 0 48px;
+  text-align: center;
+  border-bottom: 1px solid #e52424;
+}
+
+.team-member + .team-member {
+  padding-top: 48px;
+}
+
+.team-member h3 {
+  margin: 0 0 3px;
+  color: #b63834;
+  font-size: 34px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.team-role {
+  margin: 0 0 10px;
+  color: #585858;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.team-photo-wrap {
+  margin: 0 auto 18px;
+  text-align: center;
+}
+
+.team-photo-wrap img {
+  display: block;
+  width: auto;
+  max-width: 440px;
+  max-height: none;
+  height: auto;
+  margin: 0 auto;
+  object-fit: contain;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.team-bio {
+  width: min(1160px, 95%);
+  margin: 0 auto;
+}
+
+.team-bio p {
+  margin: 0 auto 8px;
+  color: #7a7a7a;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.45;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .team-board-wrap {
+    width: 88%;
+  }
+
+  .team-board-title {
+    height: 190px;
+  }
+
+  .team-board-title h2 {
+    font-size: 46px;
+  }
+
+  .team-member h3 {
+    font-size: 30px;
+  }
+
+  .team-photo-wrap img {
+    max-width: min(100%, 390px);
+  }
+}
+
+@media (max-width: 600px) {
+  .team-page-hero {
+    min-height: 210px;
+  }
+
+  .team-page-hero h1 {
+    font-size: 34px;
+  }
+
+  .team-board-section {
+    padding-top: 70px;
+  }
+
+  .team-board-wrap {
+    width: 92%;
+  }
+
+  .team-board-title {
+    height: 150px;
+  }
+
+  .team-board-title h2 {
+    font-size: 38px;
+  }
+
+  .team-member h3 {
+    font-size: 27px;
+  }
+
+  .team-role {
+    font-size: 18px;
+  }
+
+  .team-bio p {
+    font-size: 15px;
+  }
+}
