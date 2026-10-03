@@ -30,73 +30,84 @@
 })();
 
 
-/* Header search */
+/* WordPress-like search overlay + static results */
 (function () {
-  const wrap = document.querySelector('.header-search');
-  const toggle = document.getElementById('headerSearchToggle');
-  const form = document.getElementById('headerSearchForm');
-  const input = document.getElementById('headerSearchInput');
-  if (!wrap || !toggle || !form || !input) return;
+  const openBtn = document.getElementById('wpSearchButton');
+  const overlay = document.getElementById('wpSearchOverlay');
+  const closeBtn = document.getElementById('wpSearchClose');
+  const input = document.getElementById('wpSearchInput');
 
-  const routes = [
-    [['home'], 'index.html'],
-    [['mission','our mission'], 'mission.html'],
-    [['motivation','our motivation'], 'motivation.html'],
-    [['partner','sponsor'], 'partner-sponsor.html'],
-    [['team','board'], 'team.html'],
-    [['interview'], 'interviews.html'],
-    [['instagram','takeover'], 'instagram-takeovers.html'],
-    [['project'], 'projects.html'],
-    [['resource','article'], 'resources.html'],
-    [['youtube','video'], 'youtube-videos.html'],
-    [['medx'], 'medx.html'],
-    [['get involved','volunteer','member','join'], 'get-involved.html']
-  ];
+  if (openBtn && overlay && closeBtn) {
+    function setOpen(open) {
+      overlay.classList.toggle('open', open);
+      overlay.setAttribute('aria-hidden', open ? 'false' : 'true');
+      openBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if (open && input) setTimeout(() => input.focus(), 60);
+    }
 
-  function openSearch(open) {
-    wrap.classList.toggle('open', open);
-    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-    if (open) setTimeout(() => input.focus(), 40);
+    openBtn.addEventListener('click', () => setOpen(true));
+    closeBtn.addEventListener('click', () => setOpen(false));
+
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) setOpen(false);
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') setOpen(false);
+    });
   }
 
-  toggle.addEventListener('click', (e) => {
-    e.stopPropagation();
-    openSearch(!wrap.classList.contains('open'));
+  const resultsRoot = document.getElementById('searchResults');
+  const heading = document.getElementById('searchHeading');
+  const searchPageInput = document.getElementById('searchPageInput');
+
+  if (!resultsRoot || !heading || !searchPageInput) return;
+
+  const pages = [
+    { title: 'Home', url: 'index.html', text: 'Med n Ed healthcare education mission donate worldwide resources' },
+    { title: 'Our Mission', url: 'mission.html', text: 'mission medical educational access healthcare education' },
+    { title: 'Our Motivation', url: 'motivation.html', text: 'motivation why Med n Ed healthcare education' },
+    { title: 'Partner/Sponsor', url: 'partner-sponsor.html', text: 'partner sponsor partnership support organization' },
+    { title: 'Our Team', url: 'team.html', text: 'team board Sadhika Roshni Sudhiksha Sophia Swarasai' },
+    { title: 'Get Involved', url: 'get-involved.html', text: 'get involved become member partner donate volunteer' },
+    { title: 'Projects', url: 'projects.html', text: 'projects events community service mask drive book drive MedX bake sale' },
+    { title: 'Interviews', url: 'interviews.html', text: 'interviews doctors medical professionals' },
+    { title: 'Instagram Takeovers', url: 'instagram-takeovers.html', text: 'instagram takeovers social media events' },
+    { title: 'Resources', url: 'resources.html', text: 'resources articles healthcare education' },
+    { title: 'Youtube Videos', url: 'youtube-videos.html', text: 'youtube videos media' },
+    { title: 'MedX', url: 'medx.html', text: 'MedX conference event medicine education' },
+    { title: 'Contact Us', url: 'contact.html', text: 'contact email instagram message form' }
+  ];
+
+  const params = new URLSearchParams(window.location.search);
+  const q = (params.get('q') || '').trim();
+  searchPageInput.value = q;
+
+  if (!q) {
+    heading.textContent = 'Search';
+    resultsRoot.innerHTML = '<p>Enter a search term above.</p>';
+    return;
+  }
+
+  const terms = q.toLowerCase().split(/\s+/).filter(Boolean);
+  const matches = pages.filter(page => {
+    const haystack = (page.title + ' ' + page.text).toLowerCase();
+    return terms.every(term => haystack.includes(term));
   });
 
-  document.addEventListener('click', (e) => {
-    if (!wrap.contains(e.target)) openSearch(false);
-  });
+  heading.textContent = 'Search results for: “' + q + '”';
 
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') openSearch(false);
-  });
+  if (!matches.length) {
+    resultsRoot.innerHTML = '<p>No results found.</p>';
+    return;
+  }
 
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const q = input.value.trim().toLowerCase();
-    if (!q) return;
-
-    document.querySelector('.search-no-result')?.remove();
-
-    if (q.includes('donat') || q.includes('paypal')) {
-      window.open('https://www.paypal.com/paypalme/medanded?locale.x=en_US', '_blank', 'noopener');
-      return;
-    }
-    if (q.includes('contact') || q.includes('email')) {
-      window.location.href = 'mailto:contactmedanded@gmail.com';
-      return;
-    }
-
-    const match = routes.find(([terms]) => terms.some(term => q.includes(term) || term.includes(q)));
-    if (match) {
-      window.location.href = match[1];
-      return;
-    }
-
-    const msg = document.createElement('div');
-    msg.className = 'search-no-result';
-    msg.textContent = 'No matching page found. Try Mission, Team, Projects, Resources, Interviews, or Get Involved.';
-    wrap.appendChild(msg);
-  });
+  resultsRoot.innerHTML = matches.map(page =>
+    '<article class="search-result-item">' +
+      '<a href="' + page.url + '">' +
+        '<h3>' + page.title + '</h3>' +
+        '<p>' + page.text + '</p>' +
+      '</a>' +
+    '</article>'
+  ).join('');
 })();

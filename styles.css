@@ -3061,3 +3061,362 @@ df-messenger {
     margin-bottom: 24px !important;
   }
 }
+
+
+/* =========================================================
+   CONTACT PAGE — match WordPress screenshots
+   ========================================================= */
+
+.contact-page {
+  background: #fff;
+}
+
+.contact-page-hero {
+  min-height: 255px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  background: #6f2927;
+}
+
+.contact-page-hero-inner {
+  text-align: center;
+}
+
+.contact-page-hero h1 {
+  margin: 0 0 6px;
+  color: #fff;
+  font-size: 39px;
+  line-height: 1.15;
+  font-weight: 800;
+}
+
+.contact-page-hero p {
+  margin: 0;
+  color: #fff;
+  font-size: 16px;
+}
+
+.contact-page-hero a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.contact-page-hero span {
+  margin: 0 5px;
+}
+
+.contact-main {
+  min-height: 560px;
+  padding: 115px 0 125px;
+  background: #fff;
+}
+
+.contact-wrap {
+  width: min(1270px, 76%);
+  margin: 0 auto;
+}
+
+.contact-wrap h2 {
+  margin: 0 0 22px;
+  color: #d62c2c;
+  font-size: 22px;
+  line-height: 1.15;
+  font-weight: 800;
+}
+
+.contact-information ul {
+  margin: 0 0 20px 28px;
+  padding: 0;
+}
+
+.contact-information li {
+  margin: 5px 0;
+  color: #222;
+  font-size: 16px;
+}
+
+.contact-information a {
+  color: #df111e;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.contact-wrap hr {
+  margin: 20px 0 16px;
+  border: 0;
+  border-top: 2px solid #8a8a8a;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.contact-form label {
+  margin: 0 0 4px;
+  color: #262626;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.contact-form label span {
+  font-weight: 400;
+}
+
+.contact-form input:not([type="hidden"]) {
+  width: 116px;
+  height: 40px;
+  margin: 0 0 8px;
+  padding: 4px 7px;
+  border: 1px solid #dedede;
+  background: #fff;
+  font: inherit;
+}
+
+.contact-form textarea {
+  width: 230px;
+  height: 87px;
+  margin: 0 0 0;
+  padding: 7px;
+  resize: vertical;
+  border: 1px solid #dedede;
+  background: #fff;
+  font: inherit;
+}
+
+.contact-submit {
+  margin-top: 0;
+  padding: 12px 24px;
+  border: 0;
+  border-radius: 28px;
+  color: #fff;
+  background: #d92d2d;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.contact-submit:hover {
+  background: #b92020;
+}
+
+.contact-honeypot {
+  position: absolute !important;
+  left: -99999px !important;
+  opacity: 0 !important;
+}
+
+.contact-thanks p,
+.contact-confirmation p {
+  color: #343434;
+  font-size: 16px;
+}
+
+.contact-back {
+  display: inline-block;
+  margin-top: 16px;
+  color: #df111e;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* =========================================================
+   WORDPRESS-LIKE SEARCH OVERLAY
+   ========================================================= */
+
+.wp-search-button {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-right: 1px solid #ddd;
+  padding: 0 16px 0 8px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.wp-search-glass {
+  position: relative;
+  width: 15px;
+  height: 15px;
+  display: block;
+  border: 3px solid #17193d;
+  border-radius: 50%;
+}
+
+.wp-search-glass::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 3px;
+  right: -7px;
+  bottom: -4px;
+  background: #17193d;
+  border-radius: 2px;
+  transform: rotate(45deg);
+  transform-origin: left center;
+}
+
+.wp-search-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: grid;
+  place-items: center;
+  background: rgba(20, 22, 57, .96);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .2s ease, visibility .2s ease;
+}
+
+.wp-search-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.wp-search-close {
+  position: absolute;
+  top: 30px;
+  right: 38px;
+  border: 0;
+  color: #fff;
+  background: transparent;
+  font-size: 45px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.wp-search-overlay-form {
+  width: min(720px, 82vw);
+  display: grid;
+  grid-template-columns: 1fr 62px;
+  border-bottom: 2px solid rgba(255,255,255,.75);
+}
+
+.wp-search-overlay-form input {
+  height: 62px;
+  border: 0;
+  outline: none;
+  padding: 0 8px;
+  color: #fff;
+  background: transparent;
+  font-size: 32px;
+}
+
+.wp-search-overlay-form input::placeholder {
+  color: rgba(255,255,255,.7);
+}
+
+.wp-search-overlay-form button {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.wp-search-glass.light {
+  margin: 0 auto;
+  border-color: #fff;
+}
+
+.wp-search-glass.light::after {
+  background: #fff;
+}
+
+/* Static search results */
+.search-results-hero {
+  min-height: 255px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  background: #6f2927;
+  text-align: center;
+}
+
+.search-results-hero h1 {
+  margin: 0 0 6px;
+  color: #fff;
+  font-size: 39px;
+}
+
+.search-results-hero p,
+.search-results-hero a {
+  color: #fff;
+}
+
+.search-results-main {
+  padding: 85px 0 110px;
+}
+
+.search-results-wrap {
+  width: min(1050px, 84%);
+  margin: 0 auto;
+}
+
+.search-page-form {
+  display: flex;
+  max-width: 650px;
+  margin-bottom: 45px;
+}
+
+.search-page-form input {
+  flex: 1;
+  height: 45px;
+  padding: 0 12px;
+  border: 1px solid #ddd;
+}
+
+.search-page-form button {
+  border: 0;
+  padding: 0 20px;
+  color: #fff;
+  background: #df111e;
+  font-weight: 700;
+}
+
+.search-results-wrap h2 {
+  color: #df111e;
+  font-size: 25px;
+}
+
+.search-result-item {
+  padding: 20px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.search-result-item a {
+  color: #333;
+  text-decoration: none;
+}
+
+.search-result-item a:hover h3 {
+  color: #df111e;
+}
+
+.search-result-item h3 {
+  margin: 0 0 6px;
+  font-size: 21px;
+}
+
+.search-result-item p {
+  margin: 0;
+  color: #777;
+  font-size: 15px;
+}
+
+@media (max-width: 760px) {
+  .contact-main {
+    padding: 70px 0 85px;
+  }
+
+  .contact-wrap {
+    width: 88%;
+  }
+
+  .wp-search-overlay-form input {
+    font-size: 24px;
+  }
+}

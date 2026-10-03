@@ -1,0 +1,29 @@
+---
+layout: default
+title: "Search"
+description: "Search Med n' Ed."
+body_class: "wp-home search-page-body"
+nav_group: ""
+page_id: "search"
+---
+
+<main class="search-page">
+  <section class="search-results-hero">
+    <div>
+      <h1>Search</h1>
+      <p><a href="index.html">Home</a> <span>&gt;</span> Search</p>
+    </div>
+  </section>
+
+  <section class="search-results-main">
+    <div class="search-results-wrap">
+      <form class="search-page-form" action="search.html" method="get">
+        <input id="searchPageInput" name="q" type="search" placeholder="Search..." autocomplete="off">
+        <button type="submit">Search</button>
+      </form>
+
+      <h2 id="searchHeading">Search results</h2>
+      <div id="searchResults"></div>
+    </div>
+  </section>
+</main>

@@ -1,0 +1,69 @@
+---
+layout: default
+title: "Contact Us"
+description: "Contact Med n' Ed."
+body_class: "wp-home contact-page-body"
+nav_group: "contact"
+page_id: "contact"
+---
+
+<main class="contact-page">
+
+  <section class="contact-page-hero">
+    <div class="contact-page-hero-inner">
+      <h1>Contact Us</h1>
+      <p><a href="index.html">Home</a> <span>&gt;</span> Contact Us</p>
+    </div>
+  </section>
+
+  <section class="contact-main">
+    <div class="contact-wrap">
+
+      <section class="contact-information">
+        <h2>CONTACT INFORMATION</h2>
+        <ul>
+          <li><strong>Email:</strong> <a href="mailto:contactmedanded@gmail.com">contactmedanded@gmail.com</a></li>
+          <li><strong>Instagram:</strong> <a href="https://www.instagram.com/medanded_org/" target="_blank" rel="noopener">medanded_org</a></li>
+        </ul>
+      </section>
+
+      <hr>
+
+      <section class="contact-form-section">
+        <h2>CONTACT FORM</h2>
+
+        <form class="contact-form"
+              action="https://formsubmit.co/contactmedanded@gmail.com"
+              method="POST">
+          <input type="hidden" name="_subject" value="New Med n' Ed website contact form submission">
+          <input type="hidden" name="_next" value="https://swarasai.github.io/medanded/thank-you.html">
+          <input type="hidden" name="_template" value="table">
+          <input type="text" name="_honey" class="contact-honeypot" tabindex="-1" autocomplete="off">
+
+          <label for="contactName">Name <span>(required)</span></label>
+          <input id="contactName" name="Name" type="text" required>
+
+          <label for="contactEmail">Email <span>(required)</span></label>
+          <input id="contactEmail" name="Email" type="email" required>
+
+          <label for="contactPhone">Phone Number</label>
+          <input id="contactPhone" name="Phone Number" type="tel">
+
+          <label for="contactMessage">Message</label>
+          <textarea id="contactMessage" name="Message" rows="5"></textarea>
+
+          <button class="contact-submit" type="submit">SUBMIT</button>
+        </form>
+      </section>
+
+      <hr>
+
+      <section class="contact-thanks">
+        <h2>THANK YOU FOR VISITING OUR WEBSITE!</h2>
+        <p>We will be with you as soon as possible.</p>
+      </section>
+
+    </div>
+  </section>
+
+</main>
