@@ -3420,3 +3420,231 @@ df-messenger {
     font-size: 24px;
   }
 }
+
+
+/* =========================================================
+   OUR MISSION PAGE — WordPress screenshot match
+   ========================================================= */
+
+.mission-page {
+  background: #fff;
+}
+
+.mission-page-hero {
+  min-height: 255px;
+  display: grid;
+  place-items: center;
+  background: #6f2927;
+  color: #fff;
+}
+
+.mission-page-hero-inner {
+  text-align: center;
+}
+
+.mission-page-hero h1 {
+  margin: 0 0 6px;
+  color: #fff;
+  font-size: 39px;
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.mission-page-hero p {
+  margin: 0;
+  color: #fff;
+  font-size: 16px;
+}
+
+.mission-page-hero a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.mission-page-hero a:hover {
+  text-decoration: underline;
+}
+
+.mission-page-hero span {
+  margin: 0 5px;
+}
+
+.mission-main {
+  padding: 115px 0 90px;
+  background: #fff;
+}
+
+.mission-wrap {
+  width: min(1280px, 76%);
+  margin: 0 auto;
+}
+
+.mission-title-block {
+  min-height: 165px;
+  display: grid;
+  place-items: center;
+  background: #d92d2d;
+}
+
+.mission-title-block h2 {
+  margin: 0;
+  color: #fff;
+  font-size: 43px;
+  font-weight: 300;
+  line-height: 1.1;
+}
+
+.mission-statement {
+  padding: 60px 74px 42px;
+}
+
+.mission-statement p {
+  margin: 0;
+  color: #d92d2d;
+  font-size: 37px;
+  font-weight: 300;
+  line-height: 1.55;
+  letter-spacing: .1px;
+}
+
+.mission-divider {
+  height: 2px;
+  margin: 0 0 12px;
+  background: #ef8f9e;
+}
+
+.members-title {
+  min-height: 92px;
+}
+
+.members-title h2 {
+  font-size: 26px;
+  font-weight: 300;
+}
+
+.mission-members-copy {
+  padding: 18px 0 12px;
+}
+
+.mission-members-copy p {
+  margin: 0;
+  color: #df4a6c;
+  font-size: 35px;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.members-divider {
+  margin-bottom: 32px;
+}
+
+.mission-members-image {
+  position: relative;
+  width: 88%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.mission-members-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 600px;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+.mission-members-image::before,
+.mission-members-image::after {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+  font-size: 42px;
+  font-weight: 300;
+  line-height: 1;
+}
+
+.mission-members-image::before {
+  content: "‹";
+  left: -55px;
+}
+
+.mission-members-image::after {
+  content: "›";
+  right: -55px;
+}
+
+@media (max-width: 1050px) {
+  .mission-wrap {
+    width: 86%;
+  }
+
+  .mission-statement {
+    padding: 48px 45px 38px;
+  }
+
+  .mission-statement p {
+    font-size: 31px;
+  }
+
+  .mission-members-copy p {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 760px) {
+  .mission-page-hero {
+    min-height: 210px;
+  }
+
+  .mission-page-hero h1 {
+    font-size: 34px;
+  }
+
+  .mission-main {
+    padding: 70px 0;
+  }
+
+  .mission-wrap {
+    width: 92%;
+  }
+
+  .mission-title-block {
+    min-height: 125px;
+  }
+
+  .mission-title-block h2 {
+    font-size: 34px;
+  }
+
+  .mission-statement {
+    padding: 36px 18px 30px;
+  }
+
+  .mission-statement p {
+    font-size: 24px;
+    line-height: 1.5;
+  }
+
+  .members-title {
+    min-height: 80px;
+  }
+
+  .members-title h2 {
+    font-size: 24px;
+  }
+
+  .mission-members-copy p {
+    font-size: 24px;
+  }
+
+  .mission-members-image {
+    width: 100%;
+  }
+
+  .mission-members-image::before,
+  .mission-members-image::after {
+    display: none;
+  }
+}
