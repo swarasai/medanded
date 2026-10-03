@@ -2667,3 +2667,201 @@ df-messenger {
     text-align: left !important;
   }
 }
+
+
+/* =========================================================
+   GET INVOLVED PAGE — WordPress screenshot match
+   ========================================================= */
+
+.get-involved-page {
+  background: #fff;
+}
+
+.gi-page-hero {
+  min-height: 255px;
+  display: grid;
+  place-items: center;
+  background: #6f2927;
+  color: #fff;
+}
+
+.gi-page-hero-inner {
+  text-align: center;
+}
+
+.gi-page-hero h1 {
+  margin: 0 0 6px;
+  color: #fff;
+  font-size: 39px;
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.gi-page-hero p {
+  margin: 0;
+  color: #fff;
+  font-size: 16px;
+}
+
+.gi-page-hero a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.gi-page-hero a:hover {
+  text-decoration: underline;
+}
+
+.gi-page-hero span {
+  margin: 0 5px;
+}
+
+.gi-main-section {
+  padding: 115px 0 115px;
+  background: #fff;
+}
+
+.gi-wrap {
+  width: min(1460px, 86%);
+  margin: 0 auto;
+}
+
+.gi-title-block {
+  min-height: 195px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 12px;
+  background: #d92d2d;
+}
+
+.gi-title-block h2 {
+  margin: 0;
+  color: #fff;
+  font-size: 50px;
+  font-weight: 300;
+  line-height: 1.15;
+}
+
+.gi-intro {
+  margin-bottom: 18px;
+}
+
+.gi-intro p {
+  margin: 0 0 16px;
+  color: #2d2d2d;
+  font-size: 18px;
+  line-height: 1.55;
+}
+
+.gi-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 70px;
+  align-items: start;
+}
+
+.gi-card {
+  text-align: left;
+}
+
+.gi-icon-circle {
+  width: 275px;
+  height: 275px;
+  margin: 0 auto 58px;
+}
+
+.gi-icon-circle svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.gi-button {
+  display: inline-block;
+  margin: 0 0 50px;
+  padding: 12px 28px;
+  color: #fff !important;
+  background: #d92d2d;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1;
+  transition: background .18s ease, transform .18s ease, box-shadow .18s ease;
+}
+
+.gi-button:hover {
+  color: #fff !important;
+  background: #b82020;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(0,0,0,.15);
+}
+
+.gi-card p {
+  margin: 0;
+  color: #2f2f2f;
+  font-size: 17px;
+  line-height: 1.45;
+}
+
+@media (max-width: 1050px) {
+  .gi-wrap {
+    width: 90%;
+  }
+
+  .gi-columns {
+    gap: 38px;
+  }
+
+  .gi-icon-circle {
+    width: 220px;
+    height: 220px;
+  }
+}
+
+@media (max-width: 760px) {
+  .gi-page-hero {
+    min-height: 210px;
+  }
+
+  .gi-page-hero h1 {
+    font-size: 34px;
+  }
+
+  .gi-main-section {
+    padding: 70px 0;
+  }
+
+  .gi-title-block {
+    min-height: 145px;
+  }
+
+  .gi-title-block h2 {
+    font-size: 37px;
+  }
+
+  .gi-intro p {
+    font-size: 16px;
+  }
+
+  .gi-columns {
+    grid-template-columns: 1fr;
+    gap: 65px;
+  }
+
+  .gi-card {
+    text-align: center;
+  }
+
+  .gi-card p {
+    text-align: left;
+    font-size: 16px;
+  }
+
+  .gi-button {
+    margin-bottom: 30px;
+  }
+
+  .gi-icon-circle {
+    margin-bottom: 30px;
+  }
+}
