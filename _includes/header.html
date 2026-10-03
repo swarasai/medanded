@@ -57,14 +57,19 @@
       <a href="get-involved.html"{% if page.nav_group == "get-involved" %} class="active"{% endif %}>Get Involved</a>
       <span class="nav-sep"></span>
       <a href="contact.html"{% if page.nav_group == "contact" %} class="active"{% endif %}>Contact Us</a>
-      <div class="header-search">
-        <button class="header-search-toggle" id="headerSearchToggle" type="button" aria-label="Search" aria-expanded="false">
-          <span class="search-icon" aria-hidden="true"></span>
-        </button>
-        <form class="header-search-form" id="headerSearchForm" role="search">
-          <label class="sr-only" for="headerSearchInput">Search Med n' Ed</label>
-          <input id="headerSearchInput" type="search" placeholder="Search..." autocomplete="off">
-          <button type="submit">Search</button>
+      <button class="wp-search-button" id="wpSearchButton" type="button"
+        aria-label="Open search" aria-expanded="false">
+        <span class="wp-search-glass" aria-hidden="true"></span>
+      </button>
+
+      <div class="wp-search-overlay" id="wpSearchOverlay" aria-hidden="true">
+        <button class="wp-search-close" id="wpSearchClose" type="button" aria-label="Close search">×</button>
+        <form class="wp-search-overlay-form" action="search.html" method="get" role="search">
+          <label class="sr-only" for="wpSearchInput">Search Med n' Ed</label>
+          <input id="wpSearchInput" name="q" type="search" placeholder="Search..." autocomplete="off">
+          <button type="submit" aria-label="Submit search">
+            <span class="wp-search-glass light" aria-hidden="true"></span>
+          </button>
         </form>
       </div>
       <a class="wp-donate" href="https://www.paypal.com/paypalme/medanded?locale.x=en_US" target="_blank" rel="noopener">DONATE</a>
