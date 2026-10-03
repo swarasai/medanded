@@ -2235,3 +2235,130 @@ df-messenger {
 .chat-widget {
   display: none !important;
 }
+
+
+/* =========================================================
+   CAROUSEL TEXT POSITION + ACTION ICON HOVER
+   ========================================================= */
+
+/* Make text placement deterministic even if older CSS is cached */
+.wp-slider .science-slide .wp-slide-copy,
+.wp-slider .donate-slide .wp-slide-copy,
+.wp-slider .wp-slide[data-slide="0"] .wp-slide-copy,
+.wp-slider .wp-slide[data-slide="2"] .wp-slide-copy {
+  left: 7% !important;
+  right: auto !important;
+  width: 39% !important;
+  text-align: left !important;
+}
+
+.wp-slider .worldwide-slide .wp-slide-copy,
+.wp-slider .wp-slide[data-slide="1"] .wp-slide-copy {
+  left: auto !important;
+  right: 8% !important;
+  width: 43% !important;
+  text-align: right !important;
+}
+
+.wp-slider .science-slide .wp-slide-copy p,
+.wp-slider .donate-slide .wp-slide-copy p,
+.wp-slider .wp-slide[data-slide="0"] .wp-slide-copy p,
+.wp-slider .wp-slide[data-slide="2"] .wp-slide-copy p {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+  max-width: 560px !important;
+}
+
+.wp-slider .worldwide-slide .wp-slide-copy p,
+.wp-slider .wp-slide[data-slide="1"] .wp-slide-copy p {
+  margin-left: auto !important;
+  margin-right: 0 !important;
+  max-width: 610px !important;
+}
+
+/* Keep heading from stretching into the illustration */
+.wp-slider .wp-slide-copy h1 {
+  max-width: 680px !important;
+}
+
+/* The WordPress "What do we do?" hover:
+   rotate only an outer ring; keep the actual symbol stable. */
+.wp-actions .action-icon {
+  position: relative !important;
+  width: 46px !important;
+  height: 46px !important;
+  display: grid !important;
+  place-items: center !important;
+  padding-top: 0 !important;
+  overflow: visible !important;
+  transform: none !important;
+}
+
+.wp-actions .action-icon::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border: 2px dashed rgba(255,255,255,.95);
+  border-radius: 50%;
+  opacity: 0;
+  transform: rotate(0deg);
+  transition: opacity .2s ease, transform .55s ease;
+}
+
+.wp-actions .action-item:hover .action-icon::before {
+  opacity: 1;
+  transform: rotate(180deg);
+}
+
+/* Prevent the symbol itself from rotating */
+.wp-actions .action-icon,
+.wp-actions .action-item:hover .action-icon {
+  animation: none !important;
+}
+
+.wp-actions .action-icon > *,
+.wp-actions .action-item:hover .action-icon > * {
+  transform: none !important;
+  animation: none !important;
+}
+
+/* Give the symbol enough clearance inside the hover ring */
+.wp-actions .action-icon {
+  font-size: 27px !important;
+  line-height: 1 !important;
+}
+
+/* Desktop-only protection against image overlap */
+@media (min-width: 981px) {
+  .wp-slider .worldwide-slide .wp-slide-copy,
+  .wp-slider .wp-slide[data-slide="1"] .wp-slide-copy {
+    top: 135px !important;
+  }
+
+  .wp-slider .science-slide .wp-slide-copy,
+  .wp-slider .donate-slide .wp-slide-copy,
+  .wp-slider .wp-slide[data-slide="0"] .wp-slide-copy,
+  .wp-slider .wp-slide[data-slide="2"] .wp-slide-copy {
+    top: 145px !important;
+  }
+}
+
+/* On small screens all slides stack text left for readability */
+@media (max-width: 760px) {
+  .wp-slider .science-slide .wp-slide-copy,
+  .wp-slider .worldwide-slide .wp-slide-copy,
+  .wp-slider .donate-slide .wp-slide-copy,
+  .wp-slider .wp-slide[data-slide="0"] .wp-slide-copy,
+  .wp-slider .wp-slide[data-slide="1"] .wp-slide-copy,
+  .wp-slider .wp-slide[data-slide="2"] .wp-slide-copy {
+    left: 7% !important;
+    right: auto !important;
+    width: 86% !important;
+    text-align: left !important;
+  }
+
+  .wp-slider .wp-slide-copy p {
+    margin-left: 0 !important;
+    margin-right: auto !important;
+  }
+}
