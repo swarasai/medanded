@@ -27,7 +27,7 @@
 
       <div class="nav-dropdown{% if page.nav_group == 'about' %} current{% endif %}">
         <button class="nav-dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
-          About Us <span class="nav-chevron">⌄</span>
+          About Us <span class="nav-chevron" aria-hidden="true"></span>
         </button>
         <div class="nav-dropdown-menu">
           <a href="mission.html"{% if page.page_id == "mission" %} class="active"{% endif %}>Our Mission</a>
@@ -42,7 +42,7 @@
 
       <div class="nav-dropdown{% if page.nav_group == 'events' %} current{% endif %}">
         <button class="nav-dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
-          Events <span class="nav-chevron">⌄</span>
+          Events <span class="nav-chevron" aria-hidden="true"></span>
         </button>
         <div class="nav-dropdown-menu">
           <a href="interviews.html"{% if page.page_id == "interviews" %} class="active"{% endif %}>Interviews</a>
@@ -57,8 +57,17 @@
       <a href="get-involved.html"{% if page.nav_group == "get-involved" %} class="active"{% endif %}>Get Involved</a>
       <span class="nav-sep"></span>
       <a href="index.html#contact">Contact Us</a>
-      <span class="wp-search">⌕</span>
-      <a class="wp-donate" href="get-involved.html">DONATE</a>
+      <div class="header-search">
+        <button class="header-search-toggle" id="headerSearchToggle" type="button" aria-label="Search" aria-expanded="false">
+          <span class="search-icon" aria-hidden="true"></span>
+        </button>
+        <form class="header-search-form" id="headerSearchForm" role="search">
+          <label class="sr-only" for="headerSearchInput">Search Med n' Ed</label>
+          <input id="headerSearchInput" type="search" placeholder="Search..." autocomplete="off">
+          <button type="submit">Search</button>
+        </form>
+      </div>
+      <a class="wp-donate" href="https://www.paypal.com/paypalme/medanded?locale.x=en_US" target="_blank" rel="noopener">DONATE</a>
     </nav>
   </div>
 </header>

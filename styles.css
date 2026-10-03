@@ -1802,3 +1802,264 @@ body {
 .nav-dropdown-menu a:last-child {
   border-bottom: 0;
 }
+
+
+/* =========================================================
+   SCREENSHOT MATCH REFINEMENTS
+   ========================================================= */
+
+/* WordPress has a much taller navy strip above the white header */
+.social-topbar {
+  height: 96px !important;
+  background: #17193d !important;
+}
+
+.social-topbar-inner {
+  width: 86% !important;
+  max-width: none !important;
+  margin: 0 auto !important;
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.social-links {
+  display: flex !important;
+  gap: 14px !important;
+  align-items: center !important;
+}
+
+.social-round {
+  width: 31px !important;
+  height: 31px !important;
+  display: grid !important;
+  place-items: center !important;
+  border-radius: 50% !important;
+  color: #fff !important;
+  background: #df111e !important;
+  text-decoration: none !important;
+  font-weight: 700 !important;
+  transition: transform .18s ease, background .18s ease !important;
+}
+
+.social-round:hover {
+  transform: translateY(-2px) !important;
+  background: #bd0d19 !important;
+}
+
+.fb-mark {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.ig-mark {
+  font-size: 21px;
+  line-height: 1;
+}
+
+.mail-mark {
+  font-size: 16px;
+  line-height: 1;
+}
+
+/* Header spans wider like the live WordPress screenshot */
+.wp-header-inner {
+  width: 86% !important;
+  max-width: none !important;
+  height: 124px !important;
+}
+
+.wp-logo-main {
+  font-size: 32px !important;
+}
+
+.wp-nav {
+  gap: 16px !important;
+}
+
+/* Slider dimensions and per-slide text alignment */
+.wp-slider {
+  height: 625px !important;
+}
+
+.wp-slide-copy {
+  top: 156px !important;
+  width: 44% !important;
+}
+
+.wp-slide.text-left .wp-slide-copy {
+  left: 7% !important;
+  right: auto !important;
+  text-align: left !important;
+}
+
+.wp-slide.text-left .wp-slide-copy p {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+.wp-slide.text-right .wp-slide-copy {
+  left: auto !important;
+  right: 8% !important;
+  text-align: right !important;
+}
+
+.wp-slide.text-right .wp-slide-copy p {
+  margin-left: auto !important;
+  margin-right: 0 !important;
+}
+
+.wp-slide-kicker {
+  font-size: 34px !important;
+}
+
+.wp-slide-copy h1 {
+  font-size: 59px !important;
+  line-height: 1.05 !important;
+}
+
+.wp-slide-copy p {
+  font-size: 16px !important;
+  line-height: 1.55 !important;
+}
+
+.wp-slider-arrows {
+  bottom: 58px !important;
+}
+
+/* The WordPress chatbot launcher is white, not red */
+.chat-launcher {
+  width: 66px !important;
+  height: 66px !important;
+  border: 0 !important;
+  background: #fff !important;
+  box-shadow: 0 3px 16px rgba(0,0,0,.15) !important;
+  position: relative !important;
+}
+
+.chat-launcher:hover {
+  background: #fff !important;
+  transform: scale(1.04) !important;
+}
+
+.chat-launcher::after {
+  content: "";
+  position: absolute;
+  left: 19px;
+  top: 18px;
+  width: 27px;
+  height: 21px;
+  border: 3px solid #454950;
+  border-radius: 2px;
+}
+
+.chat-launcher::before {
+  content: "";
+  position: absolute;
+  left: 25px;
+  top: 37px;
+  width: 10px;
+  height: 10px;
+  border-left: 3px solid #454950;
+  border-bottom: 3px solid #454950;
+  transform: skew(-25deg);
+  background: #fff;
+  z-index: 2;
+}
+
+.chat-bubble-icon {
+  display: none !important;
+}
+
+.chat-widget {
+  right: 20px !important;
+  bottom: 20px !important;
+}
+
+/* Hide the nav underline while not hovering to more closely match live site */
+.wp-nav > a:not(.wp-donate)::after {
+  bottom: -17px !important;
+}
+
+/* Desktop alignment */
+@media (min-width: 981px) {
+  .wp-slide img {
+    object-position: center center !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .social-topbar {
+    height: 60px !important;
+  }
+
+  .wp-header-inner {
+    width: 90% !important;
+    height: auto !important;
+  }
+
+  .wp-slide.text-left .wp-slide-copy,
+  .wp-slide.text-right .wp-slide-copy {
+    left: 7% !important;
+    right: auto !important;
+    width: 86% !important;
+    text-align: left !important;
+  }
+}
+
+
+/* Header search and dropdown chevrons */
+.sr-only {
+  position:absolute!important;width:1px!important;height:1px!important;padding:0!important;
+  margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;
+  white-space:nowrap!important;border:0!important;
+}
+.nav-chevron {
+  display:inline-block;width:8px;height:8px;margin-left:7px;position:relative;top:-2px;
+  border-right:2px solid currentColor;border-bottom:2px solid currentColor;
+  transform:rotate(45deg);transition:transform .18s ease;
+}
+.nav-dropdown:hover .nav-chevron,
+.nav-dropdown:focus-within .nav-chevron { transform:rotate(225deg); }
+
+.header-search {
+  position:relative;display:flex;align-items:center;padding:0 14px 0 7px;border-right:1px solid #ddd;
+}
+.header-search-toggle {
+  width:30px;height:30px;border:0;padding:0;display:grid;place-items:center;background:transparent;cursor:pointer;
+}
+.search-icon {
+  position:relative;width:15px;height:15px;display:block;border:3px solid #17193d;border-radius:50%;
+}
+.search-icon::after {
+  content:"";position:absolute;width:8px;height:3px;right:-7px;bottom:-4px;border-radius:2px;
+  background:#17193d;transform:rotate(45deg);transform-origin:left center;
+}
+.header-search-toggle:hover .search-icon { border-color:#df111e; }
+.header-search-toggle:hover .search-icon::after { background:#df111e; }
+
+.header-search-form {
+  position:absolute;top:calc(100% + 24px);right:-4px;z-index:2500;width:330px;
+  display:flex;gap:8px;padding:12px;background:#fff;border-top:3px solid #df111e;
+  box-shadow:0 9px 24px rgba(0,0,0,.16);opacity:0;visibility:hidden;transform:translateY(8px);
+  transition:opacity .18s ease,visibility .18s ease,transform .18s ease;
+}
+.header-search.open .header-search-form { opacity:1;visibility:visible;transform:translateY(0); }
+.header-search-form input {
+  min-width:0;flex:1;height:38px;padding:0 10px;border:1px solid #d7d7d7;outline:none;font:inherit;
+}
+.header-search-form input:focus { border-color:#df111e; }
+.header-search-form button {
+  border:0;padding:0 13px;color:#fff;background:#df111e;cursor:pointer;font-weight:700;
+}
+.search-no-result {
+  position:absolute;top:calc(100% + 68px);right:-4px;z-index:2600;width:330px;
+  padding:10px 12px;color:#555;background:#fff;border:1px solid #eee;
+  box-shadow:0 8px 18px rgba(0,0,0,.10);font-size:13px;
+}
+@media(max-width:760px){
+  .header-search{padding-left:0;border-right:0}
+  .header-search-form{left:0;right:auto;width:min(330px,calc(100vw - 36px))}
+}
