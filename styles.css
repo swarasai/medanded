@@ -2950,20 +2950,50 @@ df-messenger {
 }
 
 
-/* Exact Get Involved icons cropped from the WordPress page screenshot */
+/* =========================================================
+   GET INVOLVED — exact original WordPress icon assets
+   ========================================================= */
+
 .gi-icon-circle {
-  width: 220px !important;
-  height: 220px !important;
-  border-radius: 50%;
-  overflow: hidden;
+  width: 245px !important;
+  height: 245px !important;
+  margin: 0 auto 46px !important;
+  overflow: visible !important;
+  border-radius: 0 !important;
   background: transparent !important;
 }
 
 .gi-icon-circle img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border: 0;
-  border-radius: 50%;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Slightly tighter vertical spacing to match WordPress */
+.gi-button {
+  margin-bottom: 34px !important;
+}
+
+.gi-columns {
+  align-items: start !important;
+}
+
+@media (max-width: 1050px) {
+  .gi-icon-circle {
+    width: 215px !important;
+    height: 215px !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .gi-icon-circle {
+    width: 185px !important;
+    height: 185px !important;
+    margin-bottom: 26px !important;
+  }
 }
