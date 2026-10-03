@@ -2997,3 +2997,67 @@ df-messenger {
     margin-bottom: 26px !important;
   }
 }
+
+
+/* =========================================================
+   GET INVOLVED — smaller icons centered above each button
+   ========================================================= */
+
+.gi-columns {
+  align-items: start !important;
+}
+
+.gi-card {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+}
+
+/* Center icon and button together within each column */
+.gi-icon-circle {
+  width: 165px !important;
+  height: 165px !important;
+  margin: 0 auto 22px !important;
+  overflow: visible !important;
+  border-radius: 0 !important;
+}
+
+.gi-icon-circle img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  object-position: center !important;
+}
+
+.gi-button {
+  align-self: center !important;
+  margin: 0 auto 34px !important;
+  padding: 10px 22px !important;
+  font-size: 15px !important;
+}
+
+/* Description stays aligned left like WordPress */
+.gi-card p {
+  width: 100% !important;
+  text-align: left !important;
+}
+
+@media (max-width: 1050px) {
+  .gi-icon-circle {
+    width: 150px !important;
+    height: 150px !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .gi-icon-circle {
+    width: 140px !important;
+    height: 140px !important;
+    margin-bottom: 18px !important;
+  }
+
+  .gi-button {
+    margin-bottom: 24px !important;
+  }
+}
