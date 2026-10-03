@@ -2865,3 +2865,86 @@ df-messenger {
     margin-bottom: 30px;
   }
 }
+
+
+/* =========================================================
+   GET INVOLVED — scale closer to WordPress screenshot
+   ========================================================= */
+
+.gi-wrap {
+  width: min(1360px, 84%) !important;
+}
+
+.gi-title-block {
+  min-height: 160px !important;
+  margin-bottom: 10px !important;
+}
+
+.gi-title-block h2 {
+  font-size: 40px !important;
+  font-weight: 300 !important;
+}
+
+.gi-intro p {
+  font-size: 16px !important;
+  line-height: 1.5 !important;
+  margin-bottom: 14px !important;
+}
+
+.gi-columns {
+  gap: 56px !important;
+}
+
+.gi-icon-circle {
+  width: 220px !important;
+  height: 220px !important;
+  margin-bottom: 42px !important;
+}
+
+.gi-button {
+  margin-bottom: 36px !important;
+  padding: 10px 22px !important;
+  font-size: 15.5px !important;
+}
+
+.gi-card p {
+  font-size: 15.5px !important;
+  line-height: 1.42 !important;
+}
+
+@media (max-width: 1050px) {
+  .gi-wrap {
+    width: 88% !important;
+  }
+
+  .gi-icon-circle {
+    width: 195px !important;
+    height: 195px !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .gi-title-block {
+    min-height: 130px !important;
+  }
+
+  .gi-title-block h2 {
+    font-size: 34px !important;
+  }
+
+  .gi-icon-circle {
+    width: 180px !important;
+    height: 180px !important;
+    margin-bottom: 26px !important;
+  }
+
+  .gi-button {
+    font-size: 15px !important;
+    margin-bottom: 24px !important;
+  }
+
+  .gi-card p,
+  .gi-intro p {
+    font-size: 15px !important;
+  }
+}
