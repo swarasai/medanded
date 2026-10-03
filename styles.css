@@ -1783,3 +1783,22 @@ body {
     width: min(325px, calc(100vw - 28px));
   }
 }
+
+
+/* Parent dropdown highlight when a child page is active */
+.nav-dropdown.current > .nav-dropdown-toggle {
+  color: #df111e !important;
+  font-weight: 700;
+}
+
+/* WordPress-like submenu spacing */
+.nav-dropdown-menu a {
+  min-width: 220px;
+  padding: 15px 34px !important;
+  border-bottom: 1px solid #ececec;
+  font-size: 16px !important;
+}
+
+.nav-dropdown-menu a:last-child {
+  border-bottom: 0;
+}
