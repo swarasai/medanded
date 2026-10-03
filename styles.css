@@ -2221,3 +2221,17 @@ body {
     height: auto !important;
   }
 }
+
+
+/* Dialogflow Messenger placement */
+df-messenger {
+  z-index: 5000;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+}
+
+/* Hide the old temporary chatbot if any cached markup remains */
+.chat-widget {
+  display: none !important;
+}

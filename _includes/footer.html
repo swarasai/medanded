@@ -7,31 +7,17 @@
   </p>
 </footer>
 
-<div class="chat-widget" id="chatWidget">
-  <button class="chat-launcher" id="chatLauncher" type="button" aria-label="Open Med n' Ed chat">
-    <span class="chat-bubble-icon">💬</span>
-  </button>
+<!-- Google Dialogflow Messenger chatbot -->
+<link rel="stylesheet"
+      href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
 
-  <section class="chat-panel" id="chatPanel" aria-label="Med n' Ed chat" aria-hidden="true">
-    <div class="chat-header">
-      <div>
-        <strong>Med n' Ed</strong>
-        <span>How can we help?</span>
-      </div>
-      <button class="chat-close" id="chatClose" type="button" aria-label="Close chat">×</button>
-    </div>
+<script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
 
-    <div class="chat-body" id="chatBody">
-      <div class="chat-message bot">
-        Hi! Welcome to Med n' Ed. What would you like to know?
-      </div>
+<df-messenger
+  location="us-central1"
+  project-id="med-n-ed"
+  agent-id="af6cc2c3-2fbd-419c-8ed3-eb3c38847867"
+  language-code="en"
+  max-query-length="-1">
+</df-messenger>
 
-      <div class="chat-options" id="chatOptions">
-        <button type="button" data-chat-answer="about">About us</button>
-        <button type="button" data-chat-answer="join">Get involved</button>
-        <button type="button" data-chat-answer="donate">Donate</button>
-        <button type="button" data-chat-answer="contact">Contact</button>
-      </div>
-    </div>
-  </section>
-</div>
