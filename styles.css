@@ -3648,3 +3648,82 @@ df-messenger {
     display: none;
   }
 }
+
+
+/* =========================================================
+   OUR MEMBERS CAROUSEL
+   ========================================================= */
+
+.mission-members-carousel {
+  position: relative;
+  width: 88%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.mission-members-slide {
+  display: none;
+}
+
+.mission-members-slide.active {
+  display: block;
+}
+
+.mission-members-slide img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 610px;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.mission-carousel-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 3;
+  transform: translateY(-50%);
+  border: 0;
+  padding: 0;
+  color: #8a8a8a;
+  background: transparent;
+  cursor: pointer;
+  font-size: 46px;
+  font-weight: 300;
+  line-height: 1;
+}
+
+.mission-carousel-prev {
+  left: 8px;
+}
+
+.mission-carousel-next {
+  right: 8px;
+}
+
+.mission-carousel-pause {
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  z-index: 3;
+  border: 0;
+  color: #888;
+  background: transparent;
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+@media (max-width: 760px) {
+  .mission-members-carousel {
+    width: 100%;
+  }
+
+  .mission-carousel-arrow {
+    font-size: 36px;
+  }
+
+  .mission-carousel-pause {
+    font-size: 20px;
+  }
+}

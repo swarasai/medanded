@@ -111,3 +111,50 @@
     '</article>'
   ).join('');
 })();
+
+
+
+/* Our Members carousel */
+(function () {
+  const carousel = document.getElementById('missionMembersCarousel');
+  if (!carousel) return;
+
+  const slides = [...carousel.querySelectorAll('.mission-members-slide')];
+  const prev = carousel.querySelector('.mission-carousel-prev');
+  const next = carousel.querySelector('.mission-carousel-next');
+  const pause = carousel.querySelector('.mission-carousel-pause');
+
+  let index = 0;
+  let paused = false;
+  let timer;
+
+  function show(i) {
+    index = (i + slides.length) % slides.length;
+    slides.forEach((slide, n) => slide.classList.toggle('active', n === index));
+  }
+
+  function start() {
+    clearInterval(timer);
+    if (!paused) timer = setInterval(() => show(index + 1), 6000);
+  }
+
+  prev?.addEventListener('click', () => {
+    show(index - 1);
+    start();
+  });
+
+  next?.addEventListener('click', () => {
+    show(index + 1);
+    start();
+  });
+
+  pause?.addEventListener('click', () => {
+    paused = !paused;
+    pause.textContent = paused ? '▶' : 'Ⅱ';
+    pause.setAttribute('aria-label', paused ? 'Play slideshow' : 'Pause slideshow');
+    start();
+  });
+
+  show(0);
+  start();
+})();
