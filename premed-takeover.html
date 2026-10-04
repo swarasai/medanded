@@ -4,57 +4,225 @@ title: Premed Takeover
 ---
 
 <style>
-.takeover-page{background:#fff;color:#292929}
-.takeover-wrap{max-width:1320px;margin:0 auto;padding:90px 24px 100px}
-.takeover-titlebar{background:#e32126;color:#fff;text-align:center;padding:42px 20px;margin-bottom:52px}
-.takeover-titlebar h1{margin:0;font-size:44px;font-weight:500;line-height:1.2}
-.takeover-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:42px}
-.takeover-card{position:relative;min-height:520px;overflow:hidden;background:#ddd;text-decoration:none;display:block}
-.takeover-card img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
-.takeover-card::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.34)}
-.takeover-card span{position:absolute;z-index:2;left:26px;right:26px;bottom:28px;color:#fff;font-size:34px;line-height:1.2;text-decoration:underline;text-underline-offset:5px}
-.takeover-inner{max-width:1120px;margin:0 auto;padding:88px 24px 100px}
-.takeover-heading{font-size:42px;margin:0 0 24px;color:#e32126;font-weight:500}
-.takeover-intro{font-size:18px;line-height:1.75;margin-bottom:26px}
-.takeover-actions{display:flex;flex-wrap:wrap;gap:14px;margin:0 0 38px}
-.takeover-btn{display:inline-block;background:#e32126;color:#fff!important;padding:13px 22px;text-decoration:none;font-weight:700}
-.takeover-btn.secondary{background:#fff;color:#e32126!important;border:2px solid #e32126}
-.takeover-carousel{position:relative;max-width:650px;margin:20px auto 48px;overflow:hidden}
-.takeover-track{display:flex;transition:transform .4s ease}
-.takeover-slide{flex:0 0 100%;display:flex;justify-content:center}
-.takeover-slide img{display:block;max-width:100%;height:780px;object-fit:contain;background:#fff}
-.takeover-arrow{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border:0;border-radius:50%;background:rgba(227,33,38,.92);color:#fff;font-size:25px;cursor:pointer;z-index:3}
-.takeover-prev{left:10px}.takeover-next{right:10px}
-.takeover-dots{display:flex;justify-content:center;gap:8px;margin-top:12px}
-.takeover-dot{width:9px;height:9px;border:0;border-radius:50%;background:#bbb;padding:0}
-.takeover-dot.active{background:#e32126}
-.takeover-subhead{font-size:27px;margin:42px 0 18px;font-weight:600}
-.takeover-copy{font-size:17px;line-height:1.72}
-.takeover-copy h3{font-size:20px;margin:25px 0 8px}
-@media(max-width:760px){
- .takeover-wrap,.takeover-inner{padding:56px 18px 70px}
- .takeover-titlebar h1,.takeover-heading{font-size:34px}
- .takeover-grid{grid-template-columns:1fr;gap:24px}
- .takeover-card{min-height:430px}
- .takeover-card span{font-size:28px}
- .takeover-slide img{height:620px}
+#premed-takeover-page {
+  background:#fff;
+  color:#2d2d2d;
 }
-@media(max-width:480px){.takeover-slide img{height:500px}}
+
+#premed-takeover-page .pt-hero {
+  background:#682523;
+  color:#fff;
+  text-align:center;
+  padding:96px 20px 92px;
+}
+
+#premed-takeover-page .pt-hero h1 {
+  margin:0 0 10px !important;
+  color:#fff !important;
+  font-size:42px !important;
+  line-height:1.15 !important;
+  font-weight:700 !important;
+}
+
+#premed-takeover-page .pt-hero p {
+  margin:0 !important;
+  color:#fff !important;
+  font-size:18px !important;
+}
+
+#premed-takeover-page .pt-hero a {
+  color:#fff !important;
+  text-decoration:none !important;
+}
+
+#premed-takeover-page .pt-wrap {
+  max-width:1320px;
+  margin:0 auto;
+  padding:112px 24px 92px;
+}
+
+#premed-takeover-page .pt-title {
+  background:#cf161b;
+  color:#fff;
+  text-align:center;
+  font-size:40px;
+  line-height:1.2;
+  font-weight:400;
+  padding:52px 24px;
+  margin:0 0 10px;
+}
+
+#premed-takeover-page .pt-intro {
+  background:#df2a2a;
+  color:#fff;
+  text-align:center;
+  font-size:18px;
+  line-height:1.65;
+  padding:22px 44px;
+  margin:0 0 16px;
+}
+
+#premed-takeover-page .pt-actions {
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin:0 0 16px;
+}
+
+#premed-takeover-page .pt-btn {
+  display:inline-block;
+  min-width:268px;
+  text-align:center;
+  padding:10px 22px;
+  border:2px solid #222;
+  background:#f6abab;
+  color:#111 !important;
+  text-decoration:none !important;
+  font-size:17px;
+  line-height:1.2;
+  box-sizing:border-box;
+}
+
+#premed-takeover-page .pt-gallery {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:16px;
+  align-items:start;
+  margin:0 0 22px;
+}
+
+#premed-takeover-page .pt-gallery img {
+  width:100%;
+  display:block;
+  background:#111;
+  border:8px solid #111;
+  box-sizing:border-box;
+  object-fit:cover;
+  aspect-ratio:0.59 / 1;
+}
+
+#premed-takeover-page .pt-copy {
+  font-size:17px;
+  line-height:1.58;
+  color:#292929;
+}
+
+#premed-takeover-page .pt-copy p {
+  margin:0 0 15px;
+}
+
+#premed-takeover-page .pt-copy .question {
+  margin-top:13px;
+  margin-bottom:11px;
+  font-weight:400;
+}
+
+@media(max-width:900px) {
+  #premed-takeover-page .pt-gallery {
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
+
+@media(max-width:620px) {
+  #premed-takeover-page .pt-hero {
+    padding:70px 18px 68px;
+  }
+  #premed-takeover-page .pt-hero h1 {
+    font-size:34px !important;
+  }
+  #premed-takeover-page .pt-wrap {
+    padding:58px 18px 70px;
+  }
+  #premed-takeover-page .pt-title {
+    font-size:32px;
+    padding:38px 18px;
+  }
+  #premed-takeover-page .pt-intro {
+    padding:20px 20px;
+    font-size:16px;
+  }
+  #premed-takeover-page .pt-actions {
+    display:grid;
+    grid-template-columns:1fr;
+  }
+  #premed-takeover-page .pt-btn {
+    min-width:0;
+    width:100%;
+  }
+  #premed-takeover-page .pt-gallery {
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+}
 </style>
 
-<main class="takeover-page"><div class="takeover-inner">
-<h1 class="takeover-heading">Premed Takeover</h1>
-<p class="takeover-intro">Courtney, a premed student from UC Berkeley did an instagram takeover from Med n’ Ed’s instagram account. This takeover’s main purpose was for our audience/followers to be able to ask questions on various different things about the application process, what it is like to be a premed student, what are some pros and cons, etc.</p>
-<div class="takeover-actions"><a class="takeover-btn" href="https://www.instagram.com/medanded_org/" target="_blank" rel="noopener">View takeover on Instagram</a><a class="takeover-btn secondary" href="https://www.instagram.com/clinicalcourtney/" target="_blank" rel="noopener">Courtney’s Instagram</a></div>
-<div class="takeover-carousel"><div class="takeover-track"><div class="takeover-slide"><img src="https://i0.wp.com/medanded.org/wp-content/uploads/2020/12/Screen-Shot-2020-12-25-at-8.34.14-PM.png?resize=586%2C1024&ssl=1" alt="Instagram takeover story"></div><div class="takeover-slide"><img src="https://i0.wp.com/medanded.org/wp-content/uploads/2020/12/Screen-Shot-2020-12-25-at-8.34.51-PM.png?resize=581%2C1024&ssl=1" alt="Instagram takeover story"></div><div class="takeover-slide"><img src="https://i0.wp.com/medanded.org/wp-content/uploads/2020/12/Screen-Shot-2020-12-25-at-8.35.08-PM.png?resize=586%2C1024&ssl=1" alt="Instagram takeover story"></div><div class="takeover-slide"><img src="https://i0.wp.com/medanded.org/wp-content/uploads/2020/12/Screen-Shot-2020-12-25-at-8.35.30-PM.png?resize=589%2C1024&ssl=1" alt="Instagram takeover story"></div><div class="takeover-slide"><img src="https://i0.wp.com/medanded.org/wp-content/uploads/2020/12/Screen-Shot-2020-12-25-at-8.35.46-PM.png?resize=587%2C1024&ssl=1" alt="Instagram takeover story"></div><div class="takeover-slide"><img src="https://i0.wp.com/medanded.org/wp-content/uploads/2020/12/Screen-Shot-2020-12-25-at-8.36.26-PM.png?resize=586%2C1024&ssl=1" alt="Instagram takeover story"></div></div>
-<button class="takeover-arrow takeover-prev" aria-label="Previous">&#8249;</button>
-<button class="takeover-arrow takeover-next" aria-label="Next">&#8250;</button>
-<div class="takeover-dots"><button class="takeover-dot active" data-i="0" aria-label="Slide 1"></button><button class="takeover-dot" data-i="1" aria-label="Slide 2"></button><button class="takeover-dot" data-i="2" aria-label="Slide 3"></button><button class="takeover-dot" data-i="3" aria-label="Slide 4"></button><button class="takeover-dot" data-i="4" aria-label="Slide 5"></button><button class="takeover-dot" data-i="5" aria-label="Slide 6"></button></div></div>
-<div class="takeover-copy"><h2 class="takeover-subhead">Here are some of the questions answered:</h2>
-<h3>What are the typical classes for a premed student?</h3><p>This depends on the student and major. Premed students do not have to major in biology, but they do need to complete medical-school prerequisites such as chemistry, physics, biology and biochemistry.</p>
-<h3>How do you stop procrastinating/how do you manage your time well?</h3><p>Courtney emphasized getting enough sleep, using Google Calendar, assigning time blocks throughout the day, and checking tasks regularly to stay balanced.</p>
-<h3>What extracurriculars are good for pre med?</h3><p>She discussed clinical work, volunteering, service and other experiences, while emphasizing that students should pursue activities they genuinely care about and tell their story authentically.</p>
-<h3>Can you explain your daily life as a premed student?</h3><p>She described balancing classes, volunteering, community service and work, with a strong focus on scheduling and healthy routines.</p></div>
-</div></main><script>
-document.querySelectorAll('.takeover-carousel').forEach(function(c){const t=c.querySelector('.takeover-track'),d=[...c.querySelectorAll('.takeover-dot')];let i=0,sx=null;function sh(n){i=(n+d.length)%d.length;t.style.transform=`translateX(${-i*100}%)`;d.forEach((x,j)=>x.classList.toggle('active',j===i));}c.querySelector('.takeover-prev').onclick=()=>sh(i-1);c.querySelector('.takeover-next').onclick=()=>sh(i+1);d.forEach((x,j)=>x.onclick=()=>sh(j));t.addEventListener('touchstart',e=>sx=e.touches[0].clientX,{passive:true});t.addEventListener('touchend',e=>{let dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>45)sh(i+(dx<0?1:-1));sx=null},{passive:true});});
-</script>
+<main id="premed-takeover-page">
+
+  <section class="pt-hero">
+    <h1>Premed Takeover</h1>
+    <p><a href="{{ '/' | relative_url }}">Home</a> &nbsp;&gt;&nbsp; Premed Takeover</p>
+  </section>
+
+  <section class="pt-wrap">
+
+    <div class="pt-title">Premed Takeover</div>
+
+    <div class="pt-intro">
+      Courtney, a premed student from UC Berkeley did an instagram takeover from Med n’ Ed’s instagram account.
+      This takeover’s main purpose was for our audience/followers to be able to ask questions on various different
+      things about the application process, what it is like to be a premed student, what are some pros and cons, etc.
+    </div>
+
+    <div class="pt-actions">
+      <a class="pt-btn" href="https://www.instagram.com/medanded_org/" target="_blank" rel="noopener">View takeover on Instagram</a>
+      <a class="pt-btn" href="https://www.instagram.com/clinicalcourtney/" target="_blank" rel="noopener">Courtney’s Instagram</a>
+    </div>
+
+    <div class="pt-gallery">
+      <img src="https://i0.wp.com/medanded.org/wp-content/uploads/2020/12/Screen-Shot-2020-12-25-at-8.34.14-PM.png?resize=586%2C1024&ssl=1" alt="Premed takeover story 1" loading="lazy">
+      <img src="https://i0.wp.com/medanded.org/wp-content/uploads/2020/12/Screen-Shot-2020-12-25-at-8.34.51-PM.png?resize=581%2C1024&ssl=1" alt="Premed takeover story 2" loading="lazy">
+      <img src="https://i0.wp.com/medanded.org/wp-content/uploads/2020/12/Screen-Shot-2020-12-25-at-8.35.08-PM.png?resize=586%2C1024&ssl=1" alt="Premed takeover story 3" loading="lazy">
+      <img src="https://i0.wp.com/medanded.org/wp-content/uploads/2020/12/Screen-Shot-2020-12-25-at-8.35.30-PM.png?resize=589%2C1024&ssl=1" alt="Premed takeover story 4" loading="lazy">
+      <img src="https://i0.wp.com/medanded.org/wp-content/uploads/2020/12/Screen-Shot-2020-12-25-at-8.35.46-PM.png?resize=587%2C1024&ssl=1" alt="Premed takeover story 5" loading="lazy">
+      <img src="https://i0.wp.com/medanded.org/wp-content/uploads/2020/12/Screen-Shot-2020-12-25-at-8.36.26-PM.png?resize=586%2C1024&ssl=1" alt="Premed takeover story 6" loading="lazy">
+    </div>
+
+    <div class="pt-copy">
+      <p>Here are some of the questions answered:</p>
+
+      <p class="question">What are the typical classes for a premed student?</p>
+      <p>This really depends on the premed student because some premeds might be a philosophy major, like you do not really have to be a biology major so you can sort of take whatever courses you like as long as you get in the med school prerequisites. So most med schools will require something like a full year of organic chemistry with a full year of Physics lab or semester physics lab there’s BioChemistry as long as you get those prereqs in other than that your major can be whatever you want.</p>
+
+      <p class="question">How do you stop procrastinating/how do you manage your time well?</p>
+      <p>This is a really really good question and I have a very long answer to it but I will start with saying, getting a lot of sleep. I sleep a full 8 hours every day. I sleep at 9:30 and wake up at 6:30 and so I think that’s really really key. So I think everyone has different styles of time management but for me I really like using things like Google Calendar and really allotting certain times for things throughout the day and on Google Calendar you can also integrate your task. So I can check on my tasks throughout the day and make sure I’m getting everything done. That’s super helpful and it really helps you plan out your week. I think it is really helpful in making sure you’re staying balanced.</p>
+
+      <p class="question">What extracurriculars are good for pre med?</p>
+      <p>So there are three things you need to go into med school you need a good MCAT score, paid medical work so things like scribing which I do think is very valuable and then also international philanthropy, again that’s also a really valuable thing but that’s not something you absolutely need to get into med school. There’s so many different ways to get experience and volunteer hours and community service and stuff like. I think the most important thing is to tell your story in a compelling way and a way that is genuine like things that you’re passionate about.</p>
+
+      <p class="question">What are some extracurriculars that you did to get into UC Berkeley?</p>
+      <p>So I think the first thing to say is like I was not the president of every single club and I think that a lot of people may expect that from the students that go to UC Berkeley. Like I said before I did things I’m really passionate about. So some of those things were tutoring, I competed in math so I did math competitions, I was part of National Honors Society. I also got engaged in the language to Spanish so I was also in Spanish National Honor Society which is really cool because we helped plan cultural events and things like that. I also helped start a club called Casa Esperanza where we essentially serve a women’s shelter for women and children survivors of domestic abuse in Mexico. Feel free to ask me any more questions about that!</p>
+
+      <p class="question">How important are extracurriculars to pre med applications?</p>
+      <p>Yeah so to speak about like traditional college applications like undergrad which is excluding the BS MD programs. I think extracurriculars are important because they can really show your personality and show that you are greater than just test scores. This really helps you tell a story and showcase what you are passionate about.</p>
+
+      <p class="question">Can you explain your daily life as a premed student?</p>
+      <p>I think that a lot of students have different passions and that means doing different things so a daily schedule can look really different but I think that it is basically a lot of times when people ask questions about the daily life of a pre-med student. A lot of it is about balance like how do pre-meds balance work, school, and volunteering things like that. so that’s where it comes into play like I mentioned earlier but I always make sure I get a lot of sleep. I make sure I eat breakfast before and then go to class. In the afternoon I would do my volunteering and community service. I work for Kaplan test prep so I would then go to work.</p>
+
+      <p class="question">If you are a high school student are there any things you can do to get into premed/med?</p>
+      <p>So I think the biggest thing you can do as a high school student in terms of being pre-med is figuring out if that is Something you actually want to do. I know me and a lot of my other colleagues really agree on the fact that you don’t truly know if you want to go into medicine unless you’ve had a little bit of experience in the field. So whether that be shadowing during high school or something like that unless you really had that experience and see what it’s like to be a physician and I don’t need to be doing crazy things like scribing or things like that during high school. But definitely getting a little bit of exposure to figure out if that’s truly something that you want to do.</p>
+
+      <p class="question">What do you hope to do in the future in terms of medicine? Like what kind of doctor.</p>
+      <p>So I think this is really subject to change since I’m pretty young. I’m only a second-year undergrad but right now I have my eyes set on dermatology.</p>
+
+      <p class="question">Would you recommend taking AP or academic chem, bio and physics in high school?</p>
+      <p>Yes so I actually took IB which stands for International Baccalaureate. I took AP bio and I took AP Physics in high school but I don’t think they’re necessary to do well in college but they are very fun classes and if you have the financial means to do it I would say go ahead.</p>
+
+      <p class="question">When is it ideal to take the MCAT?</p>
+      <p>So this is a really great Question but it’s really independent on if you’re planning on taking a gap year or not, the application cycle for med school starts in May or June. So you would need to take it before that so if you’re not planning on taking a gap year, then you would actually have to take your MCAT before the summer of your junior year because if you don’t take a gap year you need to, during that summer and so you have to make sure you do that before April at the latest, I would say maybe January or February just to be safe. So pretty early, I know if you are taking a gap year you can take your MCAT whenever you feel ready because here you would apply your summer after senior year and if you’re taking multiple gap years, whenever you would like!</p>
+
+      <p class="question">Any big tips for writing college applications?</p>
+      <p>Yeah I would say definitely be authentic, especially like in your essay, come across as you don’t come across as anyone else. I would say don’t let anyone edit your essay to the extent that you cannot find your own voice.</p>
+    </div>
+
+  </section>
+</main>
