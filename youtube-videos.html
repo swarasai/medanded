@@ -1,25 +1,188 @@
 ---
 layout: default
-title: "Youtube Videos"
-description: "Videos from Med n' Ed."
-body_class: "wp-home interior-page"
-nav_group: "events"
-page_id: "youtube-videos"
+title: Youtube Videos
 ---
 
-<main class="interior-main">
-  <section class="interior-hero">
-    <div class="interior-hero-inner">
-      <p class="interior-eyebrow">Events</p>
+<style>
+.youtube-page {
+  background:#fff;
+}
+
+.youtube-hero {
+  background:#682523;
+  color:#fff;
+  text-align:center;
+  padding:100px 20px 96px;
+}
+
+.youtube-hero .wrap {
+  max-width:1120px;
+  margin:0 auto;
+}
+
+.youtube-hero h1 {
+  margin:0 0 10px;
+  font-size:42px;
+  line-height:1.15;
+  font-weight:700;
+}
+
+.youtube-hero p {
+  margin:0;
+  font-size:18px;
+}
+
+.youtube-hero a {
+  color:#fff;
+  text-decoration:none;
+}
+
+.youtube-content {
+  max-width:1320px;
+  margin:118px auto 135px;
+  padding:0 24px;
+}
+
+.youtube-grid {
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0, 1fr));
+  gap:58px 34px;
+  align-items:start;
+}
+
+.yt-card {
+  min-width:0;
+}
+
+.yt-frame-wrap {
+  position:relative;
+  width:100%;
+  aspect-ratio:16 / 9;
+  background:#000;
+  overflow:hidden;
+}
+
+.yt-frame-wrap iframe {
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  border:0;
+}
+
+@media (max-width:900px) {
+  .youtube-grid {
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+  }
+  .youtube-content {
+    margin-top:75px;
+  }
+}
+
+@media (max-width:600px) {
+  .youtube-hero {
+    padding:78px 18px 74px;
+  }
+  .youtube-hero h1 {
+    font-size:34px;
+  }
+  .youtube-hero p {
+    font-size:16px;
+  }
+  .youtube-content {
+    margin:50px auto 80px;
+    padding:0 16px;
+  }
+  .youtube-grid {
+    grid-template-columns:1fr;
+    gap:30px;
+  }
+}
+</style>
+
+<main class="youtube-page">
+  <section class="youtube-hero">
+    <div class="wrap">
       <h1>Youtube Videos</h1>
+      <p><a href="{{ '/' | relative_url }}">Home</a> &nbsp;&gt;&nbsp; Youtube Videos</p>
     </div>
   </section>
 
-  <section class="interior-content">
-    <div class="interior-content-inner">
-      <div class="interior-copy wide">
-        <p>This page is reserved for Med n’ Ed video content. We can add the original YouTube videos and embeds here as we continue migrating the WordPress site.</p>
-      </div>
+  <section class="youtube-content">
+    <div class="youtube-grid">
+      
+      <article class="yt-card">
+        <div class="yt-frame-wrap">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/pwmRC-Dr41g?start=7"
+            title="Newton’s Laws"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </article>
+    
+      <article class="yt-card">
+        <div class="yt-frame-wrap">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/YQwom3DfgZQ"
+            title="Time-Management"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </article>
+    
+      <article class="yt-card">
+        <div class="yt-frame-wrap">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/cTHT8kfnHBY"
+            title="Social Media Breaks!"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </article>
+    
+      <article class="yt-card">
+        <div class="yt-frame-wrap">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/cHqyi8hx5NU"
+            title="Routine-Making With Med N' Ed!"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </article>
+    
+      <article class="yt-card">
+        <div class="yt-frame-wrap">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/VivTKJkzHg4"
+            title="Benefits of Highlighting"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </article>
+    
+      <article class="yt-card">
+        <div class="yt-frame-wrap">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/1Ujlc5XdE5E"
+            title="Good Nutrition!"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </article>
+    
     </div>
   </section>
 </main>
