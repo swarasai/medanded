@@ -83,6 +83,105 @@ title: Shelter Project
   .shelter-lesson-title { font-size:21px; padding:22px 20px; }
   .shelter-copy { font-size:16px; padding:20px; }
 }
+
+.shelter-carousel {
+  position: relative;
+  margin: 38px 24px 10px;
+  overflow: hidden;
+  background: #f5f5f5;
+}
+
+.shelter-carousel-track {
+  display: flex;
+  transition: transform .45s ease;
+  will-change: transform;
+}
+
+.shelter-carousel-slide {
+  flex: 0 0 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 520px;
+  background: #fff;
+}
+
+.shelter-carousel-slide img {
+  display: block;
+  width: 100%;
+  height: 520px;
+  object-fit: contain;
+  background: #fff;
+}
+
+.shelter-carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(227,33,38,.92);
+  color: #fff;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.shelter-carousel-btn:hover {
+  background: #bd171c;
+}
+
+.shelter-carousel-prev { left: 16px; }
+.shelter-carousel-next { right: 16px; }
+
+.shelter-carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 7px;
+  flex-wrap: wrap;
+  padding: 16px 10px 8px;
+}
+
+.shelter-carousel-dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #c9c9c9;
+  cursor: pointer;
+}
+
+.shelter-carousel-dot.active {
+  background: #e32126;
+}
+
+.shelter-carousel-count {
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+  margin: 6px 0 0;
+}
+
+@media (max-width:850px) {
+  .shelter-carousel { margin-left:0; margin-right:0; }
+  .shelter-carousel-slide { min-height: 420px; }
+  .shelter-carousel-slide img { height:420px; }
+}
+
+@media (max-width:560px) {
+  .shelter-carousel-slide { min-height: 320px; }
+  .shelter-carousel-slide img { height:320px; }
+  .shelter-carousel-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 24px;
+  }
+}
+
 </style>
 
 <main class="shelter-page">
@@ -109,14 +208,134 @@ title: Shelter Project
       them about maintaining a healthy lifestyle, and the kids seemed to learn a lot as well!
     </div>
 
-    <div class="shelter-gallery">
-      <img src="{{ '/images/projects/shelter/kahoot-nutrition.png' | relative_url }}" alt="Kahoot nutrition activity">
-      <img src="{{ '/images/projects/shelter/arthur-video.png' | relative_url }}" alt="Arthur video used during the workshop">
-      <img src="{{ '/images/projects/shelter/family-supportive-housing-room.png' | relative_url }}" alt="Workshop at Family Supportive Housing">
-      <img src="{{ '/images/projects/shelter/exercise-slide.png' | relative_url }}" alt="Exercise presentation">
-      <img src="{{ '/images/projects/shelter/zoom-group.png' | relative_url }}" alt="Med n' Ed workshop participants">
-      <img src="{{ '/images/projects/shelter/family-supportive-housing-session.png' | relative_url }}" alt="Children participating in the workshop">
+    <div class="shelter-carousel" id="shelterCarousel">
+      <div class="shelter-carousel-track" id="shelterCarouselTrack">
+        <div class="shelter-carousel-slide"><img src="{{ '/images/projects/shelter/carousel/nutrition-workshop-01.png' | relative_url }}" alt="Nutrition Workshop photo 1"></div>
+        <div class="shelter-carousel-slide"><img src="{{ '/images/projects/shelter/carousel/nutrition-workshop-02.png' | relative_url }}" alt="Nutrition Workshop photo 2"></div>
+        <div class="shelter-carousel-slide"><img src="{{ '/images/projects/shelter/carousel/nutrition-workshop-03.png' | relative_url }}" alt="Nutrition Workshop photo 3"></div>
+        <div class="shelter-carousel-slide"><img src="{{ '/images/projects/shelter/carousel/nutrition-workshop-04.png' | relative_url }}" alt="Nutrition Workshop photo 4"></div>
+        <div class="shelter-carousel-slide"><img src="{{ '/images/projects/shelter/carousel/nutrition-workshop-05.png' | relative_url }}" alt="Nutrition Workshop photo 5"></div>
+        <div class="shelter-carousel-slide"><img src="{{ '/images/projects/shelter/carousel/nutrition-workshop-06.png' | relative_url }}" alt="Nutrition Workshop photo 6"></div>
+        <div class="shelter-carousel-slide"><img src="{{ '/images/projects/shelter/carousel/nutrition-workshop-07.png' | relative_url }}" alt="Nutrition Workshop photo 7"></div>
+        <div class="shelter-carousel-slide"><img src="{{ '/images/projects/shelter/carousel/nutrition-workshop-08.png' | relative_url }}" alt="Nutrition Workshop photo 8"></div>
+        <div class="shelter-carousel-slide"><img src="{{ '/images/projects/shelter/carousel/nutrition-workshop-09.png' | relative_url }}" alt="Nutrition Workshop photo 9"></div>
+        <div class="shelter-carousel-slide"><img src="{{ '/images/projects/shelter/carousel/nutrition-workshop-10.png' | relative_url }}" alt="Nutrition Workshop photo 10"></div>
+        <div class="shelter-carousel-slide"><img src="{{ '/images/projects/shelter/carousel/nutrition-workshop-11.png' | relative_url }}" alt="Nutrition Workshop photo 11"></div>
+        <div class="shelter-carousel-slide"><img src="{{ '/images/projects/shelter/carousel/nutrition-workshop-12.png' | relative_url }}" alt="Nutrition Workshop photo 12"></div>
+        <div class="shelter-carousel-slide"><img src="{{ '/images/projects/shelter/carousel/nutrition-workshop-13.png' | relative_url }}" alt="Nutrition Workshop photo 13"></div>
+        <div class="shelter-carousel-slide"><img src="{{ '/images/projects/shelter/carousel/nutrition-workshop-14.png' | relative_url }}" alt="Nutrition Workshop photo 14"></div>
+        <div class="shelter-carousel-slide"><img src="{{ '/images/projects/shelter/carousel/nutrition-workshop-15.png' | relative_url }}" alt="Nutrition Workshop photo 15"></div>
+        <div class="shelter-carousel-slide"><img src="{{ '/images/projects/shelter/carousel/nutrition-workshop-16.png' | relative_url }}" alt="Nutrition Workshop photo 16"></div>
+        <div class="shelter-carousel-slide"><img src="{{ '/images/projects/shelter/carousel/nutrition-workshop-17.png' | relative_url }}" alt="Nutrition Workshop photo 17"></div>
+        <div class="shelter-carousel-slide"><img src="{{ '/images/projects/shelter/carousel/nutrition-workshop-18.png' | relative_url }}" alt="Nutrition Workshop photo 18"></div>
+        <div class="shelter-carousel-slide"><img src="{{ '/images/projects/shelter/carousel/nutrition-workshop-19.png' | relative_url }}" alt="Nutrition Workshop photo 19"></div>
+        <div class="shelter-carousel-slide"><img src="{{ '/images/projects/shelter/carousel/nutrition-workshop-20.png' | relative_url }}" alt="Nutrition Workshop photo 20"></div>
+        <div class="shelter-carousel-slide"><img src="{{ '/images/projects/shelter/carousel/nutrition-workshop-21.png' | relative_url }}" alt="Nutrition Workshop photo 21"></div>
+        <div class="shelter-carousel-slide"><img src="{{ '/images/projects/shelter/carousel/nutrition-workshop-22.png' | relative_url }}" alt="Nutrition Workshop photo 22"></div>
+        <div class="shelter-carousel-slide"><img src="{{ '/images/projects/shelter/carousel/nutrition-workshop-23.png' | relative_url }}" alt="Nutrition Workshop photo 23"></div>
+        <div class="shelter-carousel-slide"><img src="{{ '/images/projects/shelter/carousel/nutrition-workshop-24.png' | relative_url }}" alt="Nutrition Workshop photo 24"></div>
+        <div class="shelter-carousel-slide"><img src="{{ '/images/projects/shelter/carousel/nutrition-workshop-25.png' | relative_url }}" alt="Nutrition Workshop photo 25"></div>
+        <div class="shelter-carousel-slide"><img src="{{ '/images/projects/shelter/carousel/nutrition-workshop-26.png' | relative_url }}" alt="Nutrition Workshop photo 26"></div>
+        <div class="shelter-carousel-slide"><img src="{{ '/images/projects/shelter/carousel/nutrition-workshop-27.png' | relative_url }}" alt="Nutrition Workshop photo 27"></div>
+        <div class="shelter-carousel-slide"><img src="{{ '/images/projects/shelter/carousel/nutrition-workshop-28.png' | relative_url }}" alt="Nutrition Workshop photo 28"></div>
+        <div class="shelter-carousel-slide"><img src="{{ '/images/projects/shelter/carousel/nutrition-workshop-29.png' | relative_url }}" alt="Nutrition Workshop photo 29"></div>
+        <div class="shelter-carousel-slide"><img src="{{ '/images/projects/shelter/carousel/nutrition-workshop-30.png' | relative_url }}" alt="Nutrition Workshop photo 30"></div>
+        <div class="shelter-carousel-slide"><img src="{{ '/images/projects/shelter/carousel/nutrition-workshop-31.png' | relative_url }}" alt="Nutrition Workshop photo 31"></div>
+        <div class="shelter-carousel-slide"><img src="{{ '/images/projects/shelter/carousel/nutrition-workshop-32.png' | relative_url }}" alt="Nutrition Workshop photo 32"></div>
+        <div class="shelter-carousel-slide"><img src="{{ '/images/projects/shelter/carousel/nutrition-workshop-33.png' | relative_url }}" alt="Nutrition Workshop photo 33"></div>
+        <div class="shelter-carousel-slide"><img src="{{ '/images/projects/shelter/carousel/nutrition-workshop-34.png' | relative_url }}" alt="Nutrition Workshop photo 34"></div>
+        <div class="shelter-carousel-slide"><img src="{{ '/images/projects/shelter/carousel/nutrition-workshop-35.png' | relative_url }}" alt="Nutrition Workshop photo 35"></div>
+        <div class="shelter-carousel-slide"><img src="{{ '/images/projects/shelter/carousel/nutrition-workshop-36.png' | relative_url }}" alt="Nutrition Workshop photo 36"></div>
+        <div class="shelter-carousel-slide"><img src="{{ '/images/projects/shelter/carousel/nutrition-workshop-37.png' | relative_url }}" alt="Nutrition Workshop photo 37"></div>
+        <div class="shelter-carousel-slide"><img src="{{ '/images/projects/shelter/carousel/nutrition-workshop-38.png' | relative_url }}" alt="Nutrition Workshop photo 38"></div>
+        <div class="shelter-carousel-slide"><img src="{{ '/images/projects/shelter/carousel/nutrition-workshop-39.png' | relative_url }}" alt="Nutrition Workshop photo 39"></div>
+        <div class="shelter-carousel-slide"><img src="{{ '/images/projects/shelter/carousel/nutrition-workshop-40.png' | relative_url }}" alt="Nutrition Workshop photo 40"></div>
+        <div class="shelter-carousel-slide"><img src="{{ '/images/projects/shelter/carousel/nutrition-workshop-41.png' | relative_url }}" alt="Nutrition Workshop photo 41"></div>
+      </div>
+      <button class="shelter-carousel-btn shelter-carousel-prev" id="shelterCarouselPrev" type="button" aria-label="Previous photo">&#8249;</button>
+      <button class="shelter-carousel-btn shelter-carousel-next" id="shelterCarouselNext" type="button" aria-label="Next photo">&#8250;</button>
     </div>
+    <div class="shelter-carousel-dots" id="shelterCarouselDots">
+      <button class="shelter-carousel-dot active" type="button" data-slide="0" aria-label="Go to photo 1"></button>
+      <button class="shelter-carousel-dot" type="button" data-slide="1" aria-label="Go to photo 2"></button>
+      <button class="shelter-carousel-dot" type="button" data-slide="2" aria-label="Go to photo 3"></button>
+      <button class="shelter-carousel-dot" type="button" data-slide="3" aria-label="Go to photo 4"></button>
+      <button class="shelter-carousel-dot" type="button" data-slide="4" aria-label="Go to photo 5"></button>
+      <button class="shelter-carousel-dot" type="button" data-slide="5" aria-label="Go to photo 6"></button>
+      <button class="shelter-carousel-dot" type="button" data-slide="6" aria-label="Go to photo 7"></button>
+      <button class="shelter-carousel-dot" type="button" data-slide="7" aria-label="Go to photo 8"></button>
+      <button class="shelter-carousel-dot" type="button" data-slide="8" aria-label="Go to photo 9"></button>
+      <button class="shelter-carousel-dot" type="button" data-slide="9" aria-label="Go to photo 10"></button>
+      <button class="shelter-carousel-dot" type="button" data-slide="10" aria-label="Go to photo 11"></button>
+      <button class="shelter-carousel-dot" type="button" data-slide="11" aria-label="Go to photo 12"></button>
+      <button class="shelter-carousel-dot" type="button" data-slide="12" aria-label="Go to photo 13"></button>
+      <button class="shelter-carousel-dot" type="button" data-slide="13" aria-label="Go to photo 14"></button>
+      <button class="shelter-carousel-dot" type="button" data-slide="14" aria-label="Go to photo 15"></button>
+      <button class="shelter-carousel-dot" type="button" data-slide="15" aria-label="Go to photo 16"></button>
+      <button class="shelter-carousel-dot" type="button" data-slide="16" aria-label="Go to photo 17"></button>
+      <button class="shelter-carousel-dot" type="button" data-slide="17" aria-label="Go to photo 18"></button>
+      <button class="shelter-carousel-dot" type="button" data-slide="18" aria-label="Go to photo 19"></button>
+      <button class="shelter-carousel-dot" type="button" data-slide="19" aria-label="Go to photo 20"></button>
+      <button class="shelter-carousel-dot" type="button" data-slide="20" aria-label="Go to photo 21"></button>
+      <button class="shelter-carousel-dot" type="button" data-slide="21" aria-label="Go to photo 22"></button>
+      <button class="shelter-carousel-dot" type="button" data-slide="22" aria-label="Go to photo 23"></button>
+      <button class="shelter-carousel-dot" type="button" data-slide="23" aria-label="Go to photo 24"></button>
+      <button class="shelter-carousel-dot" type="button" data-slide="24" aria-label="Go to photo 25"></button>
+      <button class="shelter-carousel-dot" type="button" data-slide="25" aria-label="Go to photo 26"></button>
+      <button class="shelter-carousel-dot" type="button" data-slide="26" aria-label="Go to photo 27"></button>
+      <button class="shelter-carousel-dot" type="button" data-slide="27" aria-label="Go to photo 28"></button>
+      <button class="shelter-carousel-dot" type="button" data-slide="28" aria-label="Go to photo 29"></button>
+      <button class="shelter-carousel-dot" type="button" data-slide="29" aria-label="Go to photo 30"></button>
+      <button class="shelter-carousel-dot" type="button" data-slide="30" aria-label="Go to photo 31"></button>
+      <button class="shelter-carousel-dot" type="button" data-slide="31" aria-label="Go to photo 32"></button>
+      <button class="shelter-carousel-dot" type="button" data-slide="32" aria-label="Go to photo 33"></button>
+      <button class="shelter-carousel-dot" type="button" data-slide="33" aria-label="Go to photo 34"></button>
+      <button class="shelter-carousel-dot" type="button" data-slide="34" aria-label="Go to photo 35"></button>
+      <button class="shelter-carousel-dot" type="button" data-slide="35" aria-label="Go to photo 36"></button>
+      <button class="shelter-carousel-dot" type="button" data-slide="36" aria-label="Go to photo 37"></button>
+      <button class="shelter-carousel-dot" type="button" data-slide="37" aria-label="Go to photo 38"></button>
+      <button class="shelter-carousel-dot" type="button" data-slide="38" aria-label="Go to photo 39"></button>
+      <button class="shelter-carousel-dot" type="button" data-slide="39" aria-label="Go to photo 40"></button>
+      <button class="shelter-carousel-dot" type="button" data-slide="40" aria-label="Go to photo 41"></button>
+    </div>
+    <div class="shelter-carousel-count" id="shelterCarouselCount">1 / 41</div>
 
-  </section>
+</section>
 </main>
+
+<script>
+(function() {
+  const track = document.getElementById('shelterCarouselTrack');
+  const prev = document.getElementById('shelterCarouselPrev');
+  const next = document.getElementById('shelterCarouselNext');
+  const dots = Array.from(document.querySelectorAll('.shelter-carousel-dot'));
+  const count = document.getElementById('shelterCarouselCount');
+  if (!track || !prev || !next || !dots.length) return;
+
+  let index = 0;
+  const total = 41;
+
+  function show(i) {
+    index = (i + total) % total;
+    track.style.transform = `translateX(${-index * 100}%)`;
+    dots.forEach((dot, n) => dot.classList.toggle('active', n === index));
+    count.textContent = `${index + 1} / ${total}`;
+  }
+
+  prev.addEventListener('click', () => show(index - 1));
+  next.addEventListener('click', () => show(index + 1));
+  dots.forEach((dot, n) => dot.addEventListener('click', () => show(n)));
+
+  let startX = null;
+  track.addEventListener('touchstart', (e) => { startX = e.touches[0].clientX; }, {passive:true});
+  track.addEventListener('touchend', (e) => {
+    if (startX === null) return;
+    const dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) > 50) show(index + (dx < 0 ? 1 : -1));
+    startX = null;
+  }, {passive:true});
+
+  show(0);
+})();
+</script>
+
