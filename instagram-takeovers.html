@@ -1,26 +1,57 @@
 ---
 layout: default
-title: "Instagram Takeovers"
-description: "Instagram Takeovers from Med n' Ed."
-body_class: "wp-home interior-page"
-nav_group: "events"
-page_id: "instagram-takeovers"
+title: Instagram Takeovers
 ---
 
-<main class="interior-main">
-  <section class="interior-hero">
-    <div class="interior-hero-inner">
-      <p class="interior-eyebrow">Events</p>
-      <h1>Instagram Takeovers</h1>
-    </div>
-  </section>
+<style>
+.takeover-page{background:#fff;color:#292929}
+.takeover-wrap{max-width:1320px;margin:0 auto;padding:90px 24px 100px}
+.takeover-titlebar{background:#e32126;color:#fff;text-align:center;padding:42px 20px;margin-bottom:52px}
+.takeover-titlebar h1{margin:0;font-size:44px;font-weight:500;line-height:1.2}
+.takeover-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:42px}
+.takeover-card{position:relative;min-height:520px;overflow:hidden;background:#ddd;text-decoration:none;display:block}
+.takeover-card img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.takeover-card::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.34)}
+.takeover-card span{position:absolute;z-index:2;left:26px;right:26px;bottom:28px;color:#fff;font-size:34px;line-height:1.2;text-decoration:underline;text-underline-offset:5px}
+.takeover-inner{max-width:1120px;margin:0 auto;padding:88px 24px 100px}
+.takeover-heading{font-size:42px;margin:0 0 24px;color:#e32126;font-weight:500}
+.takeover-intro{font-size:18px;line-height:1.75;margin-bottom:26px}
+.takeover-actions{display:flex;flex-wrap:wrap;gap:14px;margin:0 0 38px}
+.takeover-btn{display:inline-block;background:#e32126;color:#fff!important;padding:13px 22px;text-decoration:none;font-weight:700}
+.takeover-btn.secondary{background:#fff;color:#e32126!important;border:2px solid #e32126}
+.takeover-carousel{position:relative;max-width:650px;margin:20px auto 48px;overflow:hidden}
+.takeover-track{display:flex;transition:transform .4s ease}
+.takeover-slide{flex:0 0 100%;display:flex;justify-content:center}
+.takeover-slide img{display:block;max-width:100%;height:780px;object-fit:contain;background:#fff}
+.takeover-arrow{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border:0;border-radius:50%;background:rgba(227,33,38,.92);color:#fff;font-size:25px;cursor:pointer;z-index:3}
+.takeover-prev{left:10px}.takeover-next{right:10px}
+.takeover-dots{display:flex;justify-content:center;gap:8px;margin-top:12px}
+.takeover-dot{width:9px;height:9px;border:0;border-radius:50%;background:#bbb;padding:0}
+.takeover-dot.active{background:#e32126}
+.takeover-subhead{font-size:27px;margin:42px 0 18px;font-weight:600}
+.takeover-copy{font-size:17px;line-height:1.72}
+.takeover-copy h3{font-size:20px;margin:25px 0 8px}
+@media(max-width:760px){
+ .takeover-wrap,.takeover-inner{padding:56px 18px 70px}
+ .takeover-titlebar h1,.takeover-heading{font-size:34px}
+ .takeover-grid{grid-template-columns:1fr;gap:24px}
+ .takeover-card{min-height:430px}
+ .takeover-card span{font-size:28px}
+ .takeover-slide img{height:620px}
+}
+@media(max-width:480px){.takeover-slide img{height:500px}}
+</style>
 
-  <section class="interior-content">
-    <div class="interior-content-inner">
-      <div class="interior-copy wide">
-        <p>Follow Med n’ Ed on Instagram for takeovers, updates, educational content, and community events.</p>
-<p><a href="https://www.instagram.com/medanded_org/" target="_blank" rel="noopener">@medanded_org on Instagram</a></p>
-      </div>
-    </div>
-  </section>
-</main>
+<main class="takeover-page">
+<div class="takeover-wrap">
+<div class="takeover-titlebar"><h1>Instagram Takeovers</h1></div>
+<div class="takeover-grid">
+<a class="takeover-card" href="{{ '/premed-takeover.html' | relative_url }}">
+<img src="{{ '/images/instagram-takeovers/premed-takeover-cover.png' | relative_url }}" alt="Premed Takeover"><span>Premed Takeover</span></a>
+<a class="takeover-card" href="{{ '/med-student-takeover.html' | relative_url }}">
+<img src="{{ '/images/instagram-takeovers/med-student-takeover-cover.jpg' | relative_url }}" alt="Med Student Takeover"><span>Med Student Takeover</span></a>
+<a class="takeover-card" href="{{ '/premed-takeover-2.html' | relative_url }}">
+<img src="{{ '/images/instagram-takeovers/premed-takeover-2-cover.png' | relative_url }}" alt="Premed Takeover #2"><span>Premed Takeover #2</span></a>
+<a class="takeover-card" href="{{ '/premed-takeover-3.html' | relative_url }}">
+<img src="{{ '/images/instagram-takeovers/premed-takeover-3-cover.png' | relative_url }}" alt="Premed Takeover #3"><span>Premed Takeover #3</span></a>
+</div></div></main>
