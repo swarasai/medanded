@@ -405,3 +405,438 @@ section {
     font-size: 16px; /* prevents iPhone auto-zoom */
   }
 }
+
+
+/* =========================================================
+   HOME PAGE — WordPress-like phone/tablet layout
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  body.wp-home main {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  /* ---------- HERO / CAROUSEL ---------- */
+  body.wp-home .wp-slider {
+    position: relative;
+    width: 100%;
+    height: 560px !important;
+    min-height: 560px !important;
+    overflow: hidden;
+    background: #111;
+  }
+
+  body.wp-home .wp-slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 560px !important;
+    min-height: 560px !important;
+  }
+
+  body.wp-home .wp-slide img {
+    position: absolute;
+    inset: 0;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+  }
+
+  /* subtle darkening, like WordPress mobile sliders */
+  body.wp-home .wp-slide::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0,0,0,.04) 0%,
+      rgba(0,0,0,.08) 45%,
+      rgba(0,0,0,.52) 100%
+    );
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Text sits near the bottom on mobile rather than floating far left/right */
+  body.wp-home .wp-slide .wp-slide-copy,
+  body.wp-home .wp-slide.text-left .wp-slide-copy,
+  body.wp-home .wp-slide.text-right .wp-slide-copy,
+  body.wp-home .wp-slider .science-slide .wp-slide-copy,
+  body.wp-home .wp-slider .worldwide-slide .wp-slide-copy,
+  body.wp-home .wp-slider .donate-slide .wp-slide-copy {
+    position: absolute !important;
+    z-index: 2;
+    left: 22px !important;
+    right: 22px !important;
+    top: auto !important;
+    bottom: 92px !important;
+    width: auto !important;
+    max-width: 520px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: left !important;
+    color: #fff !important;
+    background: transparent !important;
+  }
+
+  body.wp-home .wp-slide-copy .wp-slide-kicker {
+    margin: 0 0 5px;
+    font-size: 21px !important;
+    line-height: 1.2;
+    font-weight: 500;
+    color: #fff !important;
+  }
+
+  body.wp-home .wp-slide-copy h1 {
+    margin: 0 !important;
+    max-width: 100% !important;
+    font-size: clamp(34px, 7vw, 49px) !important;
+    line-height: 1.06 !important;
+    letter-spacing: -1px !important;
+    color: #fff !important;
+  }
+
+  body.wp-home .wp-slide-copy p,
+  body.wp-home .wp-slide.text-left .wp-slide-copy p,
+  body.wp-home .wp-slide.text-right .wp-slide-copy p {
+    width: auto !important;
+    max-width: 500px !important;
+    margin: 12px 0 0 !important;
+    padding: 0 !important;
+    font-size: 15px !important;
+    line-height: 1.55 !important;
+    color: #fff !important;
+  }
+
+  body.wp-home .wp-slider-arrows {
+    z-index: 4;
+    left: 20px !important;
+    right: 20px !important;
+    bottom: 28px !important;
+    top: auto !important;
+    display: flex !important;
+    justify-content: flex-end;
+    gap: 8px;
+    transform: none !important;
+  }
+
+  body.wp-home .wp-arrow {
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px;
+    border-radius: 50% !important;
+    font-size: 18px !important;
+  }
+
+  /* ---------- THREE FEATURE LINKS ---------- */
+  body.wp-home .wp-feature-links {
+    position: relative !important;
+    z-index: 5;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: 100% !important;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 0 !important;
+    transform: none !important;
+  }
+
+  body.wp-home .wp-feature-links .feature-link {
+    min-width: 0 !important;
+    min-height: 118px;
+    padding: 18px 8px !important;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+    border-radius: 0 !important;
+    font-size: 15px !important;
+  }
+
+  body.wp-home .wp-feature-links .feature-icon {
+    margin: 0 !important;
+    font-size: 30px !important;
+    line-height: 1;
+  }
+
+  /* ---------- MISSION ---------- */
+  body.wp-home .wp-mission {
+    padding: 70px 20px 64px !important;
+  }
+
+  body.wp-home .wp-section-inner {
+    width: 100% !important;
+    max-width: 680px !important;
+    margin: 0 auto !important;
+  }
+
+  body.wp-home .wp-overline {
+    font-size: 13px !important;
+    letter-spacing: 1.2px;
+    margin-bottom: 12px !important;
+  }
+
+  body.wp-home .wp-title-row {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-bottom: 20px !important;
+  }
+
+  body.wp-home .wp-title-row h2 {
+    font-size: clamp(34px, 7vw, 46px) !important;
+    line-height: 1.12;
+  }
+
+  body.wp-home .wp-section-intro {
+    max-width: 620px !important;
+    margin: 0 0 38px !important;
+    font-size: 16px !important;
+    line-height: 1.75 !important;
+  }
+
+  body.wp-home .wp-mission-columns {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+  }
+
+  body.wp-home .wp-mission-item {
+    width: 100% !important;
+    min-height: 0 !important;
+    padding: 30px 25px !important;
+    margin: 0 !important;
+    border-bottom: 1px solid #ececec;
+    text-align: left !important;
+  }
+
+  body.wp-home .wp-mission-item:last-child {
+    border-bottom: 0;
+  }
+
+  body.wp-home .wp-mission-item.featured {
+    margin: 0 !important;
+    transform: none !important;
+  }
+
+  body.wp-home .mission-icon {
+    margin: 0 0 12px !important;
+  }
+
+  body.wp-home .wp-mission-item h3 {
+    margin: 0 0 10px !important;
+    font-size: 23px !important;
+  }
+
+  body.wp-home .wp-mission-item p {
+    font-size: 15px !important;
+    line-height: 1.7 !important;
+  }
+
+  /* ---------- WHAT DO WE DO ---------- */
+  body.wp-home .wp-actions {
+    padding: 65px 20px !important;
+  }
+
+  body.wp-home .wp-actions-inner {
+    width: 100% !important;
+    max-width: 680px !important;
+    margin: 0 auto !important;
+  }
+
+  body.wp-home .wp-action-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+    margin-top: 34px !important;
+  }
+
+  body.wp-home .action-item {
+    display: grid !important;
+    grid-template-columns: 72px 1fr !important;
+    gap: 18px !important;
+    align-items: start !important;
+    width: 100% !important;
+    padding: 24px 0 !important;
+    margin: 0 !important;
+    border-bottom: 1px solid rgba(255,255,255,.17);
+  }
+
+  body.wp-home .action-item:last-child {
+    border-bottom: 0;
+  }
+
+  body.wp-home .wp-actions .action-icon {
+    width: 66px !important;
+    height: 66px !important;
+    min-width: 66px !important;
+    margin: 0 !important;
+    font-size: 25px !important;
+  }
+
+  body.wp-home .action-item h3 {
+    margin-top: 0 !important;
+    font-size: 22px !important;
+  }
+
+  body.wp-home .action-item p {
+    margin-bottom: 0 !important;
+    font-size: 15px !important;
+    line-height: 1.65 !important;
+  }
+
+  /* ---------- CONTACT STRIP ---------- */
+  body.wp-home .wp-contact-strip {
+    padding: 48px 18px !important;
+  }
+
+  body.wp-home .wp-contact-card {
+    width: 100% !important;
+    max-width: 680px !important;
+    margin: 0 auto !important;
+    padding: 34px 26px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 24px !important;
+  }
+
+  body.wp-home .wp-contact-card h2 {
+    margin: 0 !important;
+    font-size: 24px !important;
+    line-height: 1.4 !important;
+  }
+
+  body.wp-home .wp-contact-card p {
+    font-size: 15px !important;
+    line-height: 1.6 !important;
+  }
+
+  body.wp-home .wp-contact-button {
+    width: auto !important;
+    min-width: 130px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+
+  body.wp-home .wp-slider,
+  body.wp-home .wp-slide {
+    height: 500px !important;
+    min-height: 500px !important;
+  }
+
+  /* Preserve subject visibility for each supplied slide image */
+  body.wp-home .science-slide img {
+    object-position: 58% center !important;
+  }
+
+  body.wp-home .worldwide-slide img {
+    object-position: 58% center !important;
+  }
+
+  body.wp-home .donate-slide img {
+    object-position: 54% center !important;
+  }
+
+  body.wp-home .wp-slide .wp-slide-copy,
+  body.wp-home .wp-slide.text-left .wp-slide-copy,
+  body.wp-home .wp-slide.text-right .wp-slide-copy {
+    left: 18px !important;
+    right: 18px !important;
+    bottom: 80px !important;
+  }
+
+  body.wp-home .wp-slide-copy .wp-slide-kicker {
+    font-size: 18px !important;
+  }
+
+  body.wp-home .wp-slide-copy h1 {
+    font-size: clamp(31px, 9vw, 42px) !important;
+  }
+
+  body.wp-home .wp-slide-copy p {
+    max-width: 94% !important;
+    font-size: 14px !important;
+  }
+
+  body.wp-home .wp-slider-arrows {
+    left: auto !important;
+    right: 17px !important;
+    bottom: 22px !important;
+  }
+
+  body.wp-home .wp-feature-links {
+    grid-template-columns: 1fr !important;
+  }
+
+  body.wp-home .wp-feature-links .feature-link {
+    min-height: 84px;
+    flex-direction: row !important;
+    justify-content: flex-start !important;
+    padding: 18px 28px !important;
+    gap: 17px !important;
+    font-size: 17px !important;
+  }
+
+  body.wp-home .wp-feature-links .feature-icon {
+    width: 34px;
+    text-align: center;
+    font-size: 27px !important;
+  }
+
+  body.wp-home .wp-mission {
+    padding: 56px 18px 48px !important;
+  }
+
+  body.wp-home .wp-title-row h2 {
+    font-size: 34px !important;
+  }
+
+  body.wp-home .wp-section-intro {
+    font-size: 15px !important;
+  }
+
+  body.wp-home .wp-mission-item {
+    padding: 26px 18px !important;
+  }
+
+  body.wp-home .wp-actions {
+    padding: 54px 18px !important;
+  }
+
+  body.wp-home .action-item {
+    grid-template-columns: 60px 1fr !important;
+    gap: 15px !important;
+  }
+
+  body.wp-home .wp-actions .action-icon {
+    width: 56px !important;
+    height: 56px !important;
+    min-width: 56px !important;
+  }
+
+  body.wp-home .wp-contact-strip {
+    padding: 34px 14px !important;
+  }
+
+  body.wp-home .wp-contact-card {
+    padding: 28px 20px !important;
+  }
+
+  body.wp-home .wp-contact-card h2 {
+    font-size: 21px !important;
+  }
+
+  body.wp-home .wp-contact-button {
+    width: 100% !important;
+  }
+}
