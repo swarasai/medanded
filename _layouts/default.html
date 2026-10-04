@@ -3,13 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% if page.title %}{{ page.title }} – Med n' Ed{% else %}Med n' Ed{% endif %}</title>
-  <link rel="icon" type="image/png" href="{{ '/assets/favicon.png' | relative_url }}">
-  <link rel="shortcut icon" href="{{ '/assets/favicon.ico' | relative_url }}">
 
-<meta name="description" content="{{ page.description | default: "Med n' Ed — To medicate and educate all in need." }}">
+  <title>{% if page.title %}{{ page.title }} – Med n' Ed{% else %}Med n' Ed{% endif %}</title>
+
+  <!-- Site-wide browser tab icon -->
+  <link rel="icon" type="image/png" sizes="192x192" href="{{ '/assets/favicon.png' | relative_url }}">
+  <link rel="shortcut icon" type="image/x-icon" href="{{ '/assets/favicon.ico' | relative_url }}">
+  <link rel="apple-touch-icon" href="{{ '/assets/favicon.png' | relative_url }}">
+
+  <meta name="description" content="{{ page.description | default: "Med n' Ed — To medicate and educate all in need." }}">
   <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}">
-  <link rel="stylesheet" href="{{ '/mobile.css' | relative_url }}">
 </head>
 <body class="{{ page.body_class | default: 'wp-home' }}">
   {% include header.html %}
@@ -19,6 +22,5 @@
   {% include footer.html %}
 
   <script src="{{ '/script.js' | relative_url }}"></script>
-  <script src="{{ '/mobile.js' | relative_url }}"></script>
 </body>
 </html>
