@@ -1,22 +1,23 @@
-MED N' ED — PROJECTS SECTION WITH LOCAL IMAGES
+MED N' ED — BECOMING A MEDICAL PROFESSIONAL WEBINAR SERIES
 
-This package updates the Projects section so the project images you uploaded are stored locally in GitHub instead of loading from WordPress.
+Replace/add:
+- medical-professional-webinars.html
+- webinar-1-premed.html
+- webinar-2-medical-student.html
+- webinar-3-residency.html
+- webinar-4-medical-professional.html
 
-ADD/REPLACE:
-- all HTML files in this ZIP
-- images/projects/ folder
+Add/merge:
+- images/projects/webinars/
 
-LOCAL IMAGE FILES:
-images/projects/shelter-family-supportive-housing.png
-images/projects/book-drive.png
-images/projects/medical-professional-webinars.png
-images/projects/mask-drive.jpg
-images/projects/card-drive.png
-images/projects/medx.png
-images/projects/jars-of-lavender.png
-images/projects/bake-sale.jpeg
+Do NOT replace your whole images folder.
 
-IMPORTANT:
-- Eating Disorder Awareness did not have a supplied project image, so that card/page remains text-based.
-- The Book Drive PDF links and some webinar materials still point to WordPress and can be migrated later.
-- Your shared header, footer, favicon, layout, and global styles.css are not replaced.
+This package uses the uploaded webinar images locally and recreates:
+- main Webinar Series page
+- 4 webinar subpages
+- presentation buttons where direct presentation PDFs were identifiable
+- Watch Webinar links
+- responsive mobile layout
+
+NOTE:
+Some Watch Webinar links still point to the original WordPress webinar pages because the underlying video files have not yet been migrated. We can move those to YouTube/Google Drive later.
