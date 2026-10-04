@@ -4,73 +4,170 @@ title: Eating Disorder Awareness
 ---
 
 <style>
-.project-page { background:#fff; }
-.project-hero {
+.eda-page {
+  background:#fff;
+}
+
+.eda-hero {
   background:#682523;
   color:#fff;
   text-align:center;
-  padding:96px 20px;
+  padding:96px 20px 94px;
 }
-.project-hero h1 { margin:0 0 10px; font-size:42px; font-weight:700; }
-.project-hero p { margin:0; font-size:18px; }
-.project-hero a { color:#fff; text-decoration:none; }
-.project-wrap { max-width:1300px; margin:112px auto 95px; padding:0 24px; }
-.project-red-title {
-  background:#df2327; color:#fff; padding:48px 75px;
-  font-size:42px; line-height:1.2; font-weight:400; margin-bottom:34px;
+
+.eda-hero h1 {
+  margin:0 0 10px;
+  font-size:42px;
+  line-height:1.15;
+  font-weight:700;
 }
-.project-copy { font-size:18px; line-height:1.8; color:#333; }
-.project-copy h2 { color:#d91f26; margin:36px 0 14px; font-size:28px; }
-.project-copy h3 { color:#d91f26; margin:28px 0 10px; font-size:23px; }
-.project-copy a { color:#d91f26; }
-.project-image {
-  display:block; max-width:720px; width:100%; height:auto; margin:30px auto;
+
+.eda-hero p {
+  margin:0;
+  font-size:18px;
 }
-.project-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:34px; }
-.project-card { text-decoration:none; color:#222; display:block; }
-.project-card-media {
-  aspect-ratio:4/3; background:#f1f1f1; overflow:hidden; display:flex;
-  align-items:center; justify-content:center;
+
+.eda-hero a {
+  color:#fff;
+  text-decoration:none;
 }
-.project-card-media img { width:100%; height:100%; object-fit:cover; display:block; }
-.project-card-placeholder {
-  width:100%; height:100%; display:flex; align-items:center; justify-content:center;
-  background:#e8e8e8; color:#d91f26; font-size:28px; font-weight:700; text-align:center; padding:20px;
+
+.eda-wrap {
+  max-width:1300px;
+  margin:116px auto 90px;
+  padding:0 24px;
 }
-.project-card h3 { margin:13px 0 0; font-size:20px; color:#d91f26; }
-.link-button {
-  display:inline-block; background:#df2327; color:#fff !important; text-decoration:none !important;
-  padding:11px 20px; border-radius:2px; margin:8px 8px 8px 0;
+
+.eda-title {
+  background:#e32126;
+  color:#fff;
+  text-align:center;
+  padding:52px 24px;
+  font-size:42px;
+  line-height:1.2;
+  font-weight:400;
+  margin-bottom:54px;
 }
-.project-divider { border:0; border-top:1px solid #ddd; margin:42px 0; }
-@media(max-width:850px){
-  .project-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
-  .project-red-title{padding:38px 35px;font-size:34px;}
+
+.eda-copy {
+  font-size:18px;
+  line-height:1.7;
+  color:#333;
+  margin:0 0 66px;
 }
-@media(max-width:560px){
-  .project-hero{padding:72px 18px;}
-  .project-hero h1{font-size:34px;}
-  .project-wrap{margin-top:55px;padding:0 15px;}
-  .project-grid{grid-template-columns:1fr;}
-  .project-red-title{padding:30px 24px;font-size:29px;}
+
+.eda-copy p {
+  margin:0 0 18px;
+}
+
+.eda-gallery {
+  border-top:2px solid #e32126;
+  border-bottom:2px solid #e32126;
+  padding:10px 0;
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0, 1fr));
+  gap:8px;
+  align-items:stretch;
+}
+
+.eda-gallery img {
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  background:#f8d8de;
+}
+
+.eda-instagram-wrap {
+  text-align:center;
+  margin-top:18px;
+}
+
+.eda-instagram-btn {
+  display:inline-block;
+  min-width:min(620px, 90%);
+  padding:12px 24px;
+  border-radius:24px;
+  background:#e32126;
+  color:#fff !important;
+  text-decoration:none !important;
+  font-size:16px;
+}
+
+.eda-instagram-btn:hover {
+  background:#bd171c;
+}
+
+@media (max-width:900px) {
+  .eda-title {
+    font-size:34px;
+    padding:42px 20px;
+  }
+
+  .eda-gallery {
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+}
+
+@media (max-width:600px) {
+  .eda-hero {
+    padding:76px 18px 72px;
+  }
+
+  .eda-hero h1 {
+    font-size:34px;
+  }
+
+  .eda-wrap {
+    margin-top:58px;
+    padding:0 14px;
+  }
+
+  .eda-title {
+    font-size:29px;
+    padding:32px 18px;
+    margin-bottom:36px;
+  }
+
+  .eda-copy {
+    font-size:16px;
+    margin-bottom:42px;
+  }
+
+  .eda-instagram-btn {
+    min-width:100%;
+  }
 }
 </style>
 
+<main class="eda-page">
+  <section class="eda-hero">
+    <h1>Eating Disorder Awareness</h1>
+    <p><a href="{{ '/' | relative_url }}">Home</a> &nbsp;&gt;&nbsp; Eating Disorder Awareness</p>
+  </section>
 
-<main class="project-page">
-<section class="project-hero">
-  <h1>Eating Disorder Awareness</h1>
-  <p><a href="{{ '/' | relative_url }}">Home</a> &nbsp;&gt;&nbsp; Eating Disorder Awareness</p>
-</section>
+  <section class="eda-wrap">
+    <div class="eda-title">Eating Disorder Awareness</div>
 
-<section class="project-wrap">
+    <div class="eda-copy">
+      <p>Med n’ Ed posted an Instagram series that brings awareness to eating disorders including anorexia, binge eating disorder, and bulimia nervosa.</p>
+      <p>Check out the posts below!</p>
+    </div>
 
-<div class="project-red-title">Eating Disorder Awareness</div>
-<div class="project-copy">
-  <p>Med n’ Ed posted an Instagram series that brings awareness to eating disorders including anorexia, binge eating disorder, and bulimia nervosa.</p>
-  <p>Check out the posts on Med n’ Ed’s Instagram.</p>
-  <a class="link-button" href="https://www.instagram.com/medanded_org/" target="_blank" rel="noopener">Instagram</a>
-</div>
+    <div class="eda-gallery">
+      <img src="{{ '/images/projects/eating-disorder-awareness/anorexia.png' | relative_url }}" alt="Eating disorder awareness: anorexia">
+      <img src="{{ '/images/projects/eating-disorder-awareness/binge-eating-disorder.png' | relative_url }}" alt="Eating disorder awareness: binge eating disorder">
+      <img src="{{ '/images/projects/eating-disorder-awareness/bulimia-nervosa.png' | relative_url }}" alt="Eating disorder awareness: bulimia nervosa">
+    </div>
 
-</section>
+    <div class="eda-instagram-wrap">
+      <a class="eda-instagram-btn"
+         href="https://www.instagram.com/medanded_org/"
+         target="_blank"
+         rel="noopener noreferrer">
+        Instagram
+      </a>
+    </div>
+  </section>
 </main>

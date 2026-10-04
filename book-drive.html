@@ -4,77 +4,183 @@ title: Book Drive
 ---
 
 <style>
-.project-page { background:#fff; }
-.project-hero {
-  background:#682523;
+.book-page { background:#fff; }
+
+.book-wrap {
+  max-width:1320px;
+  margin:0 auto 95px;
+  padding:0 24px;
+}
+
+.book-title {
+  background:#e32126;
   color:#fff;
+  font-size:42px;
+  line-height:1.2;
+  font-weight:400;
+  padding:42px 82px;
+  margin:0 0 34px;
+}
+
+.book-copy {
+  font-size:18px;
+  line-height:1.75;
+  color:#333;
+  margin:0 34px 42px;
+}
+
+.book-copy a {
+  color:#e32126;
+  text-decoration:underline;
+  font-weight:600;
+}
+
+.book-grid {
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:26px;
+  align-items:start;
+  margin:0 20px 58px;
+}
+
+.book-card {
   text-align:center;
-  padding:96px 20px;
 }
-.project-hero h1 { margin:0 0 10px; font-size:42px; font-weight:700; }
-.project-hero p { margin:0; font-size:18px; }
-.project-hero a { color:#fff; text-decoration:none; }
-.project-wrap { max-width:1300px; margin:112px auto 95px; padding:0 24px; }
-.project-red-title {
-  background:#df2327; color:#fff; padding:48px 75px;
-  font-size:42px; line-height:1.2; font-weight:400; margin-bottom:34px;
+
+.book-cover {
+  width:100%;
+  aspect-ratio:1/1;
+  object-fit:cover;
+  display:block;
+  border:1px solid #ececec;
 }
-.project-copy { font-size:18px; line-height:1.8; color:#333; }
-.project-copy h2 { color:#d91f26; margin:36px 0 14px; font-size:28px; }
-.project-copy h3 { color:#d91f26; margin:28px 0 10px; font-size:23px; }
-.project-copy a { color:#d91f26; }
-.project-image {
-  display:block; max-width:720px; width:100%; height:auto; margin:30px auto;
+
+.read-btn {
+  display:inline-block;
+  margin-top:18px;
+  padding:11px 24px;
+  background:#e32126;
+  color:#fff !important;
+  text-decoration:none !important;
+  border-radius:2px;
+  font-size:15px;
 }
-.project-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:34px; }
-.project-card { text-decoration:none; color:#222; display:block; }
-.project-card-media {
-  aspect-ratio:4/3; background:#f1f1f1; overflow:hidden; display:flex;
-  align-items:center; justify-content:center;
+
+.book-divider {
+  border:0;
+  border-top:1px solid #ddd;
+  margin:0 0 46px;
 }
-.project-card-media img { width:100%; height:100%; object-fit:cover; display:block; }
-.project-card-placeholder {
-  width:100%; height:100%; display:flex; align-items:center; justify-content:center;
-  background:#e8e8e8; color:#d91f26; font-size:28px; font-weight:700; text-align:center; padding:20px;
+
+.org-title {
+  background:#e32126;
+  color:#fff;
+  font-size:30px;
+  font-weight:400;
+  padding:32px 50px;
+  margin-bottom:28px;
 }
-.project-card h3 { margin:13px 0 0; font-size:20px; color:#d91f26; }
-.link-button {
-  display:inline-block; background:#df2327; color:#fff !important; text-decoration:none !important;
-  padding:11px 20px; border-radius:2px; margin:8px 8px 8px 0;
+
+.org-list {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px 28px;
+  margin:0 34px;
+  font-size:17px;
 }
-.project-divider { border:0; border-top:1px solid #ddd; margin:42px 0; }
-@media(max-width:850px){
-  .project-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
-  .project-red-title{padding:38px 35px;font-size:34px;}
+
+.org-list a {
+  color:#d91f26;
+  text-decoration:none;
+  border-bottom:1px solid #eee;
+  padding:10px 0;
 }
-@media(max-width:560px){
-  .project-hero{padding:72px 18px;}
-  .project-hero h1{font-size:34px;}
-  .project-wrap{margin-top:55px;padding:0 15px;}
-  .project-grid{grid-template-columns:1fr;}
-  .project-red-title{padding:30px 24px;font-size:29px;}
+
+.org-list a:hover {
+  text-decoration:underline;
+}
+
+@media(max-width:900px) {
+  .book-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .book-title { font-size:34px; padding:34px 40px; }
+}
+
+@media(max-width:600px) {
+  .book-wrap { padding:0 14px; }
+  .book-title { font-size:29px; padding:28px 22px; }
+  .book-copy { margin-left:0; margin-right:0; font-size:16px; }
+  .book-grid { grid-template-columns:1fr; margin-left:0; margin-right:0; }
+  .book-card { max-width:420px; margin:0 auto; }
+  .org-title { font-size:25px; padding:26px 22px; }
+  .org-list { grid-template-columns:1fr; margin:0; font-size:16px; }
 }
 </style>
 
+<main class="book-page">
+  <section class="book-wrap">
 
-<main class="project-page">
-<section class="project-hero">
-  <h1>Book Drive</h1>
-  <p><a href="{{ '/' | relative_url }}">Home</a> &nbsp;&gt;&nbsp; Book Drive</p>
-</section>
+    <div class="book-title">Book Drive</div>
 
-<section class="project-wrap">
+    <div class="book-copy">
+      <p>
+        Med n’ Ed has partnered up with
+        <a href="https://www.healthyhabitsforchildren.com/" target="_blank" rel="noopener">
+          Healthy Habits for Children
+        </a>
+        to bring exposure to books made for kids. Victoria, the author and founder of Healthy Habits for Children,
+        has written books to educate children and has given them to Med n’ Ed for us to share around the world.
+      </p>
 
-<div class="project-red-title">Book Drive</div>
-<div class="project-copy">
-  <p>Med n’ Ed partnered with <a href="https://www.healthyhabitsforchildren.com/" target="_blank" rel="noopener">Healthy Habits for Children</a> to bring exposure to books made for kids. Victoria, the author and founder, created books designed to educate children and shared them with Med n’ Ed so they could be distributed around the world.</p>
-  <p>Books were shared with organizations including Smile Canada, Big Brothers Big Sisters, Friendship Circle, Children’s Home Society of California, YMCA Canada, Action for Children, The Honeypot Children’s Charity, The Canadian Children’s Book Centre, JaneFinch Reaching Up, and First Book Canada.</p>
-  <img class="project-image" src="{{ '/images/projects/book-drive.png' | relative_url }}" alt="Healthy Habits for Children books">
-  <h2>Read the books</h2>
-  <a class="link-button" href="https://medanded.org/wp-content/uploads/2020/12/BOOK-1-eBook-1.pdf" target="_blank" rel="noopener">Book 1</a>
-  <a class="link-button" href="https://medanded.org/wp-content/uploads/2020/12/BOOK-2-eBook-1.pdf" target="_blank" rel="noopener">Book 2</a>
-  <a class="link-button" href="https://medanded.org/wp-content/uploads/2020/12/BOOK-4-eBook-1.pdf" target="_blank" rel="noopener">Book 4</a>
-</div>
+      <p>
+        We have given these books to organizations including Smile Canada, Big Brothers Big Sisters,
+        Friendship Circle, Children’s Home Society of California, YMCA Canada, Action for Children,
+        The Honeypot Children’s Charity, The Canadian Children’s Book Centre, JaneFinch Reaching Up,
+        and First Book Canada.
+      </p>
 
-</section>
+      <p>
+        These organizations are spreading the books to children in their area and helping them learn!
+      </p>
+    </div>
+
+    <div class="book-grid">
+      <div class="book-card">
+        <img class="book-cover" src="{{ '/images/projects/book-drive/book-1.jpg' | relative_url }}" alt="Will and Cher Recycle">
+        <a class="read-btn" href="https://medanded.org/wp-content/uploads/2020/12/BOOK-1-eBook-1.pdf" target="_blank" rel="noopener">READ NOW</a>
+      </div>
+
+      <div class="book-card">
+        <img class="book-cover" src="{{ '/images/projects/book-drive/book-2.jpg' | relative_url }}" alt="Will and Cher Volunteer">
+        <a class="read-btn" href="https://medanded.org/wp-content/uploads/2020/12/BOOK-2-eBook-1.pdf" target="_blank" rel="noopener">READ NOW</a>
+      </div>
+
+      <div class="book-card">
+        <img class="book-cover" src="{{ '/images/projects/book-drive/book-3.jpg' | relative_url }}" alt="Will and Cher Pick Fruit and Vegetables">
+        <a class="read-btn" href="https://medanded.org/wp-content/uploads/2020/12/BOOK-4-eBook-1.pdf" target="_blank" rel="noopener">READ NOW</a>
+      </div>
+
+      <div class="book-card">
+        <img class="book-cover" src="{{ '/images/projects/book-drive/book-4.jpg' | relative_url }}" alt="Will and Cher on Water">
+        <a class="read-btn" href="https://medanded.org/wp-content/uploads/2020/12/BOOK-4-eBook-1.pdf" target="_blank" rel="noopener">READ NOW</a>
+      </div>
+    </div>
+
+    <hr class="book-divider">
+
+    <div class="org-title">Organizations we gave the books to</div>
+
+    <div class="org-list">
+      <a href="https://www.smilecan.org/" target="_blank" rel="noopener">Smile Canada</a>
+      <a href="https://northwellington.bigbrothersbigsisters.ca/" target="_blank" rel="noopener">Big Brothers Big Sisters</a>
+      <a href="https://www.friendshipcircle.org/" target="_blank" rel="noopener">Friendship Circle</a>
+      <a href="https://www.chs-ca.org/" target="_blank" rel="noopener">Children’s Home Society of California</a>
+      <a href="https://ymca.ca/" target="_blank" rel="noopener">YMCA Canada</a>
+      <a href="https://www.actionforchildren.org.uk/" target="_blank" rel="noopener">Action for Children</a>
+      <a href="https://www.honeypot.org.uk/" target="_blank" rel="noopener">The Honeypot Children’s Charity</a>
+      <a href="https://bookcentre.ca/" target="_blank" rel="noopener">The Canadian Children’s Book Centre</a>
+      <a href="https://reachingup.ca/" target="_blank" rel="noopener">JaneFinch Reaching Up</a>
+      <a href="https://www.firstbookcanada.org/" target="_blank" rel="noopener">First Book Canada</a>
+    </div>
+
+  </section>
 </main>
