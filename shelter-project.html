@@ -4,75 +4,157 @@ title: Shelter Project
 ---
 
 <style>
-.project-page { background:#fff; }
-.project-hero {
-  background:#682523;
+.shelter-page {
+  background:#fff;
+}
+
+.shelter-wrap {
+  max-width:1320px;
+  margin:0 auto 90px;
+  padding:0 24px;
+}
+
+.shelter-title {
+  background:#e32126;
   color:#fff;
-  text-align:center;
-  padding:96px 20px;
+  font-size:42px;
+  line-height:1.2;
+  font-weight:400;
+  padding:42px 82px;
+  margin:0 0 34px;
 }
-.project-hero h1 { margin:0 0 10px; font-size:42px; font-weight:700; }
-.project-hero p { margin:0; font-size:18px; }
-.project-hero a { color:#fff; text-decoration:none; }
-.project-wrap { max-width:1300px; margin:112px auto 95px; padding:0 24px; }
-.project-red-title {
-  background:#df2327; color:#fff; padding:48px 75px;
-  font-size:42px; line-height:1.2; font-weight:400; margin-bottom:34px;
+
+.shelter-partner {
+  margin:0 0 36px 42px;
+  font-size:18px;
+  font-weight:700;
+  font-style:italic;
 }
-.project-copy { font-size:18px; line-height:1.8; color:#333; }
-.project-copy h2 { color:#d91f26; margin:36px 0 14px; font-size:28px; }
-.project-copy h3 { color:#d91f26; margin:28px 0 10px; font-size:23px; }
-.project-copy a { color:#d91f26; }
-.project-image {
-  display:block; max-width:720px; width:100%; height:auto; margin:30px auto;
+
+.shelter-partner a {
+  color:#e32126;
+  text-decoration:underline;
+  text-decoration-thickness:2px;
+  text-underline-offset:2px;
 }
-.project-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:34px; }
-.project-card { text-decoration:none; color:#222; display:block; }
-.project-card-media {
-  aspect-ratio:4/3; background:#f1f1f1; overflow:hidden; display:flex;
-  align-items:center; justify-content:center;
+
+.shelter-lesson-title {
+  background:#e32126;
+  color:#fff;
+  padding:31px 58px;
+  font-size:23px;
+  font-weight:400;
+  margin:0 0 11px;
 }
-.project-card-media img { width:100%; height:100%; object-fit:cover; display:block; }
-.project-card-placeholder {
-  width:100%; height:100%; display:flex; align-items:center; justify-content:center;
-  background:#e8e8e8; color:#d91f26; font-size:28px; font-weight:700; text-align:center; padding:20px;
+
+.shelter-copy {
+  background:#e32126;
+  color:#fff;
+  margin:0 24px 36px;
+  padding:24px 42px;
+  font-size:18px;
+  line-height:1.55;
 }
-.project-card h3 { margin:13px 0 0; font-size:20px; color:#d91f26; }
-.link-button {
-  display:inline-block; background:#df2327; color:#fff !important; text-decoration:none !important;
-  padding:11px 20px; border-radius:2px; margin:8px 8px 8px 0;
+
+.shelter-gallery {
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0,1fr));
+  gap:0;
+  margin:0 24px 10px;
 }
-.project-divider { border:0; border-top:1px solid #ddd; margin:42px 0; }
-@media(max-width:850px){
-  .project-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
-  .project-red-title{padding:38px 35px;font-size:34px;}
+
+.shelter-gallery img {
+  display:block;
+  width:100%;
+  aspect-ratio:1/1;
+  object-fit:cover;
 }
-@media(max-width:560px){
-  .project-hero{padding:72px 18px;}
-  .project-hero h1{font-size:34px;}
-  .project-wrap{margin-top:55px;padding:0 15px;}
-  .project-grid{grid-template-columns:1fr;}
-  .project-red-title{padding:30px 24px;font-size:29px;}
+
+@media (max-width:850px) {
+  .shelter-title {
+    font-size:34px;
+    padding:34px 40px;
+  }
+  .shelter-partner {
+    margin-left:10px;
+  }
+  .shelter-lesson-title {
+    padding:26px 30px;
+  }
+  .shelter-copy {
+    margin-left:0;
+    margin-right:0;
+    padding:22px 26px;
+  }
+  .shelter-gallery {
+    grid-template-columns:1fr;
+    margin-left:0;
+    margin-right:0;
+  }
+}
+
+@media (max-width:560px) {
+  .shelter-wrap {
+    padding:0 14px;
+    margin-bottom:60px;
+  }
+  .shelter-title {
+    font-size:29px;
+    padding:28px 24px;
+  }
+  .shelter-partner {
+    font-size:16px;
+    margin-left:0;
+  }
+  .shelter-lesson-title {
+    font-size:21px;
+    padding:22px 20px;
+  }
+  .shelter-copy {
+    font-size:16px;
+    padding:20px;
+  }
 }
 </style>
 
+<main class="shelter-page">
+  <section class="shelter-wrap">
 
-<main class="project-page">
-<section class="project-hero">
-  <h1>Shelter Project</h1>
-  <p><a href="{{ '/' | relative_url }}">Home</a> &nbsp;&gt;&nbsp; Shelter Project</p>
-</section>
+    <div class="shelter-title">Shelter Project</div>
 
-<section class="project-wrap">
+    <p class="shelter-partner">
+      <a href="https://familysupportivehousing.org/"
+         target="_blank"
+         rel="noopener noreferrer">
+        Partnered with Family Supportive Housing
+      </a>
+    </p>
 
-<div class="project-red-title">Shelter Project</div>
-<div class="project-copy">
-  <p><a href="https://familysupportivehousing.org/" target="_blank" rel="noopener"><strong><em>Partnered with Family Supportive Housing</em></strong></a></p>
-  <h2>Lesson 1</h2>
-  <p>Med n’ Ed has partnered up with Family Supportive Housing to host educational workshops. In our first workshop, we taught the kids at the shelter about nutrition, exercise, food groups, and overall how to lead a healthy lifestyle.</p>
-  <p>We made the lesson as entertaining as possible to keep the kids engaged; we played games with them, including Kahoot and a board game, and had them watch a fun Arthur video. There were a total of eight kids, and we really enjoyed teaching them about maintaining a healthy lifestyle.</p>
-  <img class="project-image" src="{{ '/images/projects/shelter-family-supportive-housing.png' | relative_url }}" alt="Family Supportive Housing">
-</div>
+    <div class="shelter-lesson-title">Lesson 1</div>
 
-</section>
+    <div class="shelter-copy">
+      Med n’ Ed has partnered up with Family Supportive Housing to host educational workshops.
+      In our first workshop, we taught the kids at the shelter about nutrition, exercise, food groups,
+      overall, how to lead a healthy lifestyle. We made the lesson as entertaining as possible to keep
+      the kids engaged; we played games with them, like Kahoot, a raise up the board game, and even had
+      them watch a fun Arthur video! There were a total of eight kids, and we really enjoyed teaching
+      them about maintaining a healthy lifestyle, and the kids seemed to learn a lot as well!
+    </div>
+
+    <div class="shelter-gallery">
+      <img src="https://i1.wp.com/medanded.org/wp-content/uploads/2020/12/Screen-Shot-2020-12-05-at-9.43.11-PM.png?resize=1058%2C1058&ssl=1"
+           alt="Kahoot nutrition activity">
+      <img src="https://i2.wp.com/medanded.org/wp-content/uploads/2020/12/Screen-Shot-2020-12-05-at-9.43.40-PM.png?resize=1012%2C1012&ssl=1"
+           alt="Arthur video used during the workshop">
+      <img src="https://i1.wp.com/medanded.org/wp-content/uploads/2020/12/Screen-Shot-2020-12-05-at-9.44.04-PM.png?resize=971%2C971&ssl=1"
+           alt="Workshop at Family Supportive Housing">
+      <img src="https://i2.wp.com/medanded.org/wp-content/uploads/2020/12/Screen-Shot-2020-12-05-at-9.44.51-PM.png?resize=996%2C996&ssl=1"
+           alt="Exercise presentation">
+      <img src="https://i0.wp.com/medanded.org/wp-content/uploads/2020/12/Screen-Shot-2020-12-05-at-9.45.13-PM.png?resize=1004%2C1004&ssl=1"
+           alt="Med n' Ed workshop participants">
+      <img src="https://i0.wp.com/medanded.org/wp-content/uploads/2020/12/Screen-Shot-2020-12-05-at-9.45.57-PM-1.png?resize=1005%2C1005&ssl=1"
+           alt="Children participating in the workshop">
+    </div>
+
+  </section>
 </main>
