@@ -32,6 +32,7 @@ title: Projects
   color:#222;
   display:block;
   position:relative;
+  overflow:hidden;
 }
 .project-card-media {
   position:relative;
@@ -46,7 +47,7 @@ title: Projects
   content:"";
   position:absolute;
   inset:0;
-  background:rgba(255,255,255,.34);
+  background:rgba(255,255,255,.58);
   pointer-events:none;
 }
 .project-card-media img {
@@ -54,6 +55,9 @@ title: Projects
   height:100%;
   object-fit:cover;
   display:block;
+  filter:brightness(1.02) contrast(.95) saturate(.92) blur(1.6px);
+  transform:scale(1.05);
+  opacity:.68;
 }
 .project-card-placeholder {
   width:100%;
@@ -61,7 +65,7 @@ title: Projects
   display:flex;
   align-items:center;
   justify-content:center;
-  background:#e8e8e8;
+  background:#ececec;
 }
 .project-card h3 {
   position:absolute;
@@ -78,6 +82,7 @@ title: Projects
   text-align:center;
   text-decoration:underline;
   text-underline-offset:4px;
+  text-shadow:0 1px 0 rgba(255,255,255,.45);
 }
 .project-card:hover h3 {
   color:#b3131a;
