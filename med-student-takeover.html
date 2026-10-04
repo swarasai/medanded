@@ -4,58 +4,334 @@ title: Med Student Takeover
 ---
 
 <style>
-.takeover-page{background:#fff;color:#292929}
-.takeover-wrap{max-width:1320px;margin:0 auto;padding:90px 24px 100px}
-.takeover-titlebar{background:#e32126;color:#fff;text-align:center;padding:42px 20px;margin-bottom:52px}
-.takeover-titlebar h1{margin:0;font-size:44px;font-weight:500;line-height:1.2}
-.takeover-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:42px}
-.takeover-card{position:relative;min-height:520px;overflow:hidden;background:#ddd;text-decoration:none;display:block}
-.takeover-card img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
-.takeover-card::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.34)}
-.takeover-card span{position:absolute;z-index:2;left:26px;right:26px;bottom:28px;color:#fff;font-size:34px;line-height:1.2;text-decoration:underline;text-underline-offset:5px}
-.takeover-inner{max-width:1120px;margin:0 auto;padding:88px 24px 100px}
-.takeover-heading{font-size:42px;margin:0 0 24px;color:#e32126;font-weight:500}
-.takeover-intro{font-size:18px;line-height:1.75;margin-bottom:26px}
-.takeover-actions{display:flex;flex-wrap:wrap;gap:14px;margin:0 0 38px}
-.takeover-btn{display:inline-block;background:#e32126;color:#fff!important;padding:13px 22px;text-decoration:none;font-weight:700}
-.takeover-btn.secondary{background:#fff;color:#e32126!important;border:2px solid #e32126}
-.takeover-carousel{position:relative;max-width:650px;margin:20px auto 48px;overflow:hidden}
-.takeover-track{display:flex;transition:transform .4s ease}
-.takeover-slide{flex:0 0 100%;display:flex;justify-content:center}
-.takeover-slide img{display:block;max-width:100%;height:780px;object-fit:contain;background:#fff}
-.takeover-arrow{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border:0;border-radius:50%;background:rgba(227,33,38,.92);color:#fff;font-size:25px;cursor:pointer;z-index:3}
-.takeover-prev{left:10px}.takeover-next{right:10px}
-.takeover-dots{display:flex;justify-content:center;gap:8px;margin-top:12px}
-.takeover-dot{width:9px;height:9px;border:0;border-radius:50%;background:#bbb;padding:0}
-.takeover-dot.active{background:#e32126}
-.takeover-subhead{font-size:27px;margin:42px 0 18px;font-weight:600}
-.takeover-copy{font-size:17px;line-height:1.72}
-.takeover-copy h3{font-size:20px;margin:25px 0 8px}
-@media(max-width:760px){
- .takeover-wrap,.takeover-inner{padding:56px 18px 70px}
- .takeover-titlebar h1,.takeover-heading{font-size:34px}
- .takeover-grid{grid-template-columns:1fr;gap:24px}
- .takeover-card{min-height:430px}
- .takeover-card span{font-size:28px}
- .takeover-slide img{height:620px}
+#mst-page {
+  background:#fff;
+  color:#2d2d2d;
 }
-@media(max-width:480px){.takeover-slide img{height:500px}}
+
+#mst-page .mst-hero {
+  background:#682523;
+  color:#fff;
+  text-align:center;
+  padding:96px 20px 92px;
+}
+
+#mst-page .mst-hero h1 {
+  margin:0 0 10px !important;
+  color:#fff !important;
+  font-size:42px !important;
+  line-height:1.15 !important;
+  font-weight:700 !important;
+}
+
+#mst-page .mst-hero p {
+  margin:0 !important;
+  color:#fff !important;
+  font-size:18px !important;
+}
+
+#mst-page .mst-hero a {
+  color:#fff !important;
+  text-decoration:none !important;
+}
+
+#mst-page .mst-wrap {
+  max-width:1320px;
+  margin:0 auto;
+  padding:112px 24px 92px;
+}
+
+#mst-page .mst-title {
+  background:#e32126;
+  color:#fff;
+  text-align:center;
+  font-size:40px;
+  line-height:1.2;
+  font-weight:400;
+  padding:52px 24px;
+  margin:0 0 10px;
+}
+
+#mst-page .mst-intro {
+  background:#df2a2a;
+  color:#fff;
+  text-align:left;
+  font-size:18px;
+  line-height:1.6;
+  padding:22px 42px;
+  margin:0 0 16px;
+}
+
+#mst-page .mst-actions {
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin:0 0 20px;
+}
+
+#mst-page .mst-btn {
+  display:inline-block;
+  min-width:208px;
+  text-align:center;
+  padding:10px 22px;
+  border:2px solid #222;
+  background:#f6abab;
+  color:#111 !important;
+  text-decoration:none !important;
+  font-size:17px;
+  line-height:1.2;
+  box-sizing:border-box;
+}
+
+#mst-page .mst-carousel {
+  position:relative;
+  margin:0 auto 28px;
+  min-height:690px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+
+#mst-page .mst-track {
+  width:100%;
+}
+
+#mst-page .mst-slide {
+  display:none;
+  width:100%;
+  text-align:center;
+}
+
+#mst-page .mst-slide.active {
+  display:block;
+}
+
+#mst-page .mst-slide img {
+  display:block;
+  margin:0 auto;
+  width:auto;
+  max-width:390px;
+  height:670px;
+  object-fit:contain;
+  background:#111;
+}
+
+#mst-page .mst-arrow {
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  background:transparent;
+  border:0;
+  color:#8a8a8a;
+  font-size:52px;
+  line-height:1;
+  padding:12px;
+  cursor:pointer;
+  z-index:3;
+}
+
+#mst-page .mst-prev { left:0; }
+#mst-page .mst-next { right:0; }
+
+#mst-page .mst-count {
+  position:absolute;
+  left:0;
+  bottom:4px;
+  font-size:15px;
+  color:#333;
+}
+
+#mst-page .mst-copy {
+  font-size:17px;
+  line-height:1.58;
+  color:#292929;
+}
+
+#mst-page .mst-copy p {
+  margin:0 0 15px;
+}
+
+#mst-page .mst-copy .question {
+  margin-top:13px;
+  margin-bottom:11px;
+}
+
+#mst-page .mst-copy ol {
+  margin:0 0 18px 30px;
+}
+
+#mst-page .mst-copy a {
+  color:#e32126;
+}
+
+@media(max-width:700px) {
+  #mst-page .mst-hero {
+    padding:70px 18px 68px;
+  }
+  #mst-page .mst-hero h1 {
+    font-size:34px !important;
+  }
+  #mst-page .mst-wrap {
+    padding:58px 18px 70px;
+  }
+  #mst-page .mst-title {
+    font-size:32px;
+    padding:38px 18px;
+  }
+  #mst-page .mst-intro {
+    padding:20px;
+    font-size:16px;
+  }
+  #mst-page .mst-actions {
+    display:grid;
+    grid-template-columns:1fr;
+  }
+  #mst-page .mst-btn {
+    min-width:0;
+    width:100%;
+  }
+  #mst-page .mst-carousel {
+    min-height:610px;
+  }
+  #mst-page .mst-slide img {
+    width:76%;
+    max-width:none;
+    height:590px;
+  }
+  #mst-page .mst-arrow {
+    font-size:42px;
+  }
+}
 </style>
 
-<main class="takeover-page"><div class="takeover-inner">
-<h1 class="takeover-heading">Med Student Takeover</h1>
-<p class="takeover-intro">Sarah, a med student that graduted from UC Berkeley did an instagram takeover from Med n’ Ed’s instagram account. This takeover’s main purpose was for our audience/followers to be able to ask questions on various different topics such as the application process, what it is like to be a med student, pros and cons, tips and more.</p>
-<div class="takeover-actions"><a class="takeover-btn" href="https://www.instagram.com/medanded_org/" target="_blank" rel="noopener">Instagram Takeover</a><a class="takeover-btn secondary" href="https://www.instagram.com/sarahinmed/" target="_blank" rel="noopener">Sarah’s Instagram</a></div>
-<div class="takeover-carousel"><div class="takeover-track"><div class="takeover-slide"><img src="https://i0.wp.com/medanded.org/wp-content/uploads/2021/01/Screen-Shot-2021-01-03-at-5.30.57-PM.png?resize=590%2C1024&ssl=1" alt="Instagram takeover story"></div><div class="takeover-slide"><img src="https://i0.wp.com/medanded.org/wp-content/uploads/2021/01/Screen-Shot-2021-01-03-at-5.32.24-PM.png?resize=601%2C1024&ssl=1" alt="Instagram takeover story"></div><div class="takeover-slide"><img src="https://i0.wp.com/medanded.org/wp-content/uploads/2021/01/Screen-Shot-2021-01-03-at-5.32.42-PM.png?resize=588%2C1024&ssl=1" alt="Instagram takeover story"></div><div class="takeover-slide"><img src="https://i0.wp.com/medanded.org/wp-content/uploads/2021/01/Screen-Shot-2021-01-03-at-5.33.37-PM.png?resize=593%2C1024&ssl=1" alt="Instagram takeover story"></div><div class="takeover-slide"><img src="https://i0.wp.com/medanded.org/wp-content/uploads/2021/01/Screen-Shot-2021-01-03-at-5.33.53-PM.png?resize=589%2C1024&ssl=1" alt="Instagram takeover story"></div><div class="takeover-slide"><img src="https://i0.wp.com/medanded.org/wp-content/uploads/2021/01/Screen-Shot-2021-01-03-at-5.34.09-PM.png?resize=590%2C1024&ssl=1" alt="Instagram takeover story"></div><div class="takeover-slide"><img src="https://i0.wp.com/medanded.org/wp-content/uploads/2021/01/Screen-Shot-2021-01-03-at-5.34.25-PM.png?resize=603%2C1024&ssl=1" alt="Instagram takeover story"></div><div class="takeover-slide"><img src="https://i0.wp.com/medanded.org/wp-content/uploads/2021/01/Screen-Shot-2021-01-03-at-5.34.40-PM.png?resize=586%2C1024&ssl=1" alt="Instagram takeover story"></div></div>
-<button class="takeover-arrow takeover-prev" aria-label="Previous">&#8249;</button>
-<button class="takeover-arrow takeover-next" aria-label="Next">&#8250;</button>
-<div class="takeover-dots"><button class="takeover-dot active" data-i="0" aria-label="Slide 1"></button><button class="takeover-dot" data-i="1" aria-label="Slide 2"></button><button class="takeover-dot" data-i="2" aria-label="Slide 3"></button><button class="takeover-dot" data-i="3" aria-label="Slide 4"></button><button class="takeover-dot" data-i="4" aria-label="Slide 5"></button><button class="takeover-dot" data-i="5" aria-label="Slide 6"></button><button class="takeover-dot" data-i="6" aria-label="Slide 7"></button><button class="takeover-dot" data-i="7" aria-label="Slide 8"></button></div></div>
-<div class="takeover-copy"><h2 class="takeover-subhead">Some questions from the takeover:</h2>
-<p><strong>Here is a little bit about Sarah:</strong> she is a first-year medical student, Korean-American, from California, an avid dog lover, a huge foodie.</p>
-<h3>Did you take any MCAT prep courses?</h3><p>Sarah used Princeton Review, while noting that many friends successfully self-studied.</p>
-<h3>How difficult did you find the MCAT?</h3><p>She described the MCAT as one of the hardest parts of applying to medical school, while encouraging students not to be discouraged.</p>
-<h3>What extracurriculars did you do to get into med school?</h3><p>She highlighted volunteering, clinical experiences, research and leadership.</p>
-<h3>Any general advice?</h3><p>Do your best, recover from setbacks, make time for self-care, take classes you genuinely enjoy, and explore opportunities.</p></div>
-</div></main><script>
-document.querySelectorAll('.takeover-carousel').forEach(function(c){const t=c.querySelector('.takeover-track'),d=[...c.querySelectorAll('.takeover-dot')];let i=0,sx=null;function sh(n){i=(n+d.length)%d.length;t.style.transform=`translateX(${-i*100}%)`;d.forEach((x,j)=>x.classList.toggle('active',j===i));}c.querySelector('.takeover-prev').onclick=()=>sh(i-1);c.querySelector('.takeover-next').onclick=()=>sh(i+1);d.forEach((x,j)=>x.onclick=()=>sh(j));t.addEventListener('touchstart',e=>sx=e.touches[0].clientX,{passive:true});t.addEventListener('touchend',e=>{let dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>45)sh(i+(dx<0?1:-1));sx=null},{passive:true});});
+<main id="mst-page">
+  <section class="mst-hero">
+    <h1>Med Student Takeover</h1>
+    <p><a href="{{ '/' | relative_url }}">Home</a> &nbsp;&gt;&nbsp; Med Student Takeover</p>
+  </section>
+
+  <section class="mst-wrap">
+    <div class="mst-title">Med Student Takeover</div>
+
+    <div class="mst-intro">
+      Sarah, a med student that graduted from UC Berkeley did an instagram takeover from Med n’ Ed’s instagram account.
+      This takeover’s main purpose was for our audience/followers to be able to ask questions on various different topics
+      such as the application process, what it is like to be a med student, pros and cons, tips and more.
+    </div>
+
+    <div class="mst-actions">
+      <a class="mst-btn" href="https://www.instagram.com/medanded_org/" target="_blank" rel="noopener">Instagram Takeover</a>
+      <a class="mst-btn" href="https://www.instagram.com/sarahinmed/" target="_blank" rel="noopener">Sarah’s Instagram</a>
+    </div>
+
+    <div class="mst-carousel" id="mstCarousel">
+      <div class="mst-track">
+<div class="mst-slide"><img src="https://i0.wp.com/medanded.org/wp-content/uploads/2021/01/Screen-Shot-2021-01-03-at-5.30.57-PM.png?resize=590%2C1024&ssl=1" alt="Med Student Takeover story 1" loading="lazy"></div>
+<div class="mst-slide"><img src="https://i0.wp.com/medanded.org/wp-content/uploads/2021/01/Screen-Shot-2021-01-03-at-5.32.24-PM.png?resize=601%2C1024&ssl=1" alt="Med Student Takeover story 2" loading="lazy"></div>
+<div class="mst-slide"><img src="https://i0.wp.com/medanded.org/wp-content/uploads/2021/01/Screen-Shot-2021-01-03-at-5.32.42-PM.png?resize=588%2C1024&ssl=1" alt="Med Student Takeover story 3" loading="lazy"></div>
+<div class="mst-slide"><img src="https://i0.wp.com/medanded.org/wp-content/uploads/2021/01/Screen-Shot-2021-01-03-at-5.33.37-PM.png?resize=593%2C1024&ssl=1" alt="Med Student Takeover story 4" loading="lazy"></div>
+<div class="mst-slide"><img src="https://i0.wp.com/medanded.org/wp-content/uploads/2021/01/Screen-Shot-2021-01-03-at-5.33.53-PM.png?resize=589%2C1024&ssl=1" alt="Med Student Takeover story 5" loading="lazy"></div>
+<div class="mst-slide"><img src="https://i0.wp.com/medanded.org/wp-content/uploads/2021/01/Screen-Shot-2021-01-03-at-5.34.09-PM.png?resize=590%2C1024&ssl=1" alt="Med Student Takeover story 6" loading="lazy"></div>
+<div class="mst-slide"><img src="https://i0.wp.com/medanded.org/wp-content/uploads/2021/01/Screen-Shot-2021-01-03-at-5.34.25-PM.png?resize=603%2C1024&ssl=1" alt="Med Student Takeover story 7" loading="lazy"></div>
+<div class="mst-slide"><img src="https://i0.wp.com/medanded.org/wp-content/uploads/2021/01/Screen-Shot-2021-01-03-at-5.34.40-PM.png?resize=586%2C1024&ssl=1" alt="Med Student Takeover story 8" loading="lazy"></div>
+<div class="mst-slide"><img src="https://i0.wp.com/medanded.org/wp-content/uploads/2021/01/Screen-Shot-2021-01-03-at-5.34.57-PM.png?resize=596%2C1024&ssl=1" alt="Med Student Takeover story 9" loading="lazy"></div>
+<div class="mst-slide"><img src="https://i0.wp.com/medanded.org/wp-content/uploads/2021/01/Screen-Shot-2021-01-03-at-5.35.13-PM.png?resize=593%2C1024&ssl=1" alt="Med Student Takeover story 10" loading="lazy"></div>
+<div class="mst-slide"><img src="https://i0.wp.com/medanded.org/wp-content/uploads/2021/01/Screen-Shot-2021-01-03-at-5.35.33-PM.png?resize=593%2C1024&ssl=1" alt="Med Student Takeover story 11" loading="lazy"></div>
+<div class="mst-slide"><img src="https://i0.wp.com/medanded.org/wp-content/uploads/2021/01/Screen-Shot-2021-01-03-at-5.35.54-PM.png?resize=588%2C1024&ssl=1" alt="Med Student Takeover story 12" loading="lazy"></div>
+      </div>
+      <button class="mst-arrow mst-prev" id="mstPrev" aria-label="Previous slide">&#8249;</button>
+      <button class="mst-arrow mst-next" id="mstNext" aria-label="Next slide">&#8250;</button>
+      <div class="mst-count" id="mstCount">1 / 12</div>
+    </div>
+
+    <div class="mst-copy">
+      <p>Some questions from the takeover:</p>
+
+      <p>Here is a little bit about Sarah: she is a first-year medical student, Korean-American, from California, an avid dog lover, a huge foodie.</p>
+
+      <p class="question">Introduction from Sarah:</p>
+      <p>Hi everyone. My name is Sarah and I’m a first-year medical student. Many people have been asking me kind of what my day in my life is like as a student and fortunately or unfortunately, I guess depending on how you look at it still on break right now. So I’m not actually doing a lot of the typical things that I would be doing as a student. So I guess this is kind of a day in my life as a student on break.If you are curious about what my day looks like when I’m not on break, I have some reels on my page from earlier this year.</p>
+
+      <p class="question">Did you take any MCAT prep courses? If so, which did you take?</p>
+      <p>I took a prep course by Princeton Review. I do not know if it was worth the money because it was very expensive and many of my friends successfully self-studied. I personally didn’t have the confidence nor the knowledge to design my own study plan at the time. The review course didn’t hurt but looking back, I wish I had saved the money and figured it out myself. However, I only took the MCAT once and did well enough to never take it again so, in that sense, it was very worth it!</p>
+
+      <p class="question">How difficult did you find the MCAT to be?</p>
+      <p>I honestly thought it was the worst part of applying to medical school. It was awful HAHA I’m so glad it’s over! I don’t mean to scare or discourage any of you — just being honest.</p>
+
+      <p class="question">Did you ever feel like giving up?</p>
+      <p>I felt like giving up on my dream of being a physician quite frequently in undergrad, mostly because it’s so hard to get into medical school. I was much more stressed in college than I am in medical school (so far at least).My school is very supportive and offers many resources to help us succeed. I have not felt like giving up this far since starting med school 🙂</p>
+
+      <p class="question">What are some extracurriculars that you did to get into med school?</p>
+      <p>Ahh I love this question! In short:</p>
+      <ol>
+        <li>Volunteering</li>
+        <li>Clinical experiences</li>
+        <li>Research</li>
+        <li>Leadership</li>
+      </ol>
+      <p>I have so much to say about these! I’m very passionate about volunteering with my community and addressing the social determinant of health in a tangible way. The bulk of my application focused on my volunteer experiences and it was brought up at every single interview I had. I now attend a school that is known for its historical commitment to serving the underserved in our community.</p>
+
+      <p class="question">Any tips for Highschools that aim to get into med school?</p>
+      <p>Strive to do your best in everything you do. Learn the best you can in your classes! Go after things you want to do! Never be afraid to ask. The worst they can say is no.Also, this might sound weird but don’t be super committees to the idea of going to med school! I know so many people who committed to medicine early on just to find out later in life that they were actually passionate about something else! Explore other careers! There is so so much out there. Take your time and figure out what you truly want to do!</p>
+
+      <p class="question">Any college application tips?</p>
+      <p>Oh gosh, I don’t think I’m the best person to answer this aha. I applied to college many years ago and it’s an ever-changing process.</p>
+      <p>Be honest.</p>
+      <p>Be yourself.</p>
+      <p>Make sure other people have read your application to give you feedback before submitting! Some things you write may make sense to you but other people may not understand what you are trying to say!</p>
+
+      <p class="question">What is your motivation?</p>
+      <p>Every day, I remind myself I am learning what I am learning to help others in the future. The knowledge I am gaining is not just for myself but for me to share with others. I am so incredibly privileged for the opportunity to study medicine and I don’t take this privileged lightly.</p>
+
+      <p class="question">Which college did you go to?</p>
+      <p>I went to UC Berkeley!</p>
+
+      <p class="question">Any general advice for those in college right now?</p>
+      <p>Do your best and don’t take yourself too seriously. If you mess up, pick yourself back up and move on. Make sure to have some fun and make time for self-care too! It’s a marathon, not a sprint. Take classes that genuinely interest you. Explore all the opportunities offered to you.</p>
+
+      <p class="question">Tips for getting high grades in high school? I really want to go to med school too. I’m in Grade 11.</p>
+      <p>It’s awesome that you’re thinking about this so early. Focus on classes and learn good study habits early. Figure out how you retain information and try new study methods if you are not getting the grades you want. It can also help to ask for help from teachers, friends, and tutors!</p>
+
+      <p class="question">What school do you go to?</p>
+      <p>I haven’t stated where I go to school on social media for privacy reasons!</p>
+
+      <p class="question">Is it hard to balance extracurriculars with schoolwork as a 1st year?</p>
+      <p>I think it’s been unusual so far because of COVID. A lot of in-person opportunities are currently on hold to keep everyone safe! That being said, I haven’t had a particularly hard time balancing the two. I also think we have a lot more flexibility with time because we do not need to commute and our lectures are all recorded so we can literally watch them whenever sped up.</p>
+
+      <p class="question">Outro from Sarah:</p>
+      <p>And that concludes the takeover for today! I had so much fun chatting with y’all and answering your question! If you need anything else or you think of any other questions, send a DM to <a href="https://www.instagram.com/sarahinmed/" target="_blank" rel="noopener">@sarahinmed</a>. Stay safe and Happy (almost) New Year.</p>
+    </div>
+  </section>
+</main>
+
+<script>
+(function() {
+  const slides = Array.from(document.querySelectorAll('#mstCarousel .mst-slide'));
+  const count = document.getElementById('mstCount');
+  let index = 0;
+
+  function show(i) {
+    index = (i + slides.length) % slides.length;
+    slides.forEach((slide, n) => slide.classList.toggle('active', n === index));
+    count.textContent = `${index + 1} / ${slides.length}`;
+  }
+
+  document.getElementById('mstPrev').addEventListener('click', () => show(index - 1));
+  document.getElementById('mstNext').addEventListener('click', () => show(index + 1));
+
+  let startX = null;
+  document.getElementById('mstCarousel').addEventListener('touchstart', e => {
+    startX = e.touches[0].clientX;
+  }, {passive:true});
+
+  document.getElementById('mstCarousel').addEventListener('touchend', e => {
+    if (startX === null) return;
+    const dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) > 45) show(index + (dx < 0 ? 1 : -1));
+    startX = null;
+  }, {passive:true});
+
+  show(0);
+})();
 </script>
