@@ -3949,3 +3949,10 @@ df-messenger {
     max-width: min(100%, 320px) !important;
   }
 }
+
+/* Ripple Effect logo refinement */
+.partner-logo:nth-child(2) img {
+  max-width: 360px !important;
+  max-height: 150px !important;
+  object-fit: contain !important;
+}
