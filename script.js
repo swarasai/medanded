@@ -158,3 +158,36 @@
   show(0);
   start();
 })();
+
+/* Our Motivation carousel */
+(function () {
+  const carousel = document.getElementById('motivationCarousel');
+  if (!carousel) return;
+  const slides = [...carousel.querySelectorAll('.motivation-slide')];
+  const prev = carousel.querySelector('.motivation-prev');
+  const next = carousel.querySelector('.motivation-next');
+  const pause = carousel.querySelector('.motivation-pause');
+  let index = 0, paused = false, timer;
+
+  function show(i) {
+    index = (i + slides.length) % slides.length;
+    slides.forEach((slide, n) => slide.classList.toggle('active', n === index));
+  }
+
+  function start() {
+    clearInterval(timer);
+    if (!paused) timer = setInterval(() => show(index + 1), 6000);
+  }
+
+  prev?.addEventListener('click', () => { show(index - 1); start(); });
+  next?.addEventListener('click', () => { show(index + 1); start(); });
+  pause?.addEventListener('click', () => {
+    paused = !paused;
+    pause.textContent = paused ? '▶' : 'Ⅱ';
+    pause.setAttribute('aria-label', paused ? 'Play slideshow' : 'Pause slideshow');
+    start();
+  });
+
+  show(0);
+  start();
+})();

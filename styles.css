@@ -3727,3 +3727,81 @@ df-messenger {
     font-size: 20px;
   }
 }
+
+/* =========================================================
+   OUR MOTIVATION PAGE — WordPress screenshot match
+   ========================================================= */
+.motivation-page { background:#fff; }
+.motivation-page-hero {
+  min-height:255px; display:grid; place-items:center;
+  background:#6f2927; color:#fff;
+}
+.motivation-page-hero-inner { text-align:center; }
+.motivation-page-hero h1 {
+  margin:0 0 6px; color:#fff; font-size:39px;
+  font-weight:800; line-height:1.15;
+}
+.motivation-page-hero p { margin:0; color:#fff; font-size:16px; }
+.motivation-page-hero a { color:#fff; text-decoration:none; }
+.motivation-page-hero a:hover { text-decoration:underline; }
+.motivation-page-hero span { margin:0 5px; }
+
+.motivation-main { padding:115px 0 95px; background:#fff; }
+.motivation-wrap { width:min(1280px,76%); margin:0 auto; }
+
+.motivation-title-block {
+  min-height:170px; display:grid; place-items:center; background:#d92d2d;
+}
+.motivation-title-block h2 {
+  margin:0; color:#fff; font-size:43px; font-weight:300; line-height:1.1;
+}
+
+.motivation-copy { padding:45px 5px 38px; }
+.motivation-copy p {
+  margin:0; color:#bd4a43; font-size:22px; font-weight:300;
+  line-height:1.55; text-align:center;
+}
+.motivation-divider {
+  height:2px; margin:18px 0 14px; background:#d92d2d;
+}
+
+.motivation-carousel {
+  position:relative; width:72%; margin:25px auto 0; overflow:hidden;
+}
+.motivation-slide { display:none; }
+.motivation-slide.active { display:block; }
+.motivation-slide img {
+  display:block; width:100%; height:auto; max-height:560px;
+  margin:0 auto; object-fit:contain;
+}
+.motivation-arrow {
+  position:absolute; top:50%; z-index:3; transform:translateY(-50%);
+  border:0; padding:0; color:#888; background:transparent;
+  cursor:pointer; font-size:44px; line-height:1;
+}
+.motivation-prev { left:8px; }
+.motivation-next { right:8px; }
+.motivation-pause {
+  position:absolute; top:2px; right:6px; z-index:3;
+  border:0; color:#888; background:transparent;
+  cursor:pointer; font-size:24px; font-weight:700;
+}
+
+@media (max-width:1050px) {
+  .motivation-wrap { width:86%; }
+  .motivation-copy p { font-size:20px; }
+  .motivation-carousel { width:82%; }
+}
+@media (max-width:760px) {
+  .motivation-page-hero { min-height:210px; }
+  .motivation-page-hero h1 { font-size:34px; }
+  .motivation-main { padding:70px 0; }
+  .motivation-wrap { width:92%; }
+  .motivation-title-block { min-height:130px; }
+  .motivation-title-block h2 { font-size:34px; }
+  .motivation-copy { padding:32px 4px 28px; }
+  .motivation-copy p { font-size:18px; line-height:1.5; }
+  .motivation-carousel { width:100%; }
+  .motivation-arrow { font-size:36px; }
+  .motivation-pause { font-size:20px; }
+}
