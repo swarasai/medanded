@@ -21,7 +21,14 @@
       <span class="wp-logo-sub">To medicate and educate all in<br>need</span>
     </a>
 
-    <nav class="wp-nav" aria-label="Main navigation">
+
+    <button class="mobile-menu-toggle" id="mobileMenuToggle"
+            type="button" aria-label="Open menu"
+            aria-expanded="false" aria-controls="mainNav">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="wp-nav" id="mainNav" aria-label="Main navigation">
       <a href="index.html"{% if page.nav_group == "home" %} class="active"{% endif %}>Home</a>
       <span class="nav-sep"></span>
 
