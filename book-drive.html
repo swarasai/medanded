@@ -5,48 +5,48 @@ title: Book Drive
 
 <style>
 .book-page { background:#fff; }
-
 .book-wrap {
   max-width:1320px;
   margin:0 auto 95px;
   padding:0 24px;
 }
-
-.book-title {
+.book-title,
+.org-title {
   background:#e32126;
   color:#fff;
+  text-align:center;
+  font-weight:400;
+}
+.book-title {
   font-size:42px;
   line-height:1.2;
-  font-weight:400;
-  padding:42px 82px;
-  margin:0 0 34px;
+  padding:52px 24px;
+  margin:0 0 26px;
 }
-
+.org-title {
+  font-size:31px;
+  padding:34px 24px;
+  margin:58px 0 28px;
+}
 .book-copy {
   font-size:18px;
-  line-height:1.75;
+  line-height:1.72;
   color:#333;
-  margin:0 34px 42px;
+  margin:0 0 42px;
 }
-
 .book-copy a {
   color:#e32126;
   text-decoration:underline;
-  font-weight:600;
+  text-underline-offset:2px;
 }
-
 .book-grid {
   display:grid;
   grid-template-columns:repeat(4,minmax(0,1fr));
   gap:26px;
   align-items:start;
-  margin:0 20px 58px;
+  margin:0 0 38px;
 }
-
-.book-card {
-  text-align:center;
-}
-
+.book-card { text-align:center; }
 .book-cover {
   width:100%;
   aspect-ratio:1/1;
@@ -54,10 +54,9 @@ title: Book Drive
   display:block;
   border:1px solid #ececec;
 }
-
 .read-btn {
   display:inline-block;
-  margin-top:18px;
+  margin-top:16px;
   padding:11px 24px;
   background:#e32126;
   color:#fff !important;
@@ -65,81 +64,69 @@ title: Book Drive
   border-radius:2px;
   font-size:15px;
 }
-
-.book-divider {
-  border:0;
-  border-top:1px solid #ddd;
-  margin:0 0 46px;
-}
-
-.org-title {
-  background:#e32126;
-  color:#fff;
-  font-size:30px;
-  font-weight:400;
-  padding:32px 50px;
-  margin-bottom:28px;
-}
-
-.org-list {
+.org-grid {
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:12px 28px;
-  margin:0 34px;
-  font-size:17px;
+  gap:22px 28px;
 }
-
-.org-list a {
-  color:#d91f26;
+.org-card {
+  min-height:170px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:22px;
+  border:1px solid #ededed;
+  background:#fff;
   text-decoration:none;
-  border-bottom:1px solid #eee;
-  padding:10px 0;
 }
-
-.org-list a:hover {
-  text-decoration:underline;
+.org-card img {
+  display:block;
+  max-width:100%;
+  max-height:125px;
+  width:auto;
+  height:auto;
+  object-fit:contain;
 }
-
-@media(max-width:900px) {
-  .book-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
-  .book-title { font-size:34px; padding:34px 40px; }
+.org-card:hover {
+  box-shadow:0 5px 18px rgba(0,0,0,.08);
 }
-
-@media(max-width:600px) {
-  .book-wrap { padding:0 14px; }
-  .book-title { font-size:29px; padding:28px 22px; }
-  .book-copy { margin-left:0; margin-right:0; font-size:16px; }
-  .book-grid { grid-template-columns:1fr; margin-left:0; margin-right:0; }
-  .book-card { max-width:420px; margin:0 auto; }
-  .org-title { font-size:25px; padding:26px 22px; }
-  .org-list { grid-template-columns:1fr; margin:0; font-size:16px; }
+@media(max-width:900px){
+  .book-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .org-grid{grid-template-columns:1fr;}
+  .book-title{font-size:34px;padding:40px 20px;}
+}
+@media(max-width:600px){
+  .book-wrap{padding:0 14px;}
+  .book-title{font-size:29px;padding:32px 18px;}
+  .org-title{font-size:25px;padding:28px 18px;}
+  .book-copy{font-size:16px;}
+  .book-grid{grid-template-columns:1fr;}
+  .book-card{max-width:420px;margin:0 auto;}
 }
 </style>
 
 <main class="book-page">
   <section class="book-wrap">
-
     <div class="book-title">Book Drive</div>
 
     <div class="book-copy">
       <p>
         Med n’ Ed has partnered up with
-        <a href="https://www.healthyhabitsforchildren.com/" target="_blank" rel="noopener">
-          Healthy Habits for Children
-        </a>
-        to bring exposure to books made for kids. Victoria, the author and founder of Healthy Habits for Children,
-        has written books to educate children and has given them to Med n’ Ed for us to share around the world.
-      </p>
-
-      <p>
-        We have given these books to organizations including Smile Canada, Big Brothers Big Sisters,
-        Friendship Circle, Children’s Home Society of California, YMCA Canada, Action for Children,
-        The Honeypot Children’s Charity, The Canadian Children’s Book Centre, JaneFinch Reaching Up,
-        and First Book Canada.
-      </p>
-
-      <p>
-        These organizations are spreading the books to children in their area and helping them learn!
+        <a href="https://www.healthyhabitsforchildren.com/" target="_blank" rel="noopener">Healthy Habits for Children</a>
+        to bring exposure to books made for kids. Victoria (author and founder of Healthy Habits for Children)
+        has written many books to educate children and has given them to Med n’ Ed for us to share them around the world.
+        We have given these books to
+        <a href="https://www.smilecan.org/" target="_blank" rel="noopener">Smile Canada</a>,
+        <a href="https://northwellington.bigbrothersbigsisters.ca/" target="_blank" rel="noopener">Big Brothers Big Sisters</a>,
+        <a href="https://www.friendshipcircle.org/" target="_blank" rel="noopener">Friendship Circle</a>,
+        <a href="https://www.chs-ca.org/" target="_blank" rel="noopener">Children’s Home Society of California</a>,
+        <a href="https://ymca.ca/" target="_blank" rel="noopener">YMCA Canada</a>,
+        <a href="https://www.actionforchildren.org.uk/" target="_blank" rel="noopener">Action for Children</a>,
+        <a href="https://www.honeypot.org.uk/" target="_blank" rel="noopener">The Honeypot Children’s Charity</a>,
+        <a href="https://bookcentre.ca/" target="_blank" rel="noopener">The Canadian Children’s Book Centre</a>,
+        <a href="https://reachingup.ca/" target="_blank" rel="noopener">JaneFinch Reaching Up</a>,
+        and <a href="https://www.firstbookcanada.org/" target="_blank" rel="noopener">First Book Canada</a>.
+        These organizations that we have given the books to are spreading them to children in their area and helping them learn!
       </p>
     </div>
 
@@ -148,39 +135,33 @@ title: Book Drive
         <img class="book-cover" src="{{ '/images/projects/book-drive/book-1.jpg' | relative_url }}" alt="Will and Cher Recycle">
         <a class="read-btn" href="https://medanded.org/wp-content/uploads/2020/12/BOOK-1-eBook-1.pdf" target="_blank" rel="noopener">READ NOW</a>
       </div>
-
       <div class="book-card">
         <img class="book-cover" src="{{ '/images/projects/book-drive/book-2.jpg' | relative_url }}" alt="Will and Cher Volunteer">
         <a class="read-btn" href="https://medanded.org/wp-content/uploads/2020/12/BOOK-2-eBook-1.pdf" target="_blank" rel="noopener">READ NOW</a>
       </div>
-
       <div class="book-card">
         <img class="book-cover" src="{{ '/images/projects/book-drive/book-3.jpg' | relative_url }}" alt="Will and Cher Pick Fruit and Vegetables">
         <a class="read-btn" href="https://medanded.org/wp-content/uploads/2020/12/BOOK-4-eBook-1.pdf" target="_blank" rel="noopener">READ NOW</a>
       </div>
-
       <div class="book-card">
         <img class="book-cover" src="{{ '/images/projects/book-drive/book-4.jpg' | relative_url }}" alt="Will and Cher on Water">
         <a class="read-btn" href="https://medanded.org/wp-content/uploads/2020/12/BOOK-4-eBook-1.pdf" target="_blank" rel="noopener">READ NOW</a>
       </div>
     </div>
 
-    <hr class="book-divider">
-
     <div class="org-title">Organizations we gave the books to</div>
 
-    <div class="org-list">
-      <a href="https://www.smilecan.org/" target="_blank" rel="noopener">Smile Canada</a>
-      <a href="https://northwellington.bigbrothersbigsisters.ca/" target="_blank" rel="noopener">Big Brothers Big Sisters</a>
-      <a href="https://www.friendshipcircle.org/" target="_blank" rel="noopener">Friendship Circle</a>
-      <a href="https://www.chs-ca.org/" target="_blank" rel="noopener">Children’s Home Society of California</a>
-      <a href="https://ymca.ca/" target="_blank" rel="noopener">YMCA Canada</a>
-      <a href="https://www.actionforchildren.org.uk/" target="_blank" rel="noopener">Action for Children</a>
-      <a href="https://www.honeypot.org.uk/" target="_blank" rel="noopener">The Honeypot Children’s Charity</a>
-      <a href="https://bookcentre.ca/" target="_blank" rel="noopener">The Canadian Children’s Book Centre</a>
-      <a href="https://reachingup.ca/" target="_blank" rel="noopener">JaneFinch Reaching Up</a>
-      <a href="https://www.firstbookcanada.org/" target="_blank" rel="noopener">First Book Canada</a>
+    <div class="org-grid">
+      <a class="org-card" href="https://ymca.ca/" target="_blank" rel="noopener"><img src="{{ '/images/projects/book-drive/organizations/ymca-canada.png' | relative_url }}" alt="YMCA Canada"></a>
+      <a class="org-card" href="https://www.chs-ca.org/" target="_blank" rel="noopener"><img src="{{ '/images/projects/book-drive/organizations/childrens-home-society-california.png' | relative_url }}" alt="Children's Home Society of California"></a>
+      <a class="org-card" href="https://www.friendshipcircle.org/" target="_blank" rel="noopener"><img src="{{ '/images/projects/book-drive/organizations/friendship-circle.png' | relative_url }}" alt="Friendship Circle"></a>
+      <a class="org-card" href="https://northwellington.bigbrothersbigsisters.ca/" target="_blank" rel="noopener"><img src="{{ '/images/projects/book-drive/organizations/big-brothers-big-sisters.png' | relative_url }}" alt="Big Brothers Big Sisters"></a>
+      <a class="org-card" href="https://www.smilecan.org/" target="_blank" rel="noopener"><img src="{{ '/images/projects/book-drive/organizations/smile-canada.png' | relative_url }}" alt="Smile Canada"></a>
+      <a class="org-card" href="https://www.firstbookcanada.org/" target="_blank" rel="noopener"><img src="{{ '/images/projects/book-drive/organizations/first-book-canada.png' | relative_url }}" alt="First Book Canada"></a>
+      <a class="org-card" href="https://reachingup.ca/" target="_blank" rel="noopener"><img src="{{ '/images/projects/book-drive/organizations/janefinch-reaching-up.png' | relative_url }}" alt="JaneFinch Reaching Up"></a>
+      <a class="org-card" href="https://bookcentre.ca/" target="_blank" rel="noopener"><img src="{{ '/images/projects/book-drive/organizations/canadian-childrens-book-centre.png' | relative_url }}" alt="The Canadian Children's Book Centre"></a>
+      <a class="org-card" href="https://www.honeypot.org.uk/" target="_blank" rel="noopener"><img src="{{ '/images/projects/book-drive/organizations/honeypot-childrens-charity.png' | relative_url }}" alt="The Honeypot Children's Charity"></a>
+      <a class="org-card" href="https://www.actionforchildren.org.uk/" target="_blank" rel="noopener"><img src="{{ '/images/projects/book-drive/organizations/action-for-children.png' | relative_url }}" alt="Action for Children"></a>
     </div>
-
   </section>
 </main>
