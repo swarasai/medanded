@@ -3805,3 +3805,147 @@ df-messenger {
   .motivation-arrow { font-size:36px; }
   .motivation-pause { font-size:20px; }
 }
+
+
+/* =========================================================
+   PARTNERS / SPONSOR PAGE — WordPress screenshot match
+   ========================================================= */
+
+.partners-page {
+  background: #fff;
+}
+
+.partners-page-hero {
+  min-height: 255px;
+  display: grid;
+  place-items: center;
+  background: #6f2927;
+  color: #fff;
+}
+
+.partners-page-hero-inner {
+  text-align: center;
+}
+
+.partners-page-hero h1 {
+  margin: 0 0 6px;
+  color: #fff;
+  font-size: 39px;
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.partners-page-hero p {
+  margin: 0;
+  color: #fff;
+  font-size: 16px;
+}
+
+.partners-page-hero a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.partners-page-hero a:hover {
+  text-decoration: underline;
+}
+
+.partners-page-hero span {
+  margin: 0 5px;
+}
+
+.partners-main {
+  padding: 115px 0 110px;
+  background: #fff;
+}
+
+.partners-grid {
+  width: min(1280px, 76%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 120px;
+  row-gap: 75px;
+  align-items: center;
+  justify-items: center;
+}
+
+.partner-logo {
+  width: 100%;
+  min-height: 205px;
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+}
+
+.partner-logo img {
+  display: block;
+  max-width: 100%;
+  max-height: 205px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  transition: transform .18s ease, opacity .18s ease;
+}
+
+.partner-logo:hover img {
+  transform: scale(1.025);
+  opacity: .92;
+}
+
+/* Individual sizing to mimic the mixed logo proportions on WordPress */
+.partner-logo:nth-child(1) img { max-width: 265px; }
+.partner-logo:nth-child(2) img { max-width: 360px; }
+.partner-logo:nth-child(3) img { max-width: 220px; }
+.partner-logo:nth-child(4) img { max-width: 205px; }
+.partner-logo:nth-child(5) img { max-width: 235px; }
+.partner-logo:nth-child(6) img { max-width: 230px; }
+.partner-logo:nth-child(7) img { max-width: 225px; }
+.partner-logo:nth-child(8) img { max-width: 310px; }
+.partner-logo:nth-child(9) img { max-width: 315px; }
+.partner-logo:nth-child(10) img { max-width: 330px; }
+
+@media (max-width: 1050px) {
+  .partners-grid {
+    width: 86%;
+    column-gap: 70px;
+    row-gap: 65px;
+  }
+
+  .partner-logo {
+    min-height: 185px;
+  }
+
+  .partner-logo img {
+    max-height: 185px;
+  }
+}
+
+@media (max-width: 760px) {
+  .partners-page-hero {
+    min-height: 210px;
+  }
+
+  .partners-page-hero h1 {
+    font-size: 34px;
+  }
+
+  .partners-main {
+    padding: 70px 0 85px;
+  }
+
+  .partners-grid {
+    width: 88%;
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .partner-logo {
+    min-height: 150px;
+  }
+
+  .partner-logo img {
+    max-height: 160px;
+    max-width: min(100%, 320px) !important;
+  }
+}
