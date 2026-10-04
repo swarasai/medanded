@@ -3,7 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% if page.title == "Home" %}Med n' Ed{% else %}{{ page.title }} | Med n' Ed{% endif %}</title>
+  <title>{% if page.title %}{{ page.title }} – Med n' Ed{% else %}Med n' Ed{% endif %}</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="shortcut icon" href="assets/favicon.ico">
   <meta name="description" content="{{ page.description | default: "Med n' Ed — To medicate and educate all in need." }}">
   <link rel="stylesheet" href="styles.css">
 </head>
