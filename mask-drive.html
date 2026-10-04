@@ -113,6 +113,91 @@ title: Mask Drive
   text-decoration:underline;
 }
 
+
+.mask-carousel-shell {
+  position:relative;
+  overflow:hidden;
+  max-width:1180px;
+  margin:0 auto;
+  background:#fff;
+}
+
+.mask-carousel-track {
+  display:flex;
+  transition:transform .45s ease;
+  will-change:transform;
+}
+
+.mask-carousel-slide {
+  flex:0 0 100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:680px;
+  background:#fff;
+}
+
+.mask-carousel-slide img {
+  display:block;
+  width:100%;
+  height:680px;
+  object-fit:contain;
+  background:#fff;
+}
+
+.mask-carousel-btn {
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  z-index:3;
+  width:46px;
+  height:46px;
+  border:0;
+  border-radius:50%;
+  background:rgba(227,33,38,.92);
+  color:#fff;
+  font-size:28px;
+  cursor:pointer;
+}
+
+.mask-carousel-prev { left:16px; }
+.mask-carousel-next { right:16px; }
+
+.mask-carousel-dots {
+  display:flex;
+  justify-content:center;
+  gap:8px;
+  flex-wrap:wrap;
+  padding:16px 8px 8px;
+}
+
+.mask-dot {
+  width:9px;
+  height:9px;
+  border:0;
+  border-radius:50%;
+  padding:0;
+  background:#c9c9c9;
+  cursor:pointer;
+}
+
+.mask-dot.active { background:#e32126; }
+
+.mask-carousel-count {
+  text-align:center;
+  color:#666;
+  font-size:14px;
+  margin:0 0 34px;
+}
+
+.mask-org-text-block {
+  margin-top:26px;
+}
+
+.mask-org-text-block p {
+  margin:0 0 24px;
+}
+
 @media(max-width:900px) {
   .mask-top-grid,
   .mask-org-images {
@@ -127,6 +212,14 @@ title: Mask Drive
 
   .mask-title {
     font-size:34px;
+  }
+
+  .mask-carousel-slide {
+    min-height:500px;
+  }
+
+  .mask-carousel-slide img {
+    height:500px;
   }
 }
 
@@ -157,6 +250,20 @@ title: Mask Drive
   .mask-top-grid,
   .mask-org-images {
     gap:14px;
+  }
+
+  .mask-carousel-slide {
+    min-height:320px;
+  }
+
+  .mask-carousel-slide img {
+    height:320px;
+  }
+
+  .mask-carousel-btn {
+    width:38px;
+    height:38px;
+    font-size:23px;
   }
 }
 </style>
@@ -204,62 +311,122 @@ title: Mask Drive
 
     <hr class="mask-divider">
 
-    <section class="mask-org">
-      <div class="mask-org-images">
-        <img src="{{ '/images/projects/mask-drive/lifemoves-1.png' | relative_url }}" alt="Mask donation to LifeMoves">
-        <img src="{{ '/images/projects/mask-drive/lifemoves-2.png' | relative_url }}" alt="Mask donation at LifeMoves">
-      </div>
-      <div class="mask-org-copy">
-        <p>
-          <a href="https://www.lifemoves.org/" target="_blank" rel="noopener">LifeMoves</a>
-          provides interim housing and supportive services for homeless families and individuals to rapidly return to stable housing
-          and achieve long-term self-sufficiency. On any given night, they feed, clothe, and house over 850 Peninsula and Silicon Valley
-          residents experiencing homelessness.
-        </p>
-      </div>
-    </section>
+    <div class="mask-carousel-shell" id="maskCarousel">
+      <div class="mask-carousel-track" id="maskCarouselTrack">
 
-    <section class="mask-org">
-      <div class="mask-org-images">
-        <img src="{{ '/images/projects/mask-drive/oconnor-1.png' | relative_url }}" alt="Mask donation at O'Connor Hospital">
-        <img src="{{ '/images/projects/mask-drive/oconnor-2.png' | relative_url }}" alt="O'Connor Hospital mask donation">
-      </div>
-      <div class="mask-org-copy">
-        <p>
-          <a href="https://och.sccgov.org/" target="_blank" rel="noopener">O’Connor Hospital</a>
-          in San Jose is a 358-bed acute care facility offering inpatient and outpatient medical, surgical and specialty programs.
-          They are an institution providing medical and surgical treatment and nursing care for sick or injured people.
-        </p>
-      </div>
-    </section>
+        <div class="mask-carousel-slide">
+          <img src="{{ '/images/projects/mask-drive/lifemoves-1.png' | relative_url }}" alt="Mask donation to LifeMoves">
+        </div>
+        <div class="mask-carousel-slide">
+          <img src="{{ '/images/projects/mask-drive/lifemoves-2.png' | relative_url }}" alt="Mask donation at LifeMoves">
+        </div>
 
-    <section class="mask-org">
-      <div class="mask-org-images">
-        <img src="{{ '/images/projects/mask-drive/homefirst-1.png' | relative_url }}" alt="Mask donation at HomeFirst">
-        <img src="{{ '/images/projects/mask-drive/homefirst-2.png' | relative_url }}" alt="Med n' Ed at HomeFirst">
-      </div>
-      <div class="mask-org-copy">
-        <p>
-          <a href="https://www.homefirstscc.org/" target="_blank" rel="noopener">HomeFirst</a>
-          is a leading provider of services, shelter, and housing opportunities to the homeless and those at risk of homelessness in
-          Santa Clara County. They have many chapters all over California to help homeless people.
-        </p>
-      </div>
-    </section>
+        <div class="mask-carousel-slide">
+          <img src="{{ '/images/projects/mask-drive/oconnor-1.png' | relative_url }}" alt="Mask donation at O'Connor Hospital">
+        </div>
+        <div class="mask-carousel-slide">
+          <img src="{{ '/images/projects/mask-drive/oconnor-2.png' | relative_url }}" alt="O'Connor Hospital mask donation">
+        </div>
 
-    <section class="mask-org">
-      <div class="mask-org-images">
-        <img src="{{ '/images/projects/mask-drive/family-supportive-1.png' | relative_url }}" alt="Mask donation for Family Supportive Housing">
-        <img src="{{ '/images/projects/mask-drive/family-supportive-2.png' | relative_url }}" alt="Med n' Ed mask donation for Family Supportive Housing">
+        <div class="mask-carousel-slide">
+          <img src="{{ '/images/projects/mask-drive/homefirst-1.png' | relative_url }}" alt="Mask donation at HomeFirst">
+        </div>
+        <div class="mask-carousel-slide">
+          <img src="{{ '/images/projects/mask-drive/homefirst-2.png' | relative_url }}" alt="Med n' Ed at HomeFirst">
+        </div>
+
+        <div class="mask-carousel-slide">
+          <img src="{{ '/images/projects/mask-drive/family-supportive-1.png' | relative_url }}" alt="Mask donation for Family Supportive Housing">
+        </div>
+        <div class="mask-carousel-slide">
+          <img src="{{ '/images/projects/mask-drive/family-supportive-2.png' | relative_url }}" alt="Med n' Ed mask donation for Family Supportive Housing">
+        </div>
+
       </div>
-      <div class="mask-org-copy">
-        <p>
-          <a href="https://familysupportivehousing.org/" target="_blank" rel="noopener">Family Supportive Housing</a>
-          provides temporary housing and targeted support to guide families from crisis to independent lives in our community.
-          They are a shelter located in San Jose.
-        </p>
-      </div>
+
+      <button class="mask-carousel-btn mask-carousel-prev" id="maskPrev" type="button" aria-label="Previous image">&#8249;</button>
+      <button class="mask-carousel-btn mask-carousel-next" id="maskNext" type="button" aria-label="Next image">&#8250;</button>
+    </div>
+
+    <div class="mask-carousel-dots" id="maskDots">
+      <button class="mask-dot active" type="button" data-index="0" aria-label="Go to image 1"></button>
+      <button class="mask-dot" type="button" data-index="1" aria-label="Go to image 2"></button>
+      <button class="mask-dot" type="button" data-index="2" aria-label="Go to image 3"></button>
+      <button class="mask-dot" type="button" data-index="3" aria-label="Go to image 4"></button>
+      <button class="mask-dot" type="button" data-index="4" aria-label="Go to image 5"></button>
+      <button class="mask-dot" type="button" data-index="5" aria-label="Go to image 6"></button>
+      <button class="mask-dot" type="button" data-index="6" aria-label="Go to image 7"></button>
+      <button class="mask-dot" type="button" data-index="7" aria-label="Go to image 8"></button>
+    </div>
+
+    <div class="mask-carousel-count" id="maskCount">1 / 8</div>
+
+    <section class="mask-org-copy mask-org-text-block">
+      <p>
+        <a href="https://www.lifemoves.org/" target="_blank" rel="noopener">LifeMoves</a>
+        provides interim housing and supportive services for homeless families and individuals to rapidly return to stable housing
+        and achieve long-term self-sufficiency. On any given night, they feed, clothe, and house over 850 Peninsula and Silicon Valley
+        residents experiencing homelessness.
+      </p>
+
+      <p>
+        <a href="https://och.sccgov.org/" target="_blank" rel="noopener">O’Connor Hospital</a>
+        in San Jose is a 358-bed acute care facility offering inpatient and outpatient medical, surgical and specialty programs.
+        They are an institution providing medical and surgical treatment and nursing care for sick or injured people.
+      </p>
+
+      <p>
+        <a href="https://www.homefirstscc.org/" target="_blank" rel="noopener">HomeFirst</a>
+        is a leading provider of services, shelter, and housing opportunities to the homeless and those at risk of homelessness in
+        Santa Clara County. They have many chapters all over California to help homeless people.
+      </p>
+
+      <p>
+        <a href="https://familysupportivehousing.org/" target="_blank" rel="noopener">Family Supportive Housing</a>
+        provides temporary housing and targeted support to guide families from crisis to independent lives in our community.
+        They are a shelter located in San Jose.
+      </p>
     </section>
 
   </section>
 </main>
+
+
+<script>
+(function() {
+  const track = document.getElementById('maskCarouselTrack');
+  const prev = document.getElementById('maskPrev');
+  const next = document.getElementById('maskNext');
+  const dots = Array.from(document.querySelectorAll('.mask-dot'));
+  const count = document.getElementById('maskCount');
+  if (!track || !prev || !next || !dots.length) return;
+
+  let index = 0;
+  const total = 8;
+
+  function show(i) {
+    index = (i + total) % total;
+    track.style.transform = `translateX(${-index * 100}%)`;
+    dots.forEach((dot, n) => dot.classList.toggle('active', n === index));
+    count.textContent = `${index + 1} / ${total}`;
+  }
+
+  prev.addEventListener('click', () => show(index - 1));
+  next.addEventListener('click', () => show(index + 1));
+  dots.forEach((dot, n) => dot.addEventListener('click', () => show(n)));
+
+  let startX = null;
+  track.addEventListener('touchstart', e => {
+    startX = e.touches[0].clientX;
+  }, {passive:true});
+
+  track.addEventListener('touchend', e => {
+    if (startX === null) return;
+    const dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) > 50) show(index + (dx < 0 ? 1 : -1));
+    startX = null;
+  }, {passive:true});
+
+  show(0);
+})();
+</script>
