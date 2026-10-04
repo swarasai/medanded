@@ -1,184 +1,272 @@
 ---
 layout: default
-title: Webinar #2 – Medical Student
+title: Webinar #2- Medical Student
 ---
 
 <style>
-.webinar-page { background:#fff; }
+.webinar2-page {
+  background:#fff;
+}
 
-.webinar-hero {
+.webinar2-hero {
   background:#682523;
   color:#fff;
   text-align:center;
   padding:96px 20px 92px;
 }
-.webinar-hero h1 {
-  max-width:760px;
-  margin:0 auto 10px;
+
+.webinar2-hero h1 {
+  margin:0 0 10px;
   font-size:42px;
-  line-height:1.16;
+  line-height:1.15;
   font-weight:700;
 }
-.webinar-hero p { margin:0; font-size:18px; }
-.webinar-hero a { color:#fff; text-decoration:none; }
 
-.webinar-wrap {
+.webinar2-hero p {
+  margin:0;
+  font-size:18px;
+}
+
+.webinar2-hero a {
+  color:#fff;
+  text-decoration:none;
+}
+
+.webinar2-wrap {
   max-width:1320px;
   margin:112px auto 95px;
   padding:0 24px;
 }
 
-.webinar-red-title {
-  background:#e32126;
-  color:#fff;
+.webinar2-title {
+  color:#9f1f1f;
   text-align:center;
   font-size:40px;
   line-height:1.2;
   font-weight:400;
-  padding:52px 24px;
-  margin:0 0 12px;
+  margin:0 0 28px;
 }
 
-.webinar-intro {
-  background:#ae1519;
-  color:#fff;
-  padding:22px 36px;
-  font-size:18px;
-  line-height:1.58;
-  margin-bottom:45px;
+.webinar2-actions {
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:14px;
+  margin:0 0 20px;
 }
 
-.webinar-grid {
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:30px;
-}
-
-.webinar-card {
-  display:block;
-  text-decoration:none;
-  border:1px solid #eee;
+.webinar2-btn {
+  display:inline-block;
+  min-width:390px;
+  padding:11px 24px;
+  border:2px solid #e32126;
+  border-radius:9px;
   background:#fff;
+  color:#e32126 !important;
+  text-decoration:none !important;
+  text-align:center;
+  font-size:16px;
+}
+
+.webinar-carousel-shell {
+  position:relative;
+  max-width:1220px;
+  margin:18px auto 0;
+  background:#111;
   overflow:hidden;
 }
 
-.webinar-card img {
-  display:block;
-  width:100%;
-  height:300px;
-  object-fit:cover;
-}
-
-.webinar-card h3 {
-  margin:0;
-  padding:20px;
-  color:#d91f26;
-  font-size:23px;
-  line-height:1.25;
-  text-align:center;
-  text-decoration:underline;
-}
-
-.webinar-detail-title {
-  background:#e32126;
-  color:#fff;
-  text-align:center;
-  font-size:36px;
-  line-height:1.2;
-  font-weight:400;
-  padding:42px 24px;
-  margin-bottom:36px;
-}
-
-.webinar-detail-image {
-  display:block;
-  width:100%;
-  max-width:960px;
-  max-height:620px;
-  object-fit:contain;
-  margin:0 auto 30px;
-  background:#f7f7f7;
-}
-
-.webinar-actions {
+.webinar-carousel-track {
   display:flex;
-  flex-wrap:wrap;
+  transition:transform .45s ease;
+  will-change:transform;
+}
+
+.webinar-carousel-slide {
+  flex:0 0 100%;
+  min-height:620px;
+  display:flex;
+  align-items:center;
   justify-content:center;
-  gap:14px;
-  margin:24px 0 34px;
+  background:#111;
 }
 
-.webinar-btn {
-  display:inline-block;
+.webinar-carousel-slide img {
+  display:block;
+  width:100%;
+  height:620px;
+  object-fit:contain;
+  background:#111;
+}
+
+.webinar-carousel-btn {
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  z-index:3;
+  width:46px;
+  height:46px;
+  border:0;
+  border-radius:50%;
+  background:rgba(227,33,38,.92);
+  color:#fff;
+  font-size:28px;
+  cursor:pointer;
+}
+
+.webinar-carousel-prev { left:16px; }
+.webinar-carousel-next { right:16px; }
+
+.webinar-carousel-dots {
+  display:flex;
+  justify-content:center;
+  gap:8px;
+  flex-wrap:wrap;
+  padding:16px 8px 8px;
+}
+
+.webinar-dot {
+  width:9px;
+  height:9px;
+  border:0;
+  border-radius:50%;
+  padding:0;
+  background:#c9c9c9;
+  cursor:pointer;
+}
+
+.webinar-dot.active {
   background:#e32126;
-  color:#fff !important;
-  text-decoration:none !important;
-  padding:12px 22px;
-  border-radius:22px;
-  font-size:15px;
 }
 
-.webinar-note {
+.webinar-carousel-count {
   text-align:center;
-  font-size:18px;
-  line-height:1.6;
-  color:#333;
+  color:#666;
+  font-size:14px;
+  margin-top:8px;
 }
 
-.webinar-warning {
-  max-width:900px;
-  margin:0 auto 20px;
-  color:#b3131a;
-  font-weight:700;
-  text-align:center;
-}
-
-@media(max-width:800px) {
-  .webinar-grid { grid-template-columns:1fr; }
-  .webinar-hero h1 { font-size:34px; }
-  .webinar-red-title { font-size:32px; }
+@media(max-width:900px) {
+  .webinar2-hero h1 { font-size:34px; }
+  .webinar2-title { font-size:32px; }
+  .webinar-carousel-slide { min-height:460px; }
+  .webinar-carousel-slide img { height:460px; }
 }
 
 @media(max-width:600px) {
-  .webinar-hero { padding:74px 18px; }
-  .webinar-wrap { margin-top:58px; padding:0 14px; }
-  .webinar-red-title {
-    font-size:28px;
-    padding:34px 18px;
+  .webinar2-hero {
+    padding:74px 18px;
   }
-  .webinar-intro {
-    font-size:16px;
-    padding:20px;
+
+  .webinar2-wrap {
+    margin-top:58px;
+    padding:0 14px;
   }
-  .webinar-card img { height:auto; }
-  .webinar-detail-title {
+
+  .webinar2-title {
     font-size:28px;
-    padding:32px 18px;
+  }
+
+  .webinar2-actions {
+    flex-direction:column;
+  }
+
+  .webinar2-btn {
+    min-width:0;
+    width:100%;
+  }
+
+  .webinar-carousel-slide {
+    min-height:300px;
+  }
+
+  .webinar-carousel-slide img {
+    height:300px;
+  }
+
+  .webinar-carousel-btn {
+    width:38px;
+    height:38px;
+    font-size:23px;
   }
 }
 </style>
 
-
-<main class="webinar-page">
-  <section class="webinar-hero">
-    <h1>Webinar #2 – Medical Student</h1>
-    <p><a href="{{ '/' | relative_url }}">Home</a> &nbsp;&gt;&nbsp; Webinar #2 – Medical Student</p>
+<main class="webinar2-page">
+  <section class="webinar2-hero">
+    <h1>Webinar #2- Medical Student</h1>
+    <p><a href="{{ '/' | relative_url }}">Home</a> &nbsp;&gt;&nbsp; Webinar #2- Medical Student</p>
   </section>
 
-  <section class="webinar-wrap">
-    <div class="webinar-detail-title">Webinar #2 – Medical Student</div>
+  <section class="webinar2-wrap">
+    <div class="webinar2-title">Webinar #2- Medical Student</div>
 
-    <img class="webinar-detail-image"
-         src="{{ '/images/projects/webinars/webinar-2.png' | relative_url }}"
-         alt="Webinar #2 – Medical Student">
-
-    
-
-    <div class="webinar-actions">
-      <a class="webinar-btn" href="https://medanded.org/wp-content/uploads/2021/01/A-Webinar-presentation.pdf" target="_blank" rel="noopener">View Presentation</a>
-      <a class="webinar-btn" href="https://medanded.org/?page_id=1726" target="_blank" rel="noopener">
-        Watch the Webinar with Kelly Heyman
+    <div class="webinar2-actions">
+      <a class="webinar2-btn"
+         href="https://medanded.org/wp-content/uploads/2021/01/A-Webinar-presentation.pdf"
+         target="_blank"
+         rel="noopener">
+        -------- View Presentation --------
       </a>
     </div>
+
+    <div class="webinar-carousel-shell" id="webinar2Carousel">
+      <div class="webinar-carousel-track" id="webinar2CarouselTrack">
+        <div class="webinar-carousel-slide">
+          <img src="{{ '/images/projects/webinars/webinar-2-carousel/slide-01.png' | relative_url }}" alt="Webinar 2 presentation slide 1">
+        </div>
+        <div class="webinar-carousel-slide">
+          <img src="{{ '/images/projects/webinars/webinar-2-carousel/slide-02.png' | relative_url }}" alt="Webinar 2 presentation slide 2">
+        </div>
+        <div class="webinar-carousel-slide">
+          <img src="{{ '/images/projects/webinars/webinar-2-carousel/slide-03.png' | relative_url }}" alt="Webinar 2 presentation slide 3">
+        </div>
+      </div>
+      <button class="webinar-carousel-btn webinar-carousel-prev" id="webinar2Prev" type="button" aria-label="Previous slide">&#8249;</button>
+      <button class="webinar-carousel-btn webinar-carousel-next" id="webinar2Next" type="button" aria-label="Next slide">&#8250;</button>
+    </div>
+
+    <div class="webinar-carousel-dots" id="webinar2Dots">
+      <button class="webinar-dot active" type="button" data-index="0" aria-label="Go to slide 1"></button>
+      <button class="webinar-dot" type="button" data-index="1" aria-label="Go to slide 2"></button>
+      <button class="webinar-dot" type="button" data-index="2" aria-label="Go to slide 3"></button>
+    </div>
+    <div class="webinar-carousel-count" id="webinar2Count">1 / 3</div>
   </section>
 </main>
+
+<script>
+(function() {
+  const track = document.getElementById('webinar2CarouselTrack');
+  const prev = document.getElementById('webinar2Prev');
+  const next = document.getElementById('webinar2Next');
+  const dots = Array.from(document.querySelectorAll('.webinar-dot'));
+  const count = document.getElementById('webinar2Count');
+  if (!track || !prev || !next || !dots.length) return;
+
+  let index = 0;
+  const total = 3;
+
+  function show(i) {
+    index = (i + total) % total;
+    track.style.transform = `translateX(${-index * 100}%)`;
+    dots.forEach((dot, n) => dot.classList.toggle('active', n === index));
+    count.textContent = `${index + 1} / ${total}`;
+  }
+
+  prev.addEventListener('click', () => show(index - 1));
+  next.addEventListener('click', () => show(index + 1));
+  dots.forEach((dot, n) => dot.addEventListener('click', () => show(n)));
+
+  let startX = null;
+  track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, {passive:true});
+  track.addEventListener('touchend', e => {
+    if (startX === null) return;
+    const dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) > 50) show(index + (dx < 0 ? 1 : -1));
+    startX = null;
+  }, {passive:true});
+
+  show(0);
+})();
+</script>
