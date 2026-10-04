@@ -1,25 +1,22 @@
-MED N' ED — EVENTS > PROJECTS
+MED N' ED — PROJECTS SECTION WITH LOCAL IMAGES
 
-Replace/add these files in your GitHub repository:
+This package updates the Projects section so the project images you uploaded are stored locally in GitHub instead of loading from WordPress.
 
-projects.html
-shelter-project.html
-book-drive.html
-medical-professional-webinars.html
-webinar-1-premed.html
-webinar-2-medical-student.html
-webinar-3-residency.html
-webinar-4-medical-professional.html
-mask-drive.html
-card-drive.html
-jars-of-lavender.html
-eating-disorder-awareness.html
-bake-sale.html
+ADD/REPLACE:
+- all HTML files in this ZIP
+- images/projects/ folder
+
+LOCAL IMAGE FILES:
+images/projects/shelter-family-supportive-housing.png
+images/projects/book-drive.png
+images/projects/medical-professional-webinars.png
+images/projects/mask-drive.jpg
+images/projects/card-drive.png
+images/projects/medx.png
+images/projects/jars-of-lavender.png
+images/projects/bake-sale.jpeg
 
 IMPORTANT:
-- The Projects page links MedX to your existing medx.html, so this ZIP does not overwrite that page.
-- This ZIP does not replace your shared header, footer, default layout, favicon, or styles.css.
-- Representative project images are currently referenced from the existing WordPress image CDN.
-  We can migrate those images into GitHub later, just as discussed for Interviews.
-- A few webinar presentation/video resources still point back to the old WordPress pages because the original
-  pages contain embedded presentation/video assets that need a separate media-migration step.
+- Eating Disorder Awareness did not have a supplied project image, so that card/page remains text-based.
+- The Book Drive PDF links and some webinar materials still point to WordPress and can be migrated later.
+- Your shared header, footer, favicon, layout, and global styles.css are not replaced.
