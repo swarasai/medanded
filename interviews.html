@@ -1,18 +1,458 @@
 ---
 layout: default
-title: "Interviews"
-description: "Med n' Ed healthcare interviews."
-body_class: "wp-home"
-nav_group: "events"
-page_id: "interviews"
+title: Interviews
 ---
-<main><section class="section"><div class="container">
-<h1>Doctors’ Aspects on Healthcare</h1>
-<p>Med n’ Ed has hosted interview series featuring medical professionals and students discussing healthcare, medicine, education, and their career journeys.</p>
-<div class="card"><h3>Episode #1 — Dr. Ihssan Kaadan</h3><p>Insights on healthcare, doctors, and the pandemic, including the importance of protecting yourself and others.</p></div>
-<div class="card"><h3>Doctor Hardeep Kataria</h3><p>An interview about healthcare, optometry, education, empowerment, fitness, and medicine.</p></div>
-<div class="card"><h3>Episode #11 — Dr. Srushti Sahukar</h3><p>A discussion of medical electives, away rotations, and medical education experiences.</p></div>
-<div class="card"><h3>The Doctor’s Journey — Farah Dehzad</h3><p>A conversation about medical school, pre-med preparation, and the path toward becoming a physician.</p></div>
-<div class="card"><h3>Dr. Alex Schupper</h3><p>A neurosurgery resident discusses the journey to medicine and becoming a subspecialist.</p></div>
-<p class="small">The WordPress Interviews page contains long transcripts, downloads, and embedded media. Those files should be copied from the WordPress Media Library and linked here before the old hosting is cancelled.</p>
-</div></section></main>
+
+<style>
+.interviews-page { background:#fff; }
+.interviews-hero {
+  background:#8f1830;
+  padding:54px 20px;
+  color:#fff;
+}
+.interviews-hero .wrap { max-width:1120px; margin:auto; }
+.interviews-hero h1 { margin:0 0 8px; font-size:42px; font-weight:600; }
+.interviews-hero p { margin:0; font-size:14px; }
+.interviews-hero a { color:#fff; text-decoration:none; opacity:.9; }
+.interviews-wrap { max-width:1050px; margin:60px auto 90px; padding:0 22px; }
+.interview-series { margin-bottom:65px; }
+.interview-series > h2 {
+  color:#d62430;
+  text-align:center;
+  font-size:31px;
+  font-weight:500;
+  margin:0 0 14px;
+}
+.series-line { width:58px; height:2px; background:#d62430; margin:0 auto 34px; }
+.interview-item {
+  border:1px solid #ececec;
+  margin:0 0 12px;
+  background:#fff;
+}
+.interview-item summary {
+  list-style:none;
+  cursor:pointer;
+  padding:19px 22px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  color:#333;
+  font-size:17px;
+  transition:.2s ease;
+}
+.interview-item summary::-webkit-details-marker { display:none; }
+.interview-item summary:hover { color:#d62430; }
+.plus { width:22px; height:22px; position:relative; flex:0 0 22px; }
+.plus:before,.plus:after {
+  content:""; position:absolute; background:#d62430; left:50%; top:50%; transform:translate(-50%,-50%);
+}
+.plus:before { width:14px; height:2px; }
+.plus:after { width:2px; height:14px; transition:.2s; }
+.interview-item[open] .plus:after { transform:translate(-50%,-50%) rotate(90deg); opacity:0; }
+.interview-body { border-top:1px solid #eee; padding:28px; }
+.interview-grid {
+  display:grid; grid-template-columns:minmax(220px,330px) 1fr; gap:34px; align-items:center;
+}
+.interview-art { width:100%; height:auto; display:block; }
+.interview-info h3 { margin:0 0 12px; color:#d62430; font-size:24px; font-weight:500; }
+.interview-host { margin:0 0 12px; }
+.interview-note { line-height:1.7; color:#555; }
+.interview-actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:20px; }
+.interview-btn {
+  background:#d62430; color:#fff !important; text-decoration:none !important;
+  padding:10px 18px; border-radius:2px; border:1px solid #d62430; font-size:14px;
+}
+.interview-btn-outline { background:#fff; color:#d62430 !important; }
+.interview-video { width:100%; margin-top:28px; background:#000; max-height:620px; }
+.interview-video-frame { width:100%; height:560px; border:0; margin-top:28px; background:#000; }
+.interview-doc { width:100%; height:650px; border:1px solid #ddd; margin-top:28px; }
+@media (max-width:760px) {
+  .interviews-hero h1 { font-size:34px; }
+  .interviews-wrap { margin-top:40px; padding:0 15px; }
+  .interview-grid { grid-template-columns:1fr; }
+  .interview-art { max-width:420px; margin:auto; }
+  .interview-video-frame { height:320px; }
+  .interview-doc { height:500px; }
+  .interview-item summary { font-size:15px; padding:17px; }
+  .interview-body { padding:18px; }
+}
+</style>
+
+<main class="interviews-page">
+  <section class="interviews-hero">
+    <div class="wrap">
+      <h1>Interviews</h1>
+      <p><a href="{{ '/' | relative_url }}">Home</a> &nbsp;/&nbsp; Interviews</p>
+    </div>
+  </section>
+
+  <div class="interviews-wrap">
+    
+      <section class="interview-series">
+        <h2>Doctors’ Aspects on Healthcare</h2>
+        <div class="series-line"></div>
+        
+    <details class="interview-item">
+      <summary>
+        <span><strong>Episode #1</strong> — Doctor Ihssan Kaadan</span>
+        <span class="plus" aria-hidden="true"></span>
+      </summary>
+      <div class="interview-body">
+        <div class="interview-grid">
+          <div><img class="interview-art" src="https://i0.wp.com/medanded.org/wp-content/uploads/2020/11/Screen-Shot-2020-11-22-at-10.13.20-PM.png?resize=798%2C806&amp;ssl=1" alt="Doctor Ihssan Kaadan interview artwork" loading="lazy"></div>
+          <div class="interview-info">
+            <h3>Interview with Doctor Ihssan Kaadan</h3>
+            <p class="interview-host"><strong>Host:</strong> Roshni Danda</p>
+            <p class="interview-note">Insights on healthcare, doctors, and the COVID-19 pandemic.</p>
+            <div class="interview-actions"><a class="interview-btn" href="https://medanded.org/wp-content/uploads/2020/11/Doctor_Kadaan_MednEd_Final.mp4" target="_blank" rel="noopener">Watch Now</a><a class="interview-btn interview-btn-outline" href="https://medanded.org/wp-content/uploads/2020/11/Doctor_Kadaan_MednEd_Final.mp4" target="_blank" rel="noopener">Download Interview</a></div>
+          </div>
+        </div>
+        
+        <video class="interview-video" controls preload="metadata">
+          <source src="https://medanded.org/wp-content/uploads/2020/11/Doctor_Kadaan_MednEd_Final.mp4" type="video/mp4">
+          Your browser does not support embedded video.
+        </video>
+      </div>
+    </details>
+
+    <details class="interview-item">
+      <summary>
+        <span><strong>Episode #2</strong> — Doctor Kemi</span>
+        <span class="plus" aria-hidden="true"></span>
+      </summary>
+      <div class="interview-body">
+        <div class="interview-grid">
+          <div><img class="interview-art" src="https://i0.wp.com/medanded.org/wp-content/uploads/2020/11/Dr.-Kemi.png?resize=1024%2C1024&amp;ssl=1" alt="Doctor Kemi interview artwork" loading="lazy"></div>
+          <div class="interview-info">
+            <h3>Interview with Doctor Kemi</h3>
+            <p class="interview-host"><strong>Host:</strong> Sadhika Mulagari</p>
+            <p class="interview-note">Doctor Kemi discusses healthcare and the effects of the coronavirus from Lagos, Nigeria.</p>
+            <div class="interview-actions"><a class="interview-btn" href="https://medanded.org/wp-content/uploads/2020/11/Doctor_Kemmy_Interview.mp4" target="_blank" rel="noopener">Watch Now</a><a class="interview-btn interview-btn-outline" href="https://medanded.org/wp-content/uploads/2020/11/Doctor_Kemmy_Interview.mp4" target="_blank" rel="noopener">Download Interview</a></div>
+          </div>
+        </div>
+        
+        <video class="interview-video" controls preload="metadata">
+          <source src="https://medanded.org/wp-content/uploads/2020/11/Doctor_Kemmy_Interview.mp4" type="video/mp4">
+          Your browser does not support embedded video.
+        </video>
+      </div>
+    </details>
+
+    <details class="interview-item">
+      <summary>
+        <span><strong>Episode #3</strong> — Doctor Husain</span>
+        <span class="plus" aria-hidden="true"></span>
+      </summary>
+      <div class="interview-body">
+        <div class="interview-grid">
+          <div><img class="interview-art" src="https://i0.wp.com/medanded.org/wp-content/uploads/2021/01/Talking-with.png?resize=1024%2C1024&amp;ssl=1" alt="Doctor Husain interview artwork" loading="lazy"></div>
+          <div class="interview-info">
+            <h3>Interview with Doctor Husain</h3>
+            <p class="interview-host"><strong>Host:</strong> Nishi Bamania</p>
+            
+            <div class="interview-actions"><a class="interview-btn" href="https://medanded.org/wp-content/uploads/2021/01/Dr.Husain_DoctorsAspects.mp4" target="_blank" rel="noopener">Watch Now</a><a class="interview-btn interview-btn-outline" href="https://medanded.org/wp-content/uploads/2021/01/Dr.Husain_DoctorsAspects.mp4" target="_blank" rel="noopener">Download Interview</a></div>
+          </div>
+        </div>
+        
+        <video class="interview-video" controls preload="metadata">
+          <source src="https://medanded.org/wp-content/uploads/2021/01/Dr.Husain_DoctorsAspects.mp4" type="video/mp4">
+          Your browser does not support embedded video.
+        </video>
+      </div>
+    </details>
+
+    <details class="interview-item">
+      <summary>
+        <span><strong>Episode #4</strong> — Doctor Slim</span>
+        <span class="plus" aria-hidden="true"></span>
+      </summary>
+      <div class="interview-body">
+        <div class="interview-grid">
+          <div><img class="interview-art" src="https://i0.wp.com/medanded.org/wp-content/uploads/2021/01/Dr-Slim-1.png?resize=1024%2C1024&amp;ssl=1" alt="Doctor Slim interview artwork" loading="lazy"></div>
+          <div class="interview-info">
+            <h3>Interview with Doctor Slim</h3>
+            <p class="interview-host"><strong>Host:</strong> Mallika Handa</p>
+            
+            <div class="interview-actions"><a class="interview-btn" href="https://medanded.org/wp-content/uploads/2021/01/zoom_0.mp4" target="_blank" rel="noopener">Watch Now</a><a class="interview-btn interview-btn-outline" href="https://medanded.org/wp-content/uploads/2021/01/zoom_0.mp4" target="_blank" rel="noopener">Download Interview</a></div>
+          </div>
+        </div>
+        
+        <video class="interview-video" controls preload="metadata">
+          <source src="https://medanded.org/wp-content/uploads/2021/01/zoom_0.mp4" type="video/mp4">
+          Your browser does not support embedded video.
+        </video>
+      </div>
+    </details>
+
+    <details class="interview-item">
+      <summary>
+        <span><strong>Episode #5</strong> — Doctor Kataria</span>
+        <span class="plus" aria-hidden="true"></span>
+      </summary>
+      <div class="interview-body">
+        <div class="interview-grid">
+          <div><img class="interview-art" src="https://i0.wp.com/medanded.org/wp-content/uploads/2021/02/Dr-Slim-2.png?resize=1024%2C1024&amp;ssl=1" alt="Doctor Kataria interview artwork" loading="lazy"></div>
+          <div class="interview-info">
+            <h3>Interview with Doctor Kataria</h3>
+            <p class="interview-host"><strong>Host:</strong> Sohani Hossain</p>
+            <p class="interview-note">This episode is presented as a written interview/PDF on the original site.</p>
+            <div class="interview-actions"><a class="interview-btn" href="https://medanded.org/wp-content/uploads/2021/02/Interview.pdf" target="_blank" rel="noopener">Read Interview</a><a class="interview-btn interview-btn-outline" href="https://medanded.org/wp-content/uploads/2021/02/Interview-1.pdf" target="_blank" rel="noopener">Download Interview</a></div>
+          </div>
+        </div>
+        
+        <iframe class="interview-doc" src="https://medanded.org/wp-content/uploads/2021/02/Interview.pdf" title="Doctor Kataria interview PDF"></iframe>
+      </div>
+    </details>
+
+    <details class="interview-item">
+      <summary>
+        <span><strong>Episode #6</strong> — Doctor Lewars</span>
+        <span class="plus" aria-hidden="true"></span>
+      </summary>
+      <div class="interview-body">
+        <div class="interview-grid">
+          <div><img class="interview-art" src="https://i0.wp.com/medanded.org/wp-content/uploads/2021/02/Copy-of-Dr-Slim-4.png?resize=1024%2C1024&amp;ssl=1" alt="Doctor Lewars interview artwork" loading="lazy"></div>
+          <div class="interview-info">
+            <h3>Interview with Doctor Lewars</h3>
+            <p class="interview-host"><strong>Host:</strong> Sadhika Mulagari</p>
+            
+            <div class="interview-actions"><a class="interview-btn" href="https://medanded.org/wp-content/uploads/2021/02/zoom_0-copy-2.mp4" target="_blank" rel="noopener">Watch Now</a><a class="interview-btn interview-btn-outline" href="https://medanded.org/wp-content/uploads/2021/02/zoom_0-copy-2.mp4" target="_blank" rel="noopener">Download Interview</a></div>
+          </div>
+        </div>
+        
+        <video class="interview-video" controls preload="metadata">
+          <source src="https://medanded.org/wp-content/uploads/2021/02/zoom_0-copy-2.mp4" type="video/mp4">
+          Your browser does not support embedded video.
+        </video>
+      </div>
+    </details>
+
+    <details class="interview-item">
+      <summary>
+        <span><strong>Episode #7</strong> — Doctor Sarah</span>
+        <span class="plus" aria-hidden="true"></span>
+      </summary>
+      <div class="interview-body">
+        <div class="interview-grid">
+          <div><img class="interview-art" src="https://i0.wp.com/medanded.org/wp-content/uploads/2021/02/Copy-of-Dr-Slim-6-1.png?resize=1024%2C1024&amp;ssl=1" alt="Doctor Sarah interview artwork" loading="lazy"></div>
+          <div class="interview-info">
+            <h3>Interview with Doctor Sarah</h3>
+            <p class="interview-host"><strong>Host:</strong> Ashley Roselynn Vincent</p>
+            
+            <div class="interview-actions"><a class="interview-btn" href="https://medanded.org/wp-content/uploads/2021/02/zoom_0-1-2.mp4" target="_blank" rel="noopener">Watch Now</a><a class="interview-btn interview-btn-outline" href="https://medanded.org/wp-content/uploads/2021/02/zoom_0-1-2.mp4" target="_blank" rel="noopener">Download Interview</a></div>
+          </div>
+        </div>
+        
+        <video class="interview-video" controls preload="metadata">
+          <source src="https://medanded.org/wp-content/uploads/2021/02/zoom_0-1-2.mp4" type="video/mp4">
+          Your browser does not support embedded video.
+        </video>
+      </div>
+    </details>
+
+    <details class="interview-item">
+      <summary>
+        <span><strong>Episode #8</strong> — Doctor Hindmarsh</span>
+        <span class="plus" aria-hidden="true"></span>
+      </summary>
+      <div class="interview-body">
+        <div class="interview-grid">
+          <div><img class="interview-art" src="https://i0.wp.com/medanded.org/wp-content/uploads/2021/02/Copy-of-Dr-Slim-7-1.png?resize=1024%2C1024&amp;ssl=1" alt="Doctor Hindmarsh interview artwork" loading="lazy"></div>
+          <div class="interview-info">
+            <h3>Interview with Doctor Hindmarsh</h3>
+            <p class="interview-host"><strong>Host:</strong> Arifa Qureshi</p>
+            
+            <div class="interview-actions"><a class="interview-btn" href="https://drive.google.com/file/d/18l40QKSC_XwyBhKOfEXrNHG2hex1fLTU/view?usp=sharing" target="_blank" rel="noopener">Watch Now</a></div>
+          </div>
+        </div>
+        
+        <iframe class="interview-video-frame" src="https://drive.google.com/file/d/18l40QKSC_XwyBhKOfEXrNHG2hex1fLTU/preview"
+          allow="autoplay" allowfullscreen title="Doctor Hindmarsh interview video"></iframe>
+      </div>
+    </details>
+
+    <details class="interview-item">
+      <summary>
+        <span><strong>Episode #9</strong> — Doctor Mohamed</span>
+        <span class="plus" aria-hidden="true"></span>
+      </summary>
+      <div class="interview-body">
+        <div class="interview-grid">
+          <div><img class="interview-art" src="https://i0.wp.com/medanded.org/wp-content/uploads/2021/03/Copy-of-Dr-Slim-8.png?resize=1024%2C1024&amp;ssl=1" alt="Doctor Mohamed interview artwork" loading="lazy"></div>
+          <div class="interview-info">
+            <h3>Interview with Doctor Mohamed</h3>
+            <p class="interview-host"><strong>Host:</strong> Nadia Quad</p>
+            
+            <div class="interview-actions"><a class="interview-btn" href="https://medanded.org/wp-content/uploads/2021/03/zoom_0-2.mp4" target="_blank" rel="noopener">Watch Now</a><a class="interview-btn interview-btn-outline" href="https://medanded.org/wp-content/uploads/2021/03/zoom_0-2.mp4" target="_blank" rel="noopener">Download Interview</a></div>
+          </div>
+        </div>
+        
+        <video class="interview-video" controls preload="metadata">
+          <source src="https://medanded.org/wp-content/uploads/2021/03/zoom_0-2.mp4" type="video/mp4">
+          Your browser does not support embedded video.
+        </video>
+      </div>
+    </details>
+
+    <details class="interview-item">
+      <summary>
+        <span><strong>Episode #10</strong> — Doctor Srivastava</span>
+        <span class="plus" aria-hidden="true"></span>
+      </summary>
+      <div class="interview-body">
+        <div class="interview-grid">
+          <div><img class="interview-art" src="https://i0.wp.com/medanded.org/wp-content/uploads/2021/05/10.png?resize=1024%2C1024&amp;ssl=1" alt="Doctor Srivastava interview artwork" loading="lazy"></div>
+          <div class="interview-info">
+            <h3>Interview with Doctor Srivastava</h3>
+            <p class="interview-host"><strong>Host:</strong> Ashley Roselynn Vincent</p>
+            
+            <div class="interview-actions"><a class="interview-btn" href="https://drive.google.com/file/d/1gq_eILu4OZlpDd1zA7dOYmE3QZebgg56/view?usp=sharing" target="_blank" rel="noopener">Watch Now</a></div>
+          </div>
+        </div>
+        
+        <iframe class="interview-video-frame" src="https://drive.google.com/file/d/1gq_eILu4OZlpDd1zA7dOYmE3QZebgg56/preview"
+          allow="autoplay" allowfullscreen title="Doctor Srivastava interview video"></iframe>
+      </div>
+    </details>
+
+    <details class="interview-item">
+      <summary>
+        <span><strong>Episode #11</strong> — Doctor Sahukar</span>
+        <span class="plus" aria-hidden="true"></span>
+      </summary>
+      <div class="interview-body">
+        <div class="interview-grid">
+          <div><img class="interview-art" src="https://i0.wp.com/medanded.org/wp-content/uploads/2021/07/Copy-of-Dr-Slim-14.png?resize=1024%2C1024&amp;ssl=1" alt="Doctor Sahukar interview artwork" loading="lazy"></div>
+          <div class="interview-info">
+            <h3>Interview with Doctor Sahukar</h3>
+            <p class="interview-host"><strong>Host:</strong> Mallika Handa</p>
+            
+            <div class="interview-actions"><a class="interview-btn" href="https://medanded.org/wp-content/uploads/2021/07/Dr.Shreya_medned.mp4" target="_blank" rel="noopener">Watch Now</a><a class="interview-btn interview-btn-outline" href="https://medanded.org/wp-content/uploads/2021/07/Dr.Shreya_medned.mp4" target="_blank" rel="noopener">Download Interview</a></div>
+          </div>
+        </div>
+        
+        <video class="interview-video" controls preload="metadata">
+          <source src="https://medanded.org/wp-content/uploads/2021/07/Dr.Shreya_medned.mp4" type="video/mp4">
+          Your browser does not support embedded video.
+        </video>
+      </div>
+    </details>
+      </section>
+    
+      <section class="interview-series">
+        <h2>A Doctor’s Journey</h2>
+        <div class="series-line"></div>
+        
+    <details class="interview-item">
+      <summary>
+        <span><strong>Episode #1</strong> — Farah Dehzad</span>
+        <span class="plus" aria-hidden="true"></span>
+      </summary>
+      <div class="interview-body">
+        <div class="interview-grid">
+          <div></div>
+          <div class="interview-info">
+            <h3>Interview with Farah Dehzad</h3>
+            <p class="interview-host"><strong>Host:</strong> Rutu Desai</p>
+            
+            <div class="interview-actions"><a class="interview-btn" href="https://medanded.org/wp-content/uploads/2020/12/Dr.Farah_Dehzan-.mp4" target="_blank" rel="noopener">Watch Now</a><a class="interview-btn interview-btn-outline" href="https://medanded.org/wp-content/uploads/2020/12/Dr.Farah_Dehzan-.mp4" target="_blank" rel="noopener">Download Interview</a></div>
+          </div>
+        </div>
+        
+        <video class="interview-video" controls preload="metadata">
+          <source src="https://medanded.org/wp-content/uploads/2020/12/Dr.Farah_Dehzan-.mp4" type="video/mp4">
+          Your browser does not support embedded video.
+        </video>
+      </div>
+    </details>
+
+    <details class="interview-item">
+      <summary>
+        <span><strong>Episode #2</strong> — Darsh Shah</span>
+        <span class="plus" aria-hidden="true"></span>
+      </summary>
+      <div class="interview-body">
+        <div class="interview-grid">
+          <div><img class="interview-art" src="https://i0.wp.com/medanded.org/wp-content/uploads/2021/01/Dr.-Shah.png?resize=1024%2C1024&amp;ssl=1" alt="Darsh Shah interview artwork" loading="lazy"></div>
+          <div class="interview-info">
+            <h3>Interview with Darsh Shah</h3>
+            <p class="interview-host"><strong>Host:</strong> Shreya Gupta</p>
+            
+            <div class="interview-actions"><a class="interview-btn" href="https://drive.google.com/file/d/180CUXKpoVw4-1LeI2z3oFYUjmEfhNn9B/view" target="_blank" rel="noopener">Watch Now</a><a class="interview-btn interview-btn-outline" href="https://medanded.org/wp-content/uploads/2021/01/Dr.-Darsh-Shah.mp4" target="_blank" rel="noopener">Download Interview</a></div>
+          </div>
+        </div>
+        
+        <iframe class="interview-video-frame" src="https://drive.google.com/file/d/180CUXKpoVw4-1LeI2z3oFYUjmEfhNn9B/preview"
+          allow="autoplay" allowfullscreen title="Darsh Shah interview video"></iframe>
+      </div>
+    </details>
+
+    <details class="interview-item">
+      <summary>
+        <span><strong>Episode #3</strong> — Dr. Jovita</span>
+        <span class="plus" aria-hidden="true"></span>
+      </summary>
+      <div class="interview-body">
+        <div class="interview-grid">
+          <div><img class="interview-art" src="https://i0.wp.com/medanded.org/wp-content/uploads/2021/02/Copy-of-Dr-Slim-2.png?resize=1024%2C1024&amp;ssl=1" alt="Dr. Jovita interview artwork" loading="lazy"></div>
+          <div class="interview-info">
+            <h3>Interview with Dr. Jovita</h3>
+            <p class="interview-host"><strong>Host:</strong> Hana Grace Nayve</p>
+            
+            <div class="interview-actions"><a class="interview-btn" href="https://drive.google.com/file/d/1p3Y3maMX0XkbgKyzNCbXhUPYJskpvYgk/view?usp=sharing" target="_blank" rel="noopener">Watch Now</a><a class="interview-btn interview-btn-outline" href="https://medanded.org/wp-content/uploads/2021/02/zoom_0-online-video-cutter.com-3-1.mp4" target="_blank" rel="noopener">Download Interview</a></div>
+          </div>
+        </div>
+        
+        <iframe class="interview-video-frame" src="https://drive.google.com/file/d/1p3Y3maMX0XkbgKyzNCbXhUPYJskpvYgk/preview"
+          allow="autoplay" allowfullscreen title="Dr. Jovita interview video"></iframe>
+      </div>
+    </details>
+
+    <details class="interview-item">
+      <summary>
+        <span><strong>Episode #4</strong> — Dr. Kaur</span>
+        <span class="plus" aria-hidden="true"></span>
+      </summary>
+      <div class="interview-body">
+        <div class="interview-grid">
+          <div><img class="interview-art" src="https://i0.wp.com/medanded.org/wp-content/uploads/2021/03/Copy-of-Dr-Slim-11.png?resize=1024%2C1024&amp;ssl=1" alt="Dr. Kaur interview artwork" loading="lazy"></div>
+          <div class="interview-info">
+            <h3>Interview with Dr. Kaur</h3>
+            <p class="interview-host"><strong>Host:</strong> Ashley Roselynn Vincent</p>
+            
+            <div class="interview-actions"><a class="interview-btn" href="https://drive.google.com/file/d/1TuCWjVrVEwwjM_G8zZRg1HIC_0Oe34W6/view?ts=602f2a2a" target="_blank" rel="noopener">Watch Now</a><a class="interview-btn interview-btn-outline" href="https://medanded.org/wp-content/uploads/2021/03/Epiosde-4-Doctors-Journey-1.mp4" target="_blank" rel="noopener">Download Interview</a></div>
+          </div>
+        </div>
+        
+        <iframe class="interview-video-frame" src="https://drive.google.com/file/d/1TuCWjVrVEwwjM_G8zZRg1HIC_0Oe34W6/preview"
+          allow="autoplay" allowfullscreen title="Dr. Kaur interview video"></iframe>
+      </div>
+    </details>
+
+    <details class="interview-item">
+      <summary>
+        <span><strong>Episode #5</strong> — Dr. Alex</span>
+        <span class="plus" aria-hidden="true"></span>
+      </summary>
+      <div class="interview-body">
+        <div class="interview-grid">
+          <div></div>
+          <div class="interview-info">
+            <h3>Interview with Dr. Alex</h3>
+            <p class="interview-host"><strong>Host:</strong> Med n’ Ed</p>
+            
+            <div class="interview-actions"><a class="interview-btn" href="https://medanded.org/wp-content/uploads/2021/08/My-Movie-9-1.mp4" target="_blank" rel="noopener">Watch Now</a><a class="interview-btn interview-btn-outline" href="https://medanded.org/wp-content/uploads/2021/08/My-Movie-9-1.mp4" target="_blank" rel="noopener">Download Interview</a></div>
+          </div>
+        </div>
+        
+        <video class="interview-video" controls preload="metadata">
+          <source src="https://medanded.org/wp-content/uploads/2021/08/My-Movie-9-1.mp4" type="video/mp4">
+          Your browser does not support embedded video.
+        </video>
+      </div>
+    </details>
+      </section>
+    
+  </div>
+</main>
