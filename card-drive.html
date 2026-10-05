@@ -177,6 +177,18 @@ title: Card Drive
     font-size:42px;
   }
 }
+
+/* CARD DRIVE ONLY: remove any generic maroon page hero left by shared/older markup */
+body.card-drive-clean .project-hero,
+body.card-drive-clean .interior-hero,
+body.card-drive-clean .page-hero,
+body.card-drive-clean .entry-hero,
+body.card-drive-clean .breadcrumb-hero,
+body.card-drive-clean .page-title-area,
+body.card-drive-clean .page-header-banner {
+  display:none !important;
+}
+
 </style>
 
 <main id="card-drive-page">
@@ -239,6 +251,34 @@ title: Card Drive
 
   </section>
 </main>
+
+
+<script>
+(function () {
+  document.body.classList.add('card-drive-clean');
+
+  const page = document.getElementById('card-drive-page');
+  if (!page) return;
+
+  /* Remove an older/generic Card Drive hero if it exists immediately
+     before this page. This does not touch the site header/navigation. */
+  let el = page.previousElementSibling;
+  while (el) {
+    const text = (el.textContent || '').replace(/\s+/g, ' ').trim();
+    const looksLikeCardHero =
+      text.includes('Card Drive') &&
+      text.includes('Home') &&
+      (getComputedStyle(el).backgroundColor !== 'rgba(0, 0, 0, 0)' ||
+       /hero|banner|breadcrumb|page-title/i.test(el.className || ''));
+
+    const prev = el.previousElementSibling;
+    if (looksLikeCardHero) {
+      el.style.setProperty('display', 'none', 'important');
+    }
+    el = prev;
+  }
+})();
+</script>
 
 <script>
 document.querySelectorAll('[data-carousel]').forEach(function(car){
