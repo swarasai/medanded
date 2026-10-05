@@ -4,25 +4,79 @@ title: Bake Sale
 ---
 
 <style>
-#bake-page{background:#fff;color:#292929}
-#bake-page .bake-hero{background:#682523;color:#fff;text-align:center;padding:96px 20px 92px}
-#bake-page .bake-hero h1{margin:0 0 10px!important;color:#fff!important;font-size:42px!important;font-weight:700!important}
+#bake-page{background:#fff;color:#2d2d2d}
+#bake-page .bake-hero{
+  background:#682523;color:#fff;text-align:center;
+  padding:96px 20px 92px
+}
+#bake-page .bake-hero h1{
+  margin:0 0 10px!important;color:#fff!important;
+  font-size:42px!important;line-height:1.15!important;font-weight:700!important
+}
 #bake-page .bake-hero p{margin:0;font-size:18px}
 #bake-page .bake-hero a{color:#fff;text-decoration:none}
-#bake-page .bake-wrap{max-width:1320px;margin:0 auto;padding:112px 24px 92px}
-#bake-page .bake-title{background:#e32126;color:#fff;text-align:center;font-size:40px;padding:52px 24px;margin:0 0 34px}
-#bake-page .bake-copy{font-size:18px;line-height:1.65;margin-bottom:30px}
-#bake-page .bake-top{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-bottom:18px}
-#bake-page .bake-top img{display:block;width:100%;height:auto}
-#bake-page .bake-bottom{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;border-top:1px solid #aaa;padding-top:18px}
-#bake-page .bake-bottom img{display:block;width:100%;height:auto;object-fit:contain}
-@media(max-width:700px){
- #bake-page .bake-hero{padding:70px 18px 68px}
- #bake-page .bake-hero h1{font-size:34px!important}
- #bake-page .bake-wrap{padding:58px 14px 70px}
- #bake-page .bake-title{font-size:30px;padding:36px 18px}
- #bake-page .bake-copy{font-size:16px}
- #bake-page .bake-top,#bake-page .bake-bottom{grid-template-columns:1fr}
+
+#bake-page .bake-wrap{
+  max-width:1320px;margin:0 auto;padding:112px 24px 90px
+}
+#bake-page .bake-title{
+  background:#e32327;color:#fff;text-align:center;
+  font-size:40px;line-height:1.2;font-weight:400;
+  padding:52px 24px;margin:0 0 34px
+}
+#bake-page .bake-copy{
+  font-size:18px;line-height:1.65;margin:0 0 32px
+}
+
+#bake-page .bake-top{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px;margin:0 0 34px
+}
+#bake-page .bake-top img{
+  display:block;width:100%;height:auto
+}
+
+#bake-page .bake-carousel{
+  position:relative;min-height:760px;
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;margin:0 auto
+}
+#bake-page .bake-slide{display:none;width:100%;text-align:center}
+#bake-page .bake-slide.active{display:block}
+#bake-page .bake-slide img{
+  display:block;margin:0 auto;
+  max-width:760px;max-height:720px;
+  width:auto;height:auto;object-fit:contain
+}
+#bake-page .bake-arrow{
+  position:absolute;top:50%;transform:translateY(-50%);
+  border:0;background:transparent;color:#111;
+  font-size:48px;cursor:pointer;z-index:3
+}
+#bake-page .bake-prev{left:0}
+#bake-page .bake-next{right:0}
+#bake-page .bake-dots{
+  position:absolute;left:0;bottom:0;
+  display:flex;gap:8px
+}
+#bake-page .bake-dot{
+  width:9px;height:9px;border:0;border-radius:50%;
+  background:#aaa;padding:0
+}
+#bake-page .bake-dot.active{background:#222}
+
+@media(max-width:760px){
+  #bake-page .bake-top{grid-template-columns:1fr}
+}
+@media(max-width:620px){
+  #bake-page .bake-hero{padding:70px 18px 68px}
+  #bake-page .bake-hero h1{font-size:34px!important}
+  #bake-page .bake-wrap{padding:58px 14px 70px}
+  #bake-page .bake-title{font-size:30px;padding:36px 18px}
+  #bake-page .bake-copy{font-size:16px}
+  #bake-page .bake-carousel{min-height:520px}
+  #bake-page .bake-slide img{max-width:90%;max-height:500px}
+  #bake-page .bake-arrow{font-size:40px}
 }
 </style>
 
@@ -41,7 +95,7 @@ title: Bake Sale
 
     <div class="bake-top">
       <img src="https://i0.wp.com/medanded.org/wp-content/uploads/2022/06/IMG_8693-1024x768.jpeg?ssl=1" alt="Med n' Ed bake sale">
-      <img src="https://i0.wp.com/medanded.org/wp-content/uploads/2022/06/IMG_8699-1024x768.jpeg?ssl=1" alt="Med n' Ed bake sale">
+      <img src="https://i0.wp.com/medanded.org/wp-content/uploads/2022/06/IMG_8699-1024x768.jpeg?ssl=1" alt="Med n' Ed bake sale group">
     </div>
 
     <div class="bake-carousel" id="bakeCarousel">
@@ -65,34 +119,26 @@ title: Bake Sale
 
 <script>
 (function(){
-  const car = document.getElementById('bakeCarousel');
-  if (!car) return;
-  const slides = Array.from(car.querySelectorAll('.bake-slide'));
-  const dots = Array.from(car.querySelectorAll('.bake-dot'));
-  let index = 0;
-  let startX = null;
-
+  const car=document.getElementById('bakeCarousel');
+  if(!car)return;
+  const slides=[...car.querySelectorAll('.bake-slide')];
+  const dots=[...car.querySelectorAll('.bake-dot')];
+  let i=0,startX=null;
   function show(n){
-    index = (n + slides.length) % slides.length;
-    slides.forEach((s,i)=>s.classList.toggle('active', i===index));
-    dots.forEach((d,i)=>d.classList.toggle('active', i===index));
+    i=(n+slides.length)%slides.length;
+    slides.forEach((s,j)=>s.classList.toggle('active',j===i));
+    dots.forEach((d,j)=>d.classList.toggle('active',j===i));
   }
-
-  car.querySelector('.bake-prev').addEventListener('click', ()=>show(index-1));
-  car.querySelector('.bake-next').addEventListener('click', ()=>show(index+1));
-  dots.forEach((d,i)=>d.addEventListener('click', ()=>show(i)));
-
-  car.addEventListener('touchstart', e => {
-    startX = e.touches[0].clientX;
-  }, {passive:true});
-
-  car.addEventListener('touchend', e => {
-    if (startX === null) return;
-    const dx = e.changedTouches[0].clientX - startX;
-    if (Math.abs(dx) > 45) show(index + (dx < 0 ? 1 : -1));
-    startX = null;
-  }, {passive:true});
-
+  car.querySelector('.bake-prev').onclick=()=>show(i-1);
+  car.querySelector('.bake-next').onclick=()=>show(i+1);
+  dots.forEach((d,j)=>d.onclick=()=>show(j));
+  car.addEventListener('touchstart',e=>startX=e.touches[0].clientX,{passive:true});
+  car.addEventListener('touchend',e=>{
+    if(startX===null)return;
+    const dx=e.changedTouches[0].clientX-startX;
+    if(Math.abs(dx)>45)show(i+(dx<0?1:-1));
+    startX=null;
+  },{passive:true});
   show(0);
 })();
 </script>

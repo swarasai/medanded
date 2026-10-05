@@ -4,92 +4,72 @@ title: Eating Disorder Awareness
 ---
 
 <style>
-#eda-page {
-  background:#fff;
-  color:#2d2d2d;
+#eda-page{background:#fff;color:#2d2d2d}
+#eda-page .eda-hero{
+  background:#682523;color:#fff;text-align:center;
+  padding:96px 20px 92px
 }
-
-#eda-page .eda-wrap {
-  max-width:1420px;
-  margin:0 auto;
-  padding:8px 24px 68px;
+#eda-page .eda-hero h1{
+  margin:0 0 10px!important;color:#fff!important;
+  font-size:42px!important;line-height:1.15!important;font-weight:700!important
 }
+#eda-page .eda-hero p{margin:0;font-size:18px}
+#eda-page .eda-hero a{color:#fff;text-decoration:none}
 
-#eda-page .eda-copy {
-  font-size:18px;
-  line-height:1.6;
-  margin:0 0 72px;
+#eda-page .eda-wrap{
+  max-width:1320px;margin:0 auto;padding:112px 24px 82px
 }
-
-#eda-page .eda-copy p {
-  margin:0 0 18px;
+#eda-page .eda-title{
+  background:#e32327;color:#fff;text-align:center;
+  font-size:40px;line-height:1.2;font-weight:400;
+  padding:52px 24px;margin:0 0 56px
 }
+#eda-page .eda-copy{
+  font-size:18px;line-height:1.6;margin:0 0 70px
+}
+#eda-page .eda-copy p{margin:0 0 18px}
 
-#eda-page .eda-gallery {
-  border-top:2px solid #e32126;
-  border-bottom:2px solid #e32126;
+#eda-page .eda-gallery{
+  border-top:2px solid #e32327;
+  border-bottom:2px solid #e32327;
   padding:8px 0 10px;
   display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));
   gap:8px;
-  align-items:stretch;
+  align-items:stretch
+}
+#eda-page .eda-gallery img{
+  display:block;width:100%;height:auto;object-fit:contain
+}
+#eda-page .eda-instagram-wrap{text-align:center;margin-top:18px}
+#eda-page .eda-instagram{
+  display:inline-block;width:min(640px,82%);
+  padding:10px 24px;border-radius:24px;
+  background:#e32327;color:#fff!important;text-decoration:none!important;
+  font-size:17px;line-height:1.2
 }
 
-#eda-page .eda-gallery img {
-  display:block;
-  width:100%;
-  height:auto;
-  object-fit:contain;
-  background:#f2c9d0;
+@media(max-width:800px){
+  #eda-page .eda-gallery{grid-template-columns:1fr}
 }
-
-#eda-page .eda-instagram-wrap {
-  text-align:center;
-  margin-top:18px;
-}
-
-#eda-page .eda-instagram-btn {
-  display:inline-block;
-  width:min(660px, 82%);
-  padding:10px 24px;
-  border-radius:24px;
-  background:#e32126;
-  color:#fff !important;
-  text-decoration:none !important;
-  font-size:16px;
-  line-height:1.2;
-}
-
-@media(max-width:900px) {
-  #eda-page .eda-wrap {
-    padding:22px 18px 60px;
-  }
-
-  #eda-page .eda-gallery {
-    grid-template-columns:1fr;
-    gap:14px;
-  }
-
-  #eda-page .eda-instagram-btn {
-    width:90%;
-  }
-}
-
-@media(max-width:600px) {
-  #eda-page .eda-copy {
-    font-size:16px;
-    margin-bottom:42px;
-  }
-
-  #eda-page .eda-instagram-btn {
-    width:100%;
-    box-sizing:border-box;
-  }
+@media(max-width:620px){
+  #eda-page .eda-hero{padding:70px 18px 68px}
+  #eda-page .eda-hero h1{font-size:34px!important}
+  #eda-page .eda-wrap{padding:58px 14px 70px}
+  #eda-page .eda-title{font-size:30px;padding:36px 18px;margin-bottom:40px}
+  #eda-page .eda-copy{font-size:16px;margin-bottom:44px}
+  #eda-page .eda-instagram{width:100%;box-sizing:border-box}
 }
 </style>
 
 <main id="eda-page">
+  <section class="eda-hero">
+    <h1>Eating Disorder Awareness</h1>
+    <p><a href="{{ '/' | relative_url }}">Home</a> &nbsp;&gt;&nbsp; Eating Disorder Awareness</p>
+  </section>
+
   <section class="eda-wrap">
+    <div class="eda-title">Eating Disorder Awareness</div>
 
     <div class="eda-copy">
       <p>Med n’ Ed posted an Instagram series that brings awareness to eating disorders including anorexia, binge eating disorder, and bulimia nervosa.</p>
@@ -97,24 +77,16 @@ title: Eating Disorder Awareness
     </div>
 
     <div class="eda-gallery">
-      <img src="{{ '/images/projects/eating-disorder-awareness/anorexia.png' | relative_url }}"
-           alt="Eating Disorder Awareness - Anorexia">
-
-      <img src="{{ '/images/projects/eating-disorder-awareness/binge-eating-disorder.png' | relative_url }}"
-           alt="Eating Disorder Awareness - Binge Eating Disorder">
-
-      <img src="{{ '/images/projects/eating-disorder-awareness/bulimia-nervosa.png' | relative_url }}"
-           alt="Eating Disorder Awareness - Bulimia Nervosa">
+      <img src="{{ '/images/projects/eating-disorder-awareness/anorexia.png' | relative_url }}" alt="Eating Disorder Awareness - Anorexia">
+      <img src="{{ '/images/projects/eating-disorder-awareness/binge-eating-disorder.png' | relative_url }}" alt="Eating Disorder Awareness - Binge Eating Disorder">
+      <img src="{{ '/images/projects/eating-disorder-awareness/bulimia-nervosa.png' | relative_url }}" alt="Eating Disorder Awareness - Bulimia Nervosa">
     </div>
 
     <div class="eda-instagram-wrap">
-      <a class="eda-instagram-btn"
-         href="https://www.instagram.com/medanded_org/"
+      <a class="eda-instagram"
+         href="https://www.instagram.com/p/CaaqvxnvE2A/"
          target="_blank"
-         rel="noopener noreferrer">
-        Instagram
-      </a>
+         rel="noopener noreferrer">Instagram</a>
     </div>
-
   </section>
 </main>
