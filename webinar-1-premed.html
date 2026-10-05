@@ -4,205 +4,96 @@ title: Webinar #1- Premed Student
 ---
 
 <style>
-.webinar1-page {
-  background:#fff;
+.webinar1-page{background:#fff;color:#2d2d2d}
+.webinar1-hero{
+  background:#682523;color:#fff;text-align:center;
+  padding:96px 20px 92px
+}
+.webinar1-hero h1{
+  margin:0 0 10px!important;color:#fff!important;
+  font-size:42px;line-height:1.15;font-weight:700
+}
+.webinar1-hero p{margin:0;font-size:18px}
+.webinar1-hero a{color:#fff;text-decoration:none}
+
+.webinar1-wrap{
+  max-width:1320px;margin:112px auto 95px;padding:0 24px
 }
 
-.webinar1-hero {
-  background:#682523;
-  color:#fff;
-  text-align:center;
-  padding:96px 20px 92px;
+/* Match the WordPress red title box */
+.webinar1-title{
+  background:#e32126;color:#fff;text-align:center;
+  padding:50px 24px;font-size:40px;line-height:1.2;
+  font-weight:400;margin:0 0 28px
 }
 
-.webinar1-hero h1 {
-  margin:0 0 10px;
-  font-size:42px;
-  line-height:1.15;
-  font-weight:700;
+/* The WordPress page has no added summary paragraph */
+.webinar1-copy{display:none}
+
+/* Presentation link is a text-style link, not a rounded pill */
+.webinar1-actions{
+  display:flex;flex-direction:column;align-items:center;
+  gap:28px;margin:0 0 36px
+}
+.webinar1-btn{
+  display:inline-block!important;
+  padding:0!important;border:0!important;border-radius:0!important;
+  background:transparent!important;color:#e32126!important;
+  text-decoration:underline!important;text-underline-offset:3px;
+  font-size:17px;line-height:1.4;text-align:center
+}
+.webinar1-btn.secondary{
+  background:transparent!important;color:#222!important;
+  border:0!important;text-decoration:none!important;
+  margin-top:12px
 }
 
-.webinar1-hero p {
-  margin:0;
-  font-size:18px;
+.webinar-carousel-shell{
+  position:relative;background:#fff;overflow:hidden;
+  margin:0 auto;max-width:1220px
 }
-
-.webinar1-hero a {
-  color:#fff;
-  text-decoration:none;
+.webinar-carousel-track{
+  display:flex;transition:transform .45s ease;will-change:transform
 }
-
-.webinar1-wrap {
-  max-width:1320px;
-  margin:112px auto 95px;
-  padding:0 24px;
+.webinar-carousel-slide{
+  flex:0 0 100%;background:#fff;display:flex;
+  justify-content:center;align-items:center;min-height:620px
 }
-
-.webinar1-title {
-  background:#e32126;
-  color:#fff;
-  text-align:center;
-  padding:48px 24px;
-  font-size:40px;
-  line-height:1.2;
-  font-weight:400;
-  margin-bottom:34px;
+.webinar-carousel-slide img{
+  display:block;width:100%;height:620px;object-fit:contain;background:#fff
 }
-
-.webinar1-copy {
-  font-size:18px;
-  line-height:1.7;
-  color:#333;
-  margin-bottom:42px;
+.webinar-carousel-btn{
+  position:absolute;top:50%;transform:translateY(-50%);
+  z-index:3;width:42px;height:42px;border:0;border-radius:50%;
+  background:rgba(227,33,38,.92);color:#fff;font-size:27px;cursor:pointer
 }
-
-.webinar1-copy a {
-  color:#e32126;
-  text-decoration:underline;
+.webinar-carousel-prev{left:16px}
+.webinar-carousel-next{right:16px}
+.webinar-carousel-dots{
+  display:flex;justify-content:center;gap:8px;flex-wrap:wrap;
+  padding:16px 8px 8px
 }
-
-.webinar1-actions {
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:14px;
-  margin:0 0 46px;
+.webinar-dot{
+  width:9px;height:9px;border:0;border-radius:50%;
+  padding:0;background:#c9c9c9;cursor:pointer
 }
+.webinar-dot.active{background:#e32126}
+.webinar-carousel-count{text-align:center;color:#666;font-size:14px;margin-top:8px}
 
-.webinar1-btn {
-  display:inline-block;
-  padding:12px 23px;
-  border-radius:24px;
-  background:#e32126;
-  color:#fff !important;
-  text-decoration:none !important;
-  font-size:15px;
+@media(max-width:900px){
+  .webinar1-hero h1{font-size:34px}
+  .webinar1-title{font-size:32px}
+  .webinar-carousel-slide{min-height:460px}
+  .webinar-carousel-slide img{height:460px}
 }
-
-.webinar1-btn.secondary {
-  background:#fff;
-  color:#e32126 !important;
-  border:1px solid #e32126;
-}
-
-.webinar-carousel-shell {
-  position:relative;
-  background:#111;
-  overflow:hidden;
-  margin:0 auto;
-  max-width:1220px;
-}
-
-.webinar-carousel-track {
-  display:flex;
-  transition:transform .45s ease;
-  will-change:transform;
-}
-
-.webinar-carousel-slide {
-  flex:0 0 100%;
-  background:#111;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  min-height:620px;
-}
-
-.webinar-carousel-slide img {
-  display:block;
-  width:100%;
-  height:620px;
-  object-fit:contain;
-  background:#111;
-}
-
-.webinar-carousel-btn {
-  position:absolute;
-  top:50%;
-  transform:translateY(-50%);
-  z-index:3;
-  width:46px;
-  height:46px;
-  border:0;
-  border-radius:50%;
-  background:rgba(227,33,38,.92);
-  color:#fff;
-  font-size:28px;
-  cursor:pointer;
-}
-
-.webinar-carousel-prev { left:16px; }
-.webinar-carousel-next { right:16px; }
-
-.webinar-carousel-dots {
-  display:flex;
-  justify-content:center;
-  gap:8px;
-  flex-wrap:wrap;
-  padding:16px 8px 8px;
-}
-
-.webinar-dot {
-  width:9px;
-  height:9px;
-  border:0;
-  border-radius:50%;
-  padding:0;
-  background:#c9c9c9;
-  cursor:pointer;
-}
-
-.webinar-dot.active {
-  background:#e32126;
-}
-
-.webinar-carousel-count {
-  text-align:center;
-  color:#666;
-  font-size:14px;
-  margin-top:8px;
-}
-
-@media(max-width:900px) {
-  .webinar1-hero h1 { font-size:34px; }
-  .webinar1-title { font-size:32px; }
-  .webinar-carousel-slide { min-height:460px; }
-  .webinar-carousel-slide img { height:460px; }
-}
-
-@media(max-width:600px) {
-  .webinar1-hero {
-    padding:74px 18px;
-  }
-  .webinar1-wrap {
-    margin-top:58px;
-    padding:0 14px;
-  }
-  .webinar1-title {
-    font-size:28px;
-    padding:34px 18px;
-  }
-  .webinar1-copy {
-    font-size:16px;
-  }
-  .webinar1-actions {
-    flex-direction:column;
-  }
-  .webinar1-btn {
-    width:100%;
-    text-align:center;
-  }
-  .webinar-carousel-slide {
-    min-height:300px;
-  }
-  .webinar-carousel-slide img {
-    height:300px;
-  }
-  .webinar-carousel-btn {
-    width:38px;
-    height:38px;
-    font-size:23px;
-  }
+@media(max-width:600px){
+  .webinar1-hero{padding:74px 18px}
+  .webinar1-wrap{margin-top:58px;padding:0 14px}
+  .webinar1-title{font-size:28px;padding:34px 18px}
+  .webinar1-actions{gap:22px}
+  .webinar-carousel-slide{min-height:300px}
+  .webinar-carousel-slide img{height:300px}
+  .webinar-carousel-btn{width:38px;height:38px;font-size:23px}
 }
 </style>
 
@@ -214,20 +105,10 @@ title: Webinar #1- Premed Student
 
   <section class="webinar1-wrap">
     <div class="webinar1-title">Webinar #1- Premed Student</div>
-
-    <div class="webinar1-copy">
-      <p>
-        In the first webinar of our <strong>Becoming a Medical Professional</strong> series,
-        Courtney Chau shared her experience as a pre-medical student and discussed the path toward
-        medical school, clinical experience, extracurriculars, research, leadership, applications,
-        gap years, and preparing for the MCAT.
-      </p>
-    </div>
-
-    <div class="webinar1-actions">
+<div class="webinar1-actions">
       <a class="webinar1-btn"
          href="https://drive.google.com/file/d/1EcwzkMj4mocyj0VA7p7_l0ngOyrfaZSm/view?usp=sharing"
-         target="_blank" rel="noopener">View Presentation</a>
+         target="_blank" rel="noopener">———————— Presentation Link ————————</a>
       <a class="webinar1-btn secondary"
          href="https://youtu.be/2RVncdIFGM0"
          target="_blank" rel="noopener">Watch the Webinar with Courtney Chau</a>
