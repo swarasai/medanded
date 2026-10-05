@@ -44,9 +44,55 @@ title: Bake Sale
       <img src="https://i0.wp.com/medanded.org/wp-content/uploads/2022/06/IMG_8699-1024x768.jpeg?ssl=1" alt="Med n' Ed bake sale">
     </div>
 
-    <div class="bake-bottom">
-      <img src="https://i0.wp.com/medanded.org/wp-content/uploads/2022/06/IMG_6935-3.jpeg?resize=768%2C1024&ssl=1" alt="Bake sale cookies">
-      <img src="https://i0.wp.com/medanded.org/wp-content/uploads/2022/06/IMG_6930-1.jpeg?resize=768%2C1024&ssl=1" alt="Bake sale cookies">
+    <div class="bake-carousel" id="bakeCarousel">
+      <div class="bake-slide active">
+        <img src="https://i0.wp.com/medanded.org/wp-content/uploads/2022/06/IMG_6935-3.jpeg?resize=768%2C1024&ssl=1" alt="Bake sale cookies">
+      </div>
+      <div class="bake-slide">
+        <img src="https://i0.wp.com/medanded.org/wp-content/uploads/2022/06/IMG_6930-1.jpeg?resize=768%2C1024&ssl=1" alt="Bake sale cookies">
+      </div>
+
+      <button class="bake-arrow bake-prev" aria-label="Previous image">&#8249;</button>
+      <button class="bake-arrow bake-next" aria-label="Next image">&#8250;</button>
+
+      <div class="bake-dots">
+        <button class="bake-dot active" aria-label="Slide 1"></button>
+        <button class="bake-dot" aria-label="Slide 2"></button>
+      </div>
     </div>
   </section>
 </main>
+
+<script>
+(function(){
+  const car = document.getElementById('bakeCarousel');
+  if (!car) return;
+  const slides = Array.from(car.querySelectorAll('.bake-slide'));
+  const dots = Array.from(car.querySelectorAll('.bake-dot'));
+  let index = 0;
+  let startX = null;
+
+  function show(n){
+    index = (n + slides.length) % slides.length;
+    slides.forEach((s,i)=>s.classList.toggle('active', i===index));
+    dots.forEach((d,i)=>d.classList.toggle('active', i===index));
+  }
+
+  car.querySelector('.bake-prev').addEventListener('click', ()=>show(index-1));
+  car.querySelector('.bake-next').addEventListener('click', ()=>show(index+1));
+  dots.forEach((d,i)=>d.addEventListener('click', ()=>show(i)));
+
+  car.addEventListener('touchstart', e => {
+    startX = e.touches[0].clientX;
+  }, {passive:true});
+
+  car.addEventListener('touchend', e => {
+    if (startX === null) return;
+    const dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) > 45) show(index + (dx < 0 ? 1 : -1));
+    startX = null;
+  }, {passive:true});
+
+  show(0);
+})();
+</script>
