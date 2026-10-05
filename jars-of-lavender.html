@@ -4,27 +4,139 @@ title: Jars O’ Lavender Collaboration
 ---
 
 <style>
-#jars-page{background:#fff;color:#292929}
-#jars-page .jars-hero{background:#682523;color:#fff;text-align:center;padding:96px 20px 92px}
-#jars-page .jars-hero h1{margin:0 0 10px!important;color:#fff!important;font-size:42px!important;font-weight:700!important}
-#jars-page .jars-hero p{margin:0;font-size:18px}
-#jars-page .jars-hero a{color:#fff;text-decoration:none}
-#jars-page .jars-wrap{max-width:1320px;margin:0 auto;padding:112px 24px 92px}
-#jars-page .jars-title{background:#e32126;color:#fff;text-align:center;font-size:40px;padding:52px 24px;margin:0 0 34px}
-#jars-page .jars-copy{font-size:18px;line-height:1.65;margin-bottom:28px}
-#jars-page .jars-copy p{margin:0 0 18px}
-#jars-page .jars-copy a{color:#e32126;text-decoration:underline}
-#jars-page .jars-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:start}
-#jars-page .jars-grid img{display:block;width:100%;height:auto;object-fit:contain}
-#jars-page .jars-logo{display:block;max-width:420px;width:100%;height:auto;margin:24px auto 0}
-@media(max-width:900px){#jars-page .jars-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:620px){
- #jars-page .jars-hero{padding:70px 18px 68px}
- #jars-page .jars-hero h1{font-size:34px!important}
- #jars-page .jars-wrap{padding:58px 14px 70px}
- #jars-page .jars-title{font-size:30px;padding:36px 18px}
- #jars-page .jars-copy{font-size:16px}
- #jars-page .jars-grid{grid-template-columns:1fr}
+#jars-page {background:#fff;color:#292929;}
+#jars-page .jars-hero{
+  background:#682523;
+  color:#fff;
+  text-align:center;
+  padding:96px 20px 92px;
+}
+#jars-page .jars-hero h1{
+  margin:0 0 10px!important;
+  color:#fff!important;
+  font-size:42px!important;
+  font-weight:700!important;
+}
+#jars-page .jars-hero p{margin:0;font-size:18px;}
+#jars-page .jars-hero a{color:#fff;text-decoration:none;}
+
+#jars-page .jars-wrap{
+  max-width:1320px;
+  margin:0 auto;
+  padding:110px 24px 92px;
+}
+
+#jars-page .jars-message{
+  max-width:1160px;
+  margin:0 auto 38px;
+  background:#9b78de;
+  color:#fff;
+  padding:44px 56px;
+  font-size:27px;
+  line-height:1.35;
+  font-weight:700;
+}
+
+#jars-page .jars-copy{
+  max-width:1160px;
+  margin:0 auto 26px;
+  font-size:18px;
+  line-height:1.7;
+}
+#jars-page .jars-copy p{margin:0 0 18px;}
+#jars-page .jars-copy a{color:#292929;text-decoration:underline;}
+
+#jars-page .jars-carousel-wrap{
+  max-width:1520px;
+  margin:0 auto;
+}
+#jars-page .jars-carousel{
+  position:relative;
+  min-height:760px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+#jars-page .jars-slide{
+  display:none;
+  width:100%;
+  text-align:center;
+}
+#jars-page .jars-slide.active{display:block;}
+#jars-page .jars-slide img{
+  max-width:760px;
+  max-height:700px;
+  width:auto;
+  height:auto;
+  object-fit:contain;
+  display:block;
+  margin:0 auto;
+}
+#jars-page .jars-arrow{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  border:0;
+  background:transparent;
+  color:#8a8a8a;
+  font-size:56px;
+  line-height:1;
+  cursor:pointer;
+  z-index:3;
+  padding:0 4px;
+}
+#jars-page .jars-prev{left:8px;}
+#jars-page .jars-next{right:8px;}
+
+#jars-page .jars-footer{
+  max-width:1160px;
+  margin:10px auto 0;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:18px;
+}
+#jars-page .jars-count{
+  font-size:18px;
+  color:#222;
+}
+#jars-page .jars-dots{
+  flex:1;
+  display:flex;
+  justify-content:center;
+  gap:8px;
+}
+#jars-page .jars-dot{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  border:0;
+  background:#bbb;
+  padding:0;
+  cursor:pointer;
+}
+#jars-page .jars-dot.active{background:#333;}
+
+@media(max-width:768px){
+  #jars-page .jars-hero{padding:72px 18px 70px;}
+  #jars-page .jars-hero h1{font-size:34px!important;}
+  #jars-page .jars-wrap{padding:58px 14px 72px;}
+  #jars-page .jars-message{
+    padding:28px 22px;
+    font-size:21px;
+  }
+  #jars-page .jars-copy{font-size:16px;}
+  #jars-page .jars-carousel{min-height:520px;}
+  #jars-page .jars-slide img{
+    max-width:90%;
+    max-height:480px;
+  }
+  #jars-page .jars-arrow{font-size:42px;}
+  #jars-page .jars-footer{
+    flex-direction:column;
+    gap:10px;
+  }
 }
 </style>
 
@@ -35,24 +147,79 @@ title: Jars O’ Lavender Collaboration
   </section>
 
   <section class="jars-wrap">
-    <div class="jars-title">Jars O’ Lavender Collaboration</div>
+    <div class="jars-message">
+      For the months of June and July, Med n’ Ed had the incredible opportunity to collaborate with Jars O’ Lavender where all profits were donated to our organization! Their contribution will go towards purchasing hospital supplies and funding our current projects.
+    </div>
 
     <div class="jars-copy">
-      <p>For the months of June and July, Med n’ Ed had the incredible opportunity to collaborate with Jars O’ Lavender where all profits were donated to our organization! Their contribution will go towards purchasing hospital supplies and funding our current projects.</p>
       <p>We cannot thank them enough for their generosity and goodwill! Check out their Instagram and pictures below!</p>
-      <p><a href="https://www.instagram.com/" target="_blank" rel="noopener">jars o’ lavender ☾ (Instagram)</a></p>
+      <p><a href="https://www.instagram.com/jarsolavender/" target="_blank" rel="noopener">jars o’ lavender ☾ (Instagram)</a></p>
     </div>
 
-    <div class="jars-grid">
-      <img src="https://i0.wp.com/medanded.org/wp-content/uploads/2021/08/Screen-Shot-2021-08-09-at-2.28.14-PM.png?resize=974%2C1024&ssl=1" alt="Jars O’ Lavender image 1">
-      <img src="https://i0.wp.com/medanded.org/wp-content/uploads/2021/08/Screen-Shot-2021-08-09-at-2.28.30-PM.png?resize=872%2C1024&ssl=1" alt="Jars O’ Lavender image 2">
-      <img src="https://i0.wp.com/medanded.org/wp-content/uploads/2021/08/Screen-Shot-2021-08-09-at-2.29.01-PM.png?resize=432%2C452&ssl=1" alt="Jars O’ Lavender image 3">
-      <img src="https://i0.wp.com/medanded.org/wp-content/uploads/2021/08/Screen-Shot-2021-08-09-at-2.28.50-PM.png?resize=412%2C460&ssl=1" alt="Jars O’ Lavender image 4">
-      <img src="https://i0.wp.com/medanded.org/wp-content/uploads/2021/08/Screen-Shot-2021-08-09-at-2.29.34-PM.png?resize=947%2C1024&ssl=1" alt="Jars O’ Lavender image 5">
-    </div>
+    <div class="jars-carousel-wrap">
+      <div class="jars-carousel" data-carousel>
+        <div class="jars-slide active"><img src="https://i0.wp.com/medanded.org/wp-content/uploads/2021/08/Screen-Shot-2021-08-09-at-2.28.14-PM.png?resize=974%2C1024&ssl=1" alt="Jars O’ Lavender carousel image 1"></div>
+        <div class="jars-slide"><img src="https://i0.wp.com/medanded.org/wp-content/uploads/2021/08/Screen-Shot-2021-08-09-at-2.28.30-PM.png?resize=872%2C1024&ssl=1" alt="Jars O’ Lavender carousel image 2"></div>
+        <div class="jars-slide"><img src="https://i0.wp.com/medanded.org/wp-content/uploads/2021/08/Screen-Shot-2021-08-09-at-2.28.50-PM.png?resize=412%2C460&ssl=1" alt="Jars O’ Lavender carousel image 3"></div>
+        <div class="jars-slide"><img src="https://i0.wp.com/medanded.org/wp-content/uploads/2021/08/Screen-Shot-2021-08-09-at-2.29.01-PM.png?resize=432%2C452&ssl=1" alt="Jars O’ Lavender carousel image 4"></div>
+        <div class="jars-slide"><img src="https://i0.wp.com/medanded.org/wp-content/uploads/2021/08/Screen-Shot-2021-08-09-at-2.29.34-PM.png?resize=947%2C1024&ssl=1" alt="Jars O’ Lavender carousel image 5"></div>
+        <div class="jars-slide"><img src="{{ '/images/projects/jars-of-lavender/jars-logo.png' | relative_url }}" alt="Jars O’ Lavender logo"></div>
 
-    <img class="jars-logo"
-         src="{{ '/images/projects/jars-of-lavender/jars-logo.png' | relative_url }}"
-         alt="Jars O’ Lavender logo">
+        <button class="jars-arrow jars-prev" aria-label="Previous image">&#8249;</button>
+        <button class="jars-arrow jars-next" aria-label="Next image">&#8250;</button>
+      </div>
+
+      <div class="jars-footer">
+        <div class="jars-count"><span class="jars-current">1</span> / 6</div>
+        <div class="jars-dots">
+          <button class="jars-dot active" aria-label="Go to slide 1"></button>
+          <button class="jars-dot" aria-label="Go to slide 2"></button>
+          <button class="jars-dot" aria-label="Go to slide 3"></button>
+          <button class="jars-dot" aria-label="Go to slide 4"></button>
+          <button class="jars-dot" aria-label="Go to slide 5"></button>
+          <button class="jars-dot" aria-label="Go to slide 6"></button>
+        </div>
+        <div style="width:50px;"></div>
+      </div>
+    </div>
   </section>
 </main>
+
+<script>
+(function() {
+  const root = document.querySelector('#jars-page [data-carousel]');
+  if (!root) return;
+
+  const slides = Array.from(root.querySelectorAll('.jars-slide'));
+  const dots = Array.from(document.querySelectorAll('#jars-page .jars-dot'));
+  const prev = root.querySelector('.jars-prev');
+  const next = root.querySelector('.jars-next');
+  const current = document.querySelector('#jars-page .jars-current');
+  let index = 0;
+  let startX = null;
+
+  function show(n) {
+    index = (n + slides.length) % slides.length;
+    slides.forEach((slide, i) => slide.classList.toggle('active', i === index));
+    dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
+    current.textContent = String(index + 1);
+  }
+
+  prev.addEventListener('click', () => show(index - 1));
+  next.addEventListener('click', () => show(index + 1));
+  dots.forEach((dot, i) => dot.addEventListener('click', () => show(i)));
+
+  root.addEventListener('touchstart', function(e) {
+    startX = e.touches[0].clientX;
+  }, {passive:true});
+
+  root.addEventListener('touchend', function(e) {
+    if (startX === null) return;
+    const dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) > 45) show(index + (dx < 0 ? 1 : -1));
+    startX = null;
+  }, {passive:true});
+
+  show(0);
+})();
+</script>
