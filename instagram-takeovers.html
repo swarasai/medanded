@@ -4,7 +4,6 @@ title: Instagram Takeover
 ---
 
 <style>
-/* Intentionally very specific selectors so shared site CSS cannot override this page */
 #instagram-takeover-page {
   background:#fff;
   color:#222;
@@ -47,7 +46,7 @@ title: Instagram Takeover
 
 #instagram-takeover-page .ig-wp-grid {
   display:grid !important;
-  grid-template-columns:repeat(3, minmax(0, 1fr)) !important;
+  grid-template-columns:repeat(3,minmax(0,1fr)) !important;
   gap:30px !important;
   align-items:start !important;
   width:100% !important;
@@ -76,8 +75,6 @@ title: Instagram Takeover
   transform:none !important;
 }
 
-/* This is the important fix:
-   red underlined text directly over the photo — NO red box/background */
 #instagram-takeover-page a.ig-wp-card .ig-wp-label {
   position:absolute !important;
   left:18px !important;
@@ -93,7 +90,6 @@ title: Instagram Takeover
   border:0 !important;
   box-shadow:none !important;
   color:#ed1c24 !important;
-  font-family:inherit !important;
   font-size:31px !important;
   line-height:1.3 !important;
   font-weight:700 !important;
@@ -106,12 +102,12 @@ title: Instagram Takeover
   z-index:5 !important;
 }
 
+/* IMPORTANT: first card uses the full portrait source but crops from the TOP,
+   so the head is always visible just like WordPress. */
 #instagram-takeover-page .ig-wp-card.premed1 img {
-  height:auto !important;
-  aspect-ratio:auto !important;
-  object-fit:contain !important;
-  object-position:center top !important;
+  object-position:50% 8% !important;
 }
+
 #instagram-takeover-page .ig-wp-card.medstudent img { object-position:center 35% !important; }
 #instagram-takeover-page .ig-wp-card.premed2 img { object-position:center 38% !important; }
 #instagram-takeover-page .ig-wp-card.premed3 img { object-position:center 28% !important; }
@@ -122,7 +118,7 @@ title: Instagram Takeover
 
 @media (max-width:900px) {
   #instagram-takeover-page .ig-wp-grid {
-    grid-template-columns:repeat(2, minmax(0, 1fr)) !important;
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
   }
   #instagram-takeover-page .ig-wp-card-four {
     grid-column:auto !important;
@@ -154,7 +150,6 @@ title: Instagram Takeover
 </style>
 
 <main id="instagram-takeover-page">
-
   <section class="ig-wp-hero">
     <h1>Instagram Takeover</h1>
     <p><a href="{{ '/' | relative_url }}">Home</a> &nbsp;&gt;&nbsp; Instagram Takeover</p>
@@ -162,7 +157,6 @@ title: Instagram Takeover
 
   <section class="ig-wp-wrap">
     <div class="ig-wp-grid">
-
       <a class="ig-wp-card premed1" href="{{ '/premed-takeover.html' | relative_url }}">
         <img src="{{ '/images/instagram-takeovers/premed-takeover-cover.png' | relative_url }}" alt="Premed Takeover">
         <span class="ig-wp-label">Premed Takeover</span>
@@ -182,8 +176,6 @@ title: Instagram Takeover
         <img src="{{ '/images/instagram-takeovers/premed-takeover-3-cover.png' | relative_url }}" alt="Premed Takeover #3">
         <span class="ig-wp-label">Premed Takeover<br>#3</span>
       </a>
-
     </div>
   </section>
-
 </main>
