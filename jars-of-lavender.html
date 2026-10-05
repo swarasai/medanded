@@ -4,73 +4,55 @@ title: Jars O’ Lavender Collaboration
 ---
 
 <style>
-.project-page { background:#fff; }
-.project-hero {
-  background:#682523;
-  color:#fff;
-  text-align:center;
-  padding:96px 20px;
-}
-.project-hero h1 { margin:0 0 10px; font-size:42px; font-weight:700; }
-.project-hero p { margin:0; font-size:18px; }
-.project-hero a { color:#fff; text-decoration:none; }
-.project-wrap { max-width:1300px; margin:112px auto 95px; padding:0 24px; }
-.project-red-title {
-  background:#df2327; color:#fff; padding:48px 75px;
-  font-size:42px; line-height:1.2; font-weight:400; margin-bottom:34px;
-}
-.project-copy { font-size:18px; line-height:1.8; color:#333; }
-.project-copy h2 { color:#d91f26; margin:36px 0 14px; font-size:28px; }
-.project-copy h3 { color:#d91f26; margin:28px 0 10px; font-size:23px; }
-.project-copy a { color:#d91f26; }
-.project-image {
-  display:block; max-width:720px; width:100%; height:auto; margin:30px auto;
-}
-.project-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:34px; }
-.project-card { text-decoration:none; color:#222; display:block; }
-.project-card-media {
-  aspect-ratio:4/3; background:#f1f1f1; overflow:hidden; display:flex;
-  align-items:center; justify-content:center;
-}
-.project-card-media img { width:100%; height:100%; object-fit:cover; display:block; }
-.project-card-placeholder {
-  width:100%; height:100%; display:flex; align-items:center; justify-content:center;
-  background:#e8e8e8; color:#d91f26; font-size:28px; font-weight:700; text-align:center; padding:20px;
-}
-.project-card h3 { margin:13px 0 0; font-size:20px; color:#d91f26; }
-.link-button {
-  display:inline-block; background:#df2327; color:#fff !important; text-decoration:none !important;
-  padding:11px 20px; border-radius:2px; margin:8px 8px 8px 0;
-}
-.project-divider { border:0; border-top:1px solid #ddd; margin:42px 0; }
-@media(max-width:850px){
-  .project-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
-  .project-red-title{padding:38px 35px;font-size:34px;}
-}
-@media(max-width:560px){
-  .project-hero{padding:72px 18px;}
-  .project-hero h1{font-size:34px;}
-  .project-wrap{margin-top:55px;padding:0 15px;}
-  .project-grid{grid-template-columns:1fr;}
-  .project-red-title{padding:30px 24px;font-size:29px;}
+#jars-page{background:#fff;color:#292929}
+#jars-page .jars-hero{background:#682523;color:#fff;text-align:center;padding:96px 20px 92px}
+#jars-page .jars-hero h1{margin:0 0 10px!important;color:#fff!important;font-size:42px!important;font-weight:700!important}
+#jars-page .jars-hero p{margin:0;font-size:18px}
+#jars-page .jars-hero a{color:#fff;text-decoration:none}
+#jars-page .jars-wrap{max-width:1320px;margin:0 auto;padding:112px 24px 92px}
+#jars-page .jars-title{background:#e32126;color:#fff;text-align:center;font-size:40px;padding:52px 24px;margin:0 0 34px}
+#jars-page .jars-copy{font-size:18px;line-height:1.65;margin-bottom:28px}
+#jars-page .jars-copy p{margin:0 0 18px}
+#jars-page .jars-copy a{color:#e32126;text-decoration:underline}
+#jars-page .jars-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:start}
+#jars-page .jars-grid img{display:block;width:100%;height:auto;object-fit:contain}
+#jars-page .jars-logo{display:block;max-width:420px;width:100%;height:auto;margin:24px auto 0}
+@media(max-width:900px){#jars-page .jars-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){
+ #jars-page .jars-hero{padding:70px 18px 68px}
+ #jars-page .jars-hero h1{font-size:34px!important}
+ #jars-page .jars-wrap{padding:58px 14px 70px}
+ #jars-page .jars-title{font-size:30px;padding:36px 18px}
+ #jars-page .jars-copy{font-size:16px}
+ #jars-page .jars-grid{grid-template-columns:1fr}
 }
 </style>
 
+<main id="jars-page">
+  <section class="jars-hero">
+    <h1>Jars O’ Lavender Collaboration</h1>
+    <p><a href="{{ '/' | relative_url }}">Home</a> &nbsp;&gt;&nbsp; Jars O’ Lavender Collaboration</p>
+  </section>
 
-<main class="project-page">
-<section class="project-hero">
-  <h1>Jars O’ Lavender Collaboration</h1>
-  <p><a href="{{ '/' | relative_url }}">Home</a> &nbsp;&gt;&nbsp; Jars O’ Lavender Collaboration</p>
-</section>
+  <section class="jars-wrap">
+    <div class="jars-title">Jars O’ Lavender Collaboration</div>
 
-<section class="project-wrap">
+    <div class="jars-copy">
+      <p>For the months of June and July, Med n’ Ed had the incredible opportunity to collaborate with Jars O’ Lavender where all profits were donated to our organization! Their contribution will go towards purchasing hospital supplies and funding our current projects.</p>
+      <p>We cannot thank them enough for their generosity and goodwill! Check out their Instagram and pictures below!</p>
+      <p><a href="https://www.instagram.com/" target="_blank" rel="noopener">jars o’ lavender ☾ (Instagram)</a></p>
+    </div>
 
-<div class="project-red-title">Jars O’ Lavender Collaboration</div>
-<div class="project-copy">
-  <p>For the months of June and July, Med n’ Ed had the opportunity to collaborate with Jars O’ Lavender, where all profits were donated to the organization. Their contribution went toward purchasing hospital supplies and funding current projects.</p>
-  <p>Med n’ Ed thanked Jars O’ Lavender for their generosity and goodwill.</p>
-  <img class="project-image" src="{{ '/images/projects/jars-of-lavender.png' | relative_url }}" alt="Jars O' Lavender">
-</div>
+    <div class="jars-grid">
+      <img src="https://i0.wp.com/medanded.org/wp-content/uploads/2021/08/Screen-Shot-2021-08-09-at-2.28.14-PM.png?resize=974%2C1024&ssl=1" alt="Jars O’ Lavender image 1">
+      <img src="https://i0.wp.com/medanded.org/wp-content/uploads/2021/08/Screen-Shot-2021-08-09-at-2.28.30-PM.png?resize=872%2C1024&ssl=1" alt="Jars O’ Lavender image 2">
+      <img src="https://i0.wp.com/medanded.org/wp-content/uploads/2021/08/Screen-Shot-2021-08-09-at-2.29.01-PM.png?resize=432%2C452&ssl=1" alt="Jars O’ Lavender image 3">
+      <img src="https://i0.wp.com/medanded.org/wp-content/uploads/2021/08/Screen-Shot-2021-08-09-at-2.28.50-PM.png?resize=412%2C460&ssl=1" alt="Jars O’ Lavender image 4">
+      <img src="https://i0.wp.com/medanded.org/wp-content/uploads/2021/08/Screen-Shot-2021-08-09-at-2.29.34-PM.png?resize=947%2C1024&ssl=1" alt="Jars O’ Lavender image 5">
+    </div>
 
-</section>
+    <img class="jars-logo"
+         src="{{ '/images/projects/jars-of-lavender/jars-logo.png' | relative_url }}"
+         alt="Jars O’ Lavender logo">
+  </section>
 </main>

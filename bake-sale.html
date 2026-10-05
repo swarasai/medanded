@@ -4,73 +4,49 @@ title: Bake Sale
 ---
 
 <style>
-.project-page { background:#fff; }
-.project-hero {
-  background:#682523;
-  color:#fff;
-  text-align:center;
-  padding:96px 20px;
-}
-.project-hero h1 { margin:0 0 10px; font-size:42px; font-weight:700; }
-.project-hero p { margin:0; font-size:18px; }
-.project-hero a { color:#fff; text-decoration:none; }
-.project-wrap { max-width:1300px; margin:112px auto 95px; padding:0 24px; }
-.project-red-title {
-  background:#df2327; color:#fff; padding:48px 75px;
-  font-size:42px; line-height:1.2; font-weight:400; margin-bottom:34px;
-}
-.project-copy { font-size:18px; line-height:1.8; color:#333; }
-.project-copy h2 { color:#d91f26; margin:36px 0 14px; font-size:28px; }
-.project-copy h3 { color:#d91f26; margin:28px 0 10px; font-size:23px; }
-.project-copy a { color:#d91f26; }
-.project-image {
-  display:block; max-width:720px; width:100%; height:auto; margin:30px auto;
-}
-.project-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:34px; }
-.project-card { text-decoration:none; color:#222; display:block; }
-.project-card-media {
-  aspect-ratio:4/3; background:#f1f1f1; overflow:hidden; display:flex;
-  align-items:center; justify-content:center;
-}
-.project-card-media img { width:100%; height:100%; object-fit:cover; display:block; }
-.project-card-placeholder {
-  width:100%; height:100%; display:flex; align-items:center; justify-content:center;
-  background:#e8e8e8; color:#d91f26; font-size:28px; font-weight:700; text-align:center; padding:20px;
-}
-.project-card h3 { margin:13px 0 0; font-size:20px; color:#d91f26; }
-.link-button {
-  display:inline-block; background:#df2327; color:#fff !important; text-decoration:none !important;
-  padding:11px 20px; border-radius:2px; margin:8px 8px 8px 0;
-}
-.project-divider { border:0; border-top:1px solid #ddd; margin:42px 0; }
-@media(max-width:850px){
-  .project-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
-  .project-red-title{padding:38px 35px;font-size:34px;}
-}
-@media(max-width:560px){
-  .project-hero{padding:72px 18px;}
-  .project-hero h1{font-size:34px;}
-  .project-wrap{margin-top:55px;padding:0 15px;}
-  .project-grid{grid-template-columns:1fr;}
-  .project-red-title{padding:30px 24px;font-size:29px;}
+#bake-page{background:#fff;color:#292929}
+#bake-page .bake-hero{background:#682523;color:#fff;text-align:center;padding:96px 20px 92px}
+#bake-page .bake-hero h1{margin:0 0 10px!important;color:#fff!important;font-size:42px!important;font-weight:700!important}
+#bake-page .bake-hero p{margin:0;font-size:18px}
+#bake-page .bake-hero a{color:#fff;text-decoration:none}
+#bake-page .bake-wrap{max-width:1320px;margin:0 auto;padding:112px 24px 92px}
+#bake-page .bake-title{background:#e32126;color:#fff;text-align:center;font-size:40px;padding:52px 24px;margin:0 0 34px}
+#bake-page .bake-copy{font-size:18px;line-height:1.65;margin-bottom:30px}
+#bake-page .bake-top{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-bottom:18px}
+#bake-page .bake-top img{display:block;width:100%;height:auto}
+#bake-page .bake-bottom{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;border-top:1px solid #aaa;padding-top:18px}
+#bake-page .bake-bottom img{display:block;width:100%;height:auto;object-fit:contain}
+@media(max-width:700px){
+ #bake-page .bake-hero{padding:70px 18px 68px}
+ #bake-page .bake-hero h1{font-size:34px!important}
+ #bake-page .bake-wrap{padding:58px 14px 70px}
+ #bake-page .bake-title{font-size:30px;padding:36px 18px}
+ #bake-page .bake-copy{font-size:16px}
+ #bake-page .bake-top,#bake-page .bake-bottom{grid-template-columns:1fr}
 }
 </style>
 
+<main id="bake-page">
+  <section class="bake-hero">
+    <h1>Bake Sale</h1>
+    <p><a href="{{ '/' | relative_url }}">Home</a> &nbsp;&gt;&nbsp; Bake Sale</p>
+  </section>
 
-<main class="project-page">
-<section class="project-hero">
-  <h1>Bake Sale</h1>
-  <p><a href="{{ '/' | relative_url }}">Home</a> &nbsp;&gt;&nbsp; Bake Sale</p>
-</section>
+  <section class="bake-wrap">
+    <div class="bake-title">Bake Sale</div>
 
-<section class="project-wrap">
+    <div class="bake-copy">
+      <p>Med n’ Ed held a bake sale on April 24th in order to raise money for a children’s hospital. Through selling cookies, brownies, cupcakes, and lemon bars the officers were able to raise over 600 dollars! Thank you to everyone who came out and generously supported us. We appreciate your help and your support towards a good cause!!</p>
+    </div>
 
-<div class="project-red-title">Bake Sale</div>
-<div class="project-copy">
-  <p>Med n’ Ed held a bake sale on April 24 in order to raise money for a children’s hospital. Through selling cookies, brownies, cupcakes, and lemon bars, the officers raised over $600.</p>
-  <p>Thank you to everyone who came out and generously supported Med n’ Ed and this cause.</p>
-  <img class="project-image" src="{{ '/images/projects/bake-sale.jpeg' | relative_url }}" alt="Bake sale cookies">
-</div>
+    <div class="bake-top">
+      <img src="https://i0.wp.com/medanded.org/wp-content/uploads/2022/06/IMG_8693-1024x768.jpeg?ssl=1" alt="Med n' Ed bake sale">
+      <img src="https://i0.wp.com/medanded.org/wp-content/uploads/2022/06/IMG_8699-1024x768.jpeg?ssl=1" alt="Med n' Ed bake sale">
+    </div>
 
-</section>
+    <div class="bake-bottom">
+      <img src="https://i0.wp.com/medanded.org/wp-content/uploads/2022/06/IMG_6935-3.jpeg?resize=768%2C1024&ssl=1" alt="Bake sale cookies">
+      <img src="https://i0.wp.com/medanded.org/wp-content/uploads/2022/06/IMG_6930-1.jpeg?resize=768%2C1024&ssl=1" alt="Bake sale cookies">
+    </div>
+  </section>
 </main>
