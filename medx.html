@@ -1,14 +1,100 @@
 ---
 layout: default
-title: "MedX"
-description: "MedX Conference — Med n' Ed."
-body_class: "wp-home"
-nav_group: "events"
-page_id: "medx"
+title: MedX
 ---
-<main><section class="section"><div class="container">
-<h1>MedX Conference</h1>
-<p>On May 1, 2021, Med n’ Ed partnered with The Ripple Effect and Med Debrief to initiate, develop, and host an online conference known as MedX. MedX encourages youth to educate themselves about humanitarian issues from a medical standpoint. The conference focused on healthcare for refugees and the general refugee crisis.</p>
-<p>Guest speakers Doctor Zahra Goliaei and medical student Sumara Stroshein discussed the refugee crisis from a global perspective and the importance of becoming involved with humanitarian organizations. Med n’ Ed, Med Debrief, and The Ripple Effect representatives discussed medical issues commonly faced by refugees, possible solutions, ways to take action, and useful resources. The conference ended with an online escape-room simulation designed to deepen participants’ understanding of the refugee crisis and common obstacles refugees face.</p>
-<p>Med n’ Ed hopes to continue MedX as a series discussing lesser-known issues from a medical perspective and educating the public.</p>
-</div></section></main>
+<style>
+#medx-page{background:#fff;color:#292929}
+#medx-page .mx-hero{background:#682523;color:#fff;text-align:center;padding:96px 20px 92px}
+#medx-page .mx-hero h1{margin:0 0 10px!important;color:#fff!important;font-size:42px!important;line-height:1.15!important;font-weight:700!important}
+#medx-page .mx-hero p{margin:0;font-size:18px}
+#medx-page .mx-hero a{color:#fff;text-decoration:none}
+#medx-page .mx-wrap{max-width:1420px;margin:0 auto;padding:112px 28px 95px}
+#medx-page .mx-title{background:#e32327;color:#fff;text-align:center;font-size:42px;line-height:1.2;font-weight:400;padding:54px 24px;margin:0 0 44px}
+#medx-page .mx-copy{font-size:18px;line-height:1.58;margin-bottom:55px}
+#medx-page .mx-copy p{margin:0}
+#medx-page .mx-media{border-top:1px solid #777;padding-top:18px;display:grid;grid-template-columns:1.05fr .95fr;gap:38px;align-items:center}
+#medx-page .mx-carousel{position:relative;min-height:500px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+#medx-page .mx-slide{display:none;text-align:center}
+#medx-page .mx-slide.active{display:block}
+#medx-page .mx-slide img{display:block;width:100%;max-width:720px;height:auto;margin:0 auto}
+#medx-page .mx-arrow{position:absolute;top:50%;transform:translateY(-50%);border:0;border-radius:5px;background:rgba(230,230,230,.85);color:#222;font-size:46px;width:40px;height:56px;cursor:pointer;z-index:3}
+#medx-page .mx-prev{left:4px} #medx-page .mx-next{right:4px}
+#medx-page .mx-dots{position:absolute;left:2px;bottom:5px;display:flex;gap:8px}
+#medx-page .mx-dot{width:9px;height:9px;border:0;border-radius:50%;background:#aaa;padding:0}
+#medx-page .mx-dot.active{background:#222}
+#medx-page .mx-slideshow{display:block;background:#e32327;color:#fff!important;text-decoration:none!important;text-align:center;padding:11px 20px;border-radius:26px;font-size:20px;width:80%;margin:0 auto}
+#medx-page .mx-watch{display:block;margin:54px auto 18px;border:3px solid #c52d2d;border-radius:15px;background:#fff;color:#c52d2d!important;text-decoration:none!important;text-align:center;padding:10px 20px;font-size:20px}
+@media(max-width:850px){
+ #medx-page .mx-media{grid-template-columns:1fr}
+ #medx-page .mx-slideshow{width:100%}
+}
+@media(max-width:620px){
+ #medx-page .mx-hero{padding:70px 18px 68px}
+ #medx-page .mx-hero h1{font-size:34px!important}
+ #medx-page .mx-wrap{padding:58px 14px 70px}
+ #medx-page .mx-title{font-size:32px;padding:38px 18px}
+ #medx-page .mx-copy{font-size:16px}
+ #medx-page .mx-carousel{min-height:300px}
+}
+</style>
+
+<main id="medx-page">
+  <section class="mx-hero">
+    <h1>MedX</h1>
+    <p><a href="{{ '/' | relative_url }}">Home</a> &nbsp;&gt;&nbsp; MedX</p>
+  </section>
+
+  <section class="mx-wrap">
+    <div class="mx-title">MedX Conference</div>
+
+    <div class="mx-copy">
+      <p>On May 1, 2021, Med n’ Ed had the opportunity to partner with <strong>The Ripple Effect</strong> and <strong>Med Debrief</strong> to initiate, develop, and host an online conference known as <strong>MedX</strong>. MedX encourages the youth to educate themselves about humanitarian issues from a medical standpoint. The topic of this conference in particular was healthcare for refugees and the general refugee crisis. We were thrilled to have two incredible guest speakers, <strong>Doctor Zahra Goliaei</strong> and medical student <strong>Sumara Stroshein</strong>, who discussed what the refugee crisis looks like from a global perspective and the importance of getting involved with humanitarian organizations to make a difference. Following this conversation, <strong>Shreya Gupta</strong>, representing Med n’ Ed, discussed various medical issues that are commonly faced by refugees, which led to an analysis on solutions to these issues presented by <strong>Renee Guerville</strong> from Med Debrief. Finally, <strong>Cynthia Li</strong> and <strong>Grace Kim</strong> representing The Ripple Effect discussed how to take action and provided informative resources that would be of benefit to the audience. The conference was wrapped up with an online simulation of an escape room activity in which participants were given the opportunity to work through puzzles that deepened their understanding of the refugee crisis and the common obstacles they face. Overall, the conference was a huge success, and we hope to transform MedX into a series in the future in which we can discuss various lesser-known issues from a medical perspective and educate the public.</p>
+    </div>
+
+    <div class="mx-media">
+      <div class="mx-carousel" id="mxCarousel">
+        <div class="mx-track">
+          <div class="mx-slide active"><img src="https://i0.wp.com/medanded.org/wp-content/uploads/2021/06/Screen-Shot-2021-06-15-at-9.15.58-PM-1.png?resize=1024%2C640&ssl=1" alt="MedX conference image 1"></div>
+<div class="mx-slide"><img src="https://i0.wp.com/medanded.org/wp-content/uploads/2021/06/Screen-Shot-2021-06-15-at-9.16.18-PM-1.png?resize=1024%2C640&ssl=1" alt="MedX conference image 2"></div>
+        </div>
+        <button class="mx-arrow mx-prev" aria-label="Previous">&#8249;</button>
+        <button class="mx-arrow mx-next" aria-label="Next">&#8250;</button>
+        <div class="mx-dots">
+          <button class="mx-dot active" aria-label="Slide 1"></button>
+          <button class="mx-dot" aria-label="Slide 2"></button>
+        </div>
+      </div>
+
+      <div>
+        <a class="mx-slideshow" href="https://docs.google.com/presentation/d/1bwWuE8TOR-LppENiErqolaZ8H4BpvvVAArQMs4byQNk/mobilepresent?slide=id.g7a4c91d599_1_34" target="_blank" rel="noopener">View Slideshow</a>
+      </div>
+    </div>
+
+    <a class="mx-watch" href="https://youtu.be/21gda5Z4igY" target="_blank" rel="noopener">Watch the MedX Conference!</a>
+  </section>
+</main>
+
+<script>
+(function(){
+  const car=document.getElementById('mxCarousel');
+  const slides=[...car.querySelectorAll('.mx-slide')];
+  const dots=[...car.querySelectorAll('.mx-dot')];
+  let i=0,startX=null;
+  function show(n){
+    i=(n+slides.length)%slides.length;
+    slides.forEach((s,j)=>s.classList.toggle('active',j===i));
+    dots.forEach((d,j)=>d.classList.toggle('active',j===i));
+  }
+  car.querySelector('.mx-prev').onclick=()=>show(i-1);
+  car.querySelector('.mx-next').onclick=()=>show(i+1);
+  dots.forEach((d,j)=>d.onclick=()=>show(j));
+  car.addEventListener('touchstart',e=>startX=e.touches[0].clientX,{passive:true});
+  car.addEventListener('touchend',e=>{
+    if(startX===null)return;
+    const dx=e.changedTouches[0].clientX-startX;
+    if(Math.abs(dx)>45)show(i+(dx<0?1:-1));
+    startX=null;
+  },{passive:true});
+  show(0);
+})();
+</script>

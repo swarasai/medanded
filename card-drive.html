@@ -2,201 +2,123 @@
 layout: default
 title: Card Drive
 ---
-
 <style>
-#card-drive-page {
-  background:#fff;
-  color:#2d2d2d;
+#cd-page{background:#fff;color:#292929}
+#cd-page .cd-wrap{max-width:1400px;margin:0 auto;padding:0 26px 90px}
+#cd-page .cd-title{background:#e32327;color:#fff;text-align:center;font-size:46px;line-height:1.2;font-weight:400;padding:10px 20px 64px;margin:0 0 10px}
+#cd-page .cd-copy{font-size:20px;line-height:1.55;text-align:center;margin:0 20px 26px}
+#cd-page .cd-grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:start;margin:0 0 36px}
+#cd-page .cd-grid3 img{display:block;width:100%;height:540px;object-fit:cover}
+#cd-page .cd-grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;align-items:start;margin:0 0 28px}
+#cd-page .cd-grid2 img{display:block;width:100%;height:480px;object-fit:cover}
+#cd-page .cd-carousel{position:relative;min-height:720px;margin:10px auto 28px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+#cd-page .cd-track{width:100%}
+#cd-page .cd-slide{display:none;text-align:center}
+#cd-page .cd-slide.active{display:block}
+#cd-page .cd-slide img{display:block;margin:0 auto;max-width:760px;width:auto;height:690px;object-fit:contain}
+#cd-page .cd-arrow{position:absolute;top:50%;transform:translateY(-50%);border:0;background:transparent;color:#8b8b8b;font-size:54px;cursor:pointer;z-index:3}
+#cd-page .cd-prev{left:4px} #cd-page .cd-next{right:4px}
+#cd-page .cd-dots{position:absolute;left:0;bottom:0;display:flex;gap:8px}
+#cd-page .cd-dot{width:9px;height:9px;border:0;border-radius:50%;background:#aaa;padding:0}
+#cd-page .cd-dot.active{background:#222}
+#cd-page .cd-pt2{margin-top:36px}
+#cd-page .cd-pt2 .cd-copy{text-align:left;margin-left:0;margin-right:0}
+@media(max-width:900px){
+ #cd-page .cd-grid3{grid-template-columns:1fr 1fr}
+ #cd-page .cd-grid2{grid-template-columns:1fr}
+ #cd-page .cd-grid3 img,#cd-page .cd-grid2 img{height:auto}
 }
-
-#card-drive-page .cd-hero {
-  background:#682523;
-  color:#fff;
-  text-align:center;
-  padding:96px 20px 92px;
-}
-
-#card-drive-page .cd-hero h1 {
-  margin:0 0 10px !important;
-  color:#fff !important;
-  font-size:42px !important;
-  line-height:1.15 !important;
-  font-weight:700 !important;
-}
-
-#card-drive-page .cd-hero p {
-  margin:0 !important;
-  color:#fff !important;
-  font-size:18px !important;
-}
-
-#card-drive-page .cd-hero a {
-  color:#fff !important;
-  text-decoration:none !important;
-}
-
-#card-drive-page .cd-wrap {
-  max-width:1320px;
-  margin:0 auto;
-  padding:105px 24px 95px;
-}
-
-#card-drive-page .cd-section-title {
-  background:#e32126;
-  color:#fff;
-  text-align:center;
-  font-size:38px;
-  line-height:1.2;
-  font-weight:400;
-  padding:42px 24px;
-  margin:0 0 12px;
-}
-
-#card-drive-page .cd-copy {
-  font-size:18px;
-  line-height:1.65;
-  color:#292929;
-  margin:0 0 24px;
-}
-
-#card-drive-page .cd-copy p {
-  margin:0;
-}
-
-#card-drive-page .cd-divider {
-  border:0;
-  border-top:1px solid #777;
-  margin:48px 0;
-}
-
-/* Pt. 1 — preserve WordPress placement: two static rows of three */
-#card-drive-page .cd-grid-3 {
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:18px;
-  align-items:start;
-  margin:0 0 18px;
-}
-
-#card-drive-page .cd-grid-3 img {
-  display:block;
-  width:100%;
-  height:auto;
-  object-fit:contain;
-}
-
-/* Pt. 2 — first two photos are full-width/standalone, then the final three are a row */
-#card-drive-page .cd-wide {
-  margin:0 0 22px;
-}
-
-#card-drive-page .cd-wide img {
-  display:block;
-  width:100%;
-  height:auto;
-  margin:0 auto;
-}
-
-#card-drive-page .cd-pt2-row {
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:18px;
-  align-items:start;
-  margin-top:18px;
-}
-
-#card-drive-page .cd-pt2-row img {
-  display:block;
-  width:100%;
-  height:auto;
-  object-fit:contain;
-}
-
-@media(max-width:850px) {
-  #card-drive-page .cd-grid-3,
-  #card-drive-page .cd-pt2-row {
-    grid-template-columns:repeat(2,minmax(0,1fr));
-  }
-}
-
-@media(max-width:620px) {
-  #card-drive-page .cd-hero {
-    padding:70px 18px 68px;
-  }
-
-  #card-drive-page .cd-hero h1 {
-    font-size:34px !important;
-  }
-
-  #card-drive-page .cd-wrap {
-    padding:58px 16px 70px;
-  }
-
-  #card-drive-page .cd-section-title {
-    font-size:30px;
-    padding:34px 18px;
-  }
-
-  #card-drive-page .cd-copy {
-    font-size:16px;
-  }
-
-  #card-drive-page .cd-grid-3,
-  #card-drive-page .cd-pt2-row {
-    grid-template-columns:1fr;
-    gap:14px;
-  }
+@media(max-width:620px){
+ #cd-page .cd-wrap{padding:0 14px 65px}
+ #cd-page .cd-title{font-size:34px;padding:12px 16px 38px}
+ #cd-page .cd-copy{font-size:17px;margin-left:0;margin-right:0}
+ #cd-page .cd-grid3{grid-template-columns:1fr}
+ #cd-page .cd-carousel{min-height:510px}
+ #cd-page .cd-slide img{height:480px;max-width:92%}
+ #cd-page .cd-arrow{font-size:42px}
 }
 </style>
 
-<main id="card-drive-page">
-
-  <section class="cd-hero">
-    <h1>Card Drive</h1>
-    <p><a href="{{ '/' | relative_url }}">Home</a> &nbsp;&gt;&nbsp; Card Drive</p>
-  </section>
-
+<main id="cd-page">
   <section class="cd-wrap">
 
-    <div class="cd-section-title">Card Drive Pt. 1</div>
+    <div class="cd-title">Card Drive Pt. 1</div>
 
     <div class="cd-copy">
-      <p>Representatives from Med n’ Ed – Sadhika Mulagari and Roshni Danda – delivered over 80 cards to senior center near them. We realized that during the pandemic, especially seniors have been feeling lonely as they are more isolated than usual. We wanted to help that by delivering motivating cards to them! We sent the cards to Silver Creek Housing Center, Sunrise Villa!</p>
+      Representatives from Med n’ Ed – Sadhika Mulagari and Roshni Danda – delivered over 80 cards to senior center near them. We realized that during the pandemic, especially seniors have been feeling lonely as they are more isolated than usual. We wanted to help that by delivering motivating cards to them! We sent the cards to Silver Creek Housing Center, Sunrise Villa!
     </div>
 
-    <div class="cd-grid-3">
-      <img src="https://i0.wp.com/medanded.org/wp-content/uploads/2021/03/Screen-Shot-2021-03-25-at-5.07.42-PM.png?resize=1024%2C775&ssl=1" alt="Card Drive Part 1 - Sunrise Villa">
-      <img src="https://i0.wp.com/medanded.org/wp-content/uploads/2021/03/Screen-Shot-2021-03-25-at-5.08.21-PM.png?resize=772%2C1024&ssl=1" alt="Card Drive Part 1 - Sunrise Villa entrance">
-      <img src="https://i0.wp.com/medanded.org/wp-content/uploads/2021/03/Screen-Shot-2021-03-25-at-5.08.42-PM.png?resize=777%2C1024&ssl=1" alt="Card Drive Part 1 - delivering cards">
+    <div class="cd-grid3">
+      <img src="https://i0.wp.com/medanded.org/wp-content/uploads/2021/03/Screen-Shot-2021-03-25-at-5.07.42-PM.png?resize=1024%2C775&ssl=1" alt="Sunrise Villa sign">
+      <img src="https://i0.wp.com/medanded.org/wp-content/uploads/2021/03/Screen-Shot-2021-03-25-at-5.08.21-PM.png?resize=772%2C1024&ssl=1" alt="Sunrise Villa entrance">
+      <img src="https://i0.wp.com/medanded.org/wp-content/uploads/2021/03/Screen-Shot-2021-03-25-at-5.08.42-PM.png?resize=777%2C1024&ssl=1" alt="Med n' Ed representatives at Sunrise Villa">
     </div>
 
-    <div class="cd-grid-3">
-      <img src="https://i0.wp.com/medanded.org/wp-content/uploads/2021/03/Screen-Shot-2021-03-25-at-5.09.08-PM.png?resize=1024%2C774&ssl=1" alt="Cards for seniors">
-      <img src="https://i0.wp.com/medanded.org/wp-content/uploads/2021/03/Screen-Shot-2021-03-25-at-5.09.27-PM.png?resize=775%2C1024&ssl=1" alt="Stay Strong cards">
-      <img src="https://i0.wp.com/medanded.org/wp-content/uploads/2021/03/Screen-Shot-2021-03-25-at-5.09.44-PM.png?resize=1024%2C771&ssl=1" alt="Cards for Silver Creek Senior Living">
+    <div class="cd-carousel" data-carousel>
+      <div class="cd-track">
+        <div class="cd-slide active"><img src="https://i0.wp.com/medanded.org/wp-content/uploads/2021/03/Screen-Shot-2021-03-25-at-5.09.08-PM.png?resize=1024%2C774&ssl=1" alt="Card Drive image 1"></div>
+<div class="cd-slide"><img src="https://i0.wp.com/medanded.org/wp-content/uploads/2021/03/Screen-Shot-2021-03-25-at-5.09.27-PM.png?resize=775%2C1024&ssl=1" alt="Card Drive image 2"></div>
+<div class="cd-slide"><img src="https://i0.wp.com/medanded.org/wp-content/uploads/2021/03/Screen-Shot-2021-03-25-at-5.09.44-PM.png?resize=1024%2C771&ssl=1" alt="Card Drive image 3"></div>
+      </div>
+      <button class="cd-arrow cd-prev" aria-label="Previous">&#8249;</button>
+      <button class="cd-arrow cd-next" aria-label="Next">&#8250;</button>
+      <div class="cd-dots">
+        <button class="cd-dot active" aria-label="Slide 1"></button>
+        <button class="cd-dot" aria-label="Slide 2"></button>
+        <button class="cd-dot" aria-label="Slide 3"></button>
+      </div>
     </div>
 
-    <hr class="cd-divider">
+    <div class="cd-pt2">
+      <div class="cd-title">Card Drive Pt. 2</div>
 
-    <div class="cd-section-title">Card Drive Pt. 2</div>
+      <div class="cd-copy">
+        Representatives from Med n’ Ed – Sadhika Mulagari, Roshni Danda, and Sudiksha Das – delivered cards to healthcare workers at the Good Samaritan Hospital.
+      </div>
 
-    <div class="cd-copy">
-      <p>Representatives from Med n’ Ed – Sadhika Mulagari, Roshni Danda, and Sudiksha Das – delivered cards to healthcare workers at the Good Samaritan Hospital.</p>
+      <div class="cd-grid2">
+        <img src="https://i0.wp.com/medanded.org/wp-content/uploads/2022/02/Image-from-iOS-3-5.jpg?ssl=1&w=1170" alt="Delivering cards inside Good Samaritan Hospital">
+        <img src="https://i0.wp.com/medanded.org/wp-content/uploads/2022/02/Screen-Shot-2022-02-25-at-7.01.00-PM.png?resize=1024%2C757&ssl=1" alt="Med n' Ed representatives with cards">
+      </div>
+
+      <div class="cd-carousel" data-carousel>
+        <div class="cd-track">
+          <div class="cd-slide active"><img src="https://i0.wp.com/medanded.org/wp-content/uploads/2022/02/Image-from-iOS-4.jpg?ssl=1&w=1170" alt="Card Drive image 1"></div>
+<div class="cd-slide"><img src="https://i0.wp.com/medanded.org/wp-content/uploads/2022/02/Image-from-iOS-7-1.jpg?ssl=1&w=1170" alt="Card Drive image 2"></div>
+<div class="cd-slide"><img src="https://i0.wp.com/medanded.org/wp-content/uploads/2022/02/Image-from-iOS-6.jpg?ssl=1&w=1170" alt="Card Drive image 3"></div>
+        </div>
+        <button class="cd-arrow cd-prev" aria-label="Previous">&#8249;</button>
+        <button class="cd-arrow cd-next" aria-label="Next">&#8250;</button>
+        <div class="cd-dots">
+          <button class="cd-dot active" aria-label="Slide 1"></button>
+          <button class="cd-dot" aria-label="Slide 2"></button>
+          <button class="cd-dot" aria-label="Slide 3"></button>
+        </div>
+      </div>
     </div>
-
-    <div class="cd-wide">
-      <img src="https://i0.wp.com/medanded.org/wp-content/uploads/2022/02/Image-from-iOS-3-5.jpg?ssl=1&w=1170" alt="Delivering cards at Good Samaritan Hospital">
-    </div>
-
-    <div class="cd-wide">
-      <img src="https://i0.wp.com/medanded.org/wp-content/uploads/2022/02/Screen-Shot-2022-02-25-at-7.01.00-PM.png?resize=1024%2C757&ssl=1" alt="Med n' Ed representatives with cards">
-    </div>
-
-    <div class="cd-pt2-row">
-      <img src="https://i0.wp.com/medanded.org/wp-content/uploads/2022/02/Image-from-iOS-4.jpg?ssl=1&w=1170" alt="Good Samaritan Hospital">
-      <img src="https://i0.wp.com/medanded.org/wp-content/uploads/2022/02/Image-from-iOS-7-1.jpg?ssl=1&w=1170" alt="Thank you cards">
-      <img src="https://i0.wp.com/medanded.org/wp-content/uploads/2022/02/Image-from-iOS-6.jpg?ssl=1&w=1170" alt="Healthcare worker thank you cards">
-    </div>
-
   </section>
 </main>
+
+<script>
+document.querySelectorAll('[data-carousel]').forEach(function(car){
+  const slides=[...car.querySelectorAll('.cd-slide')];
+  const dots=[...car.querySelectorAll('.cd-dot')];
+  let i=0,startX=null;
+  function show(n){
+    i=(n+slides.length)%slides.length;
+    slides.forEach((s,j)=>s.classList.toggle('active',j===i));
+    dots.forEach((d,j)=>d.classList.toggle('active',j===i));
+  }
+  car.querySelector('.cd-prev').onclick=()=>show(i-1);
+  car.querySelector('.cd-next').onclick=()=>show(i+1);
+  dots.forEach((d,j)=>d.onclick=()=>show(j));
+  car.addEventListener('touchstart',e=>startX=e.touches[0].clientX,{passive:true});
+  car.addEventListener('touchend',e=>{
+    if(startX===null)return;
+    const dx=e.changedTouches[0].clientX-startX;
+    if(Math.abs(dx)>45)show(i+(dx<0?1:-1));
+    startX=null;
+  },{passive:true});
+  show(0);
+});
+</script>
